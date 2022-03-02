@@ -110,6 +110,7 @@ body{
 .top{
     height: 125px;
 }
+
 /******* 2. 메인영역 *******/
 .cont{
     max-width: 1920px;
@@ -117,7 +118,6 @@ body{
     height: 800px;
     overflow: hidden;
     /* 자식요소 마진탑포함! */
-
 }
 /* 캐릭터 부모박스 */
 #cbx{
@@ -133,7 +133,7 @@ body{
     /* float해제를 위해! */
 }
 
-/* 캐릭어박스 공통 */
+/* 캐릭터박스 공통 */
 .cat{
     /* 4등분 가로 크기는 몇%? 25% */
     width: 24%;
@@ -159,15 +159,17 @@ body{
     */
 
     /* height: 200px; */
-    outline: 4px dotted red;
+    /* outline: 4px dotted red; */
 }
+
 /* 캐릭터 이미지 */
 .ci>img{
     width: 100%;
-    /* 이미짘기를 싸고 있는 부모박스에 맞춰라!
+    /* 이미지크기를 싸고 있는 부모박스에 맞춰라!
     height크기를 안주면 비율유지함! */
 
 }
+
 /* 캐릭터 이름이미지 박스 */
 .ci span{
     display: block;
