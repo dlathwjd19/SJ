@@ -10,13 +10,11 @@ font-family: 'Gowun Dodum', sans-serif;
 font-family: 'Nanum Gothic', sans-serif;
 */
 
-
 /* 기본태그 초기화 - 마진,패딩 없애기*/
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd{
     margin: 0;
     padding: 0;
 }
-
 /* 헤딩태그 글자크기 초기화 */
 h1,h2,h3,h4,h5,h6{
     font-size: 100%;
@@ -63,6 +61,8 @@ body{
     background-position: center;
     background-size: cover; */
 
+
+
     /* 1. 배경색 */
    /* background-color:lightpink; */
 
@@ -91,14 +91,15 @@ body{
     - 가로: px, % 등 단위 또는 left, center, right
     - 세로: px, % 등 단위 또는 top, center, bottom
 */
+
 /* 6. 배경이미지 크기 */
 /* background-size: cover; */
 /* background-size: contain; */
 /* background-size: auto 200px; */
 /* background-size: 100px auto; */
 /* background-size: 100px 400px; */
-/* b
-    ackground-size: 가로 세로; 
+/* 
+    background-size: 가로 세로; 
     - 가로 : px,% 등 단위 auto
     - 세로 : px,% 등 단위 auto
     -> 가로,세로중 한쪽만 크기주고 나머지는 auto일
@@ -128,6 +129,7 @@ body{
     background-color: #ddd;
     border-radius: 5px;
 }
+
 
 
 
@@ -185,6 +187,9 @@ body{
 }
 
 
+
+
+
 /******* 2. 메인영역 *******/
 .cont{
     max-width: 1920px;
@@ -235,7 +240,7 @@ body{
         -> left 값은 나는 왼쪽에 너는 오른쪽에 올라와!
         -> right 값은 나는 오른쪽에 너는 왼쪽에 올라와!
 
-        [ 자식용소가 float된 경우 부모요소는 높이값 0? ]
+        [ 자식요소가 float된 경우 부모요소는 높이값 0? ]
         -> 블록 자식요소 float으로 인해 부모요소가 높이값이
         0인 경우 다음과 같이 해결한다!
         1. 부모요소에 overflow:hidden 설정
@@ -283,6 +288,7 @@ body{
 }
 /* 
     [ 자식요소 선택 가상클래스 ]
+
     - 전제조건 : 자식요소가 같은 종류일 경우
     :first-child 첫번째 자식
     :last-child 마지막 자식
@@ -406,7 +412,7 @@ body{
 /* 가상요소 clear */
 .blink ul::after{
     content: '';
-    display: none;
+    display: block;
     clear: both;
 }
 .blink li{
