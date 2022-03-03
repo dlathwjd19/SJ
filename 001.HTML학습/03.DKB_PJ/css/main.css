@@ -2,11 +2,12 @@
 /* 도깨비 메인페이지 CSS - main.css */
 
 /* 외부파일 합치기 - 웹폰트(CDN) */
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic&display=swap&family=Gowun+Dodum&display=swap');
 
 /* 
 font-family: 'Do Hyeon', sans-serif;
 font-family: 'Gowun Dodum', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
 */
 
 
@@ -15,11 +16,17 @@ html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd{
     margin: 0;
     padding: 0;
 }
+
 /* 헤딩태그 글자크기 초기화 */
 h1,h2,h3,h4,h5,h6{
     font-size: 100%;
     /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
     기본글자크기는 16px */
+}
+/* ul,ol초기화 */
+ul,ol{
+    list-style: none;
+    /* 블릿 표시자 없앰 */
 }
 
 
@@ -136,9 +143,47 @@ body{
 }
 
 /******* 1. 상단영역 *******/
-.top{
+#top{/* 겉박스 */
+    background-color: #fff;
+}
+.top{/* 속박스 */
     height: 125px;
 }
+/* 로고박스 */
+#logo{
+    padding: 20px;
+    text-align: center;
+}
+/* 로고이미지 */
+#logo img{
+    width: 100px;
+}
+
+/* GNB 메뉴 */
+.gnb{
+    width: 569px;
+    margin: 0 auto;
+    /* 마영오! */
+}
+/* 가상요소로 clear설정하기 */
+.gnb>ul>::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.gnb>ul>li{
+    float: left; /* 옆으로 흐르게 */
+    padding: 0 15px;
+}
+/* 메뉴 링크 */
+.gnb>ul>li>a{
+    color: #222;
+    text-decoration: none;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 17px;
+    line-height: 40px;
+}
+
 
 /******* 2. 메인영역 *******/
 .cont{
@@ -157,7 +202,8 @@ body{
     margin-top: 400px;
     /* 윗쪽마진 400px로 설정 */
     /* height: 300px; */
-    background-color: rgba(244, 210, 250, 0.603);
+    /* background-color: rgba(244, 210, 250, 0.603); */
+
     /* overflow: hidden; */
     /* float해제를 위해! 
     -> 자식요소가 위로 올라갈때 가려져서 쓸 수 없음!!! */
@@ -273,6 +319,10 @@ body{
     background: url(../images/eachBG.jpg) no-repeat center/cover;
     margin-top: 15px;
 
+    /* 둥근모서리 - border-radius */
+    border-radius: 20px 0 0 20px;
+    /* 4개의 값 - 왼쪽 위 부터 시계방향 */
+
     /* 트랜지션: 속시이지 - trs */
     transition: height .4s ease-out;
     /* transition: .4s; -> 시간만 줘도 적용됨
@@ -338,7 +388,36 @@ body{
 }
 
 /******* 3. 하단영역 *******/
-.info{
+#info{/* 겉박스 */
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.info{/* 속박스 */
     height: 241px;
+}
+/* 하단링크 */
+.blink{
+
+}
+/* 가상요소 clear */
+.blink ul::after{
+    content: '';
+    display: none;
+    clear: both;
+}
+.blink li{
+    float: left;
+    padding: 0 15px;
+}
+/* 하단링크a */
+.blink a{
+    color: #222;
+    text-decoration: none;
+    /* font-family: 'Nanum Gothic', sans-serif; */
+    font: bold 14px/39px 'Nanum Gothic', sans-serif;
+    /* 
+        font 한번에 셋팅하기!
+        font: 스두크/줄체
+        font: 스타일 두께 크기/줄간격 글자체
+    */
 }
 
