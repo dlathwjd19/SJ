@@ -19,7 +19,7 @@
 
         #a1{
             position: absolute;
-           /* 
+           /************************************************************************** 
                 [ 3. absolute 포지션 ]
 
                 1) absolute 포지션은 위치이동값을 
@@ -93,9 +93,10 @@
                     기존 설정값을 해제해야 새로운 기준값으로 
                     변경할 수 있다! 이때 auto셋팅을한다!
                 예) top: auto; bottom: 100px;
-                
 
-           */
+                6) 앱솔루트끼리는 서로 겹친다!
+
+           **************************************************************************/
 
             color: #fff;
             background: url(./ab_img/ab1.jpg) no-repeat center/cover;
@@ -106,7 +107,6 @@
             right: 0;
             /* 나의 부모는? */
            
-
             color: #fff;
             background: url(./ab_img/ab1.jpg) no-repeat center/cover;
         }
@@ -126,7 +126,8 @@
             position: relative;
             bottom: 75px;
             right: -86px;
-            z-index: -1;    /* static보다 아래! */
+            z-index: -1;
+            /* static보다 아래! */
 
             color: #fff;
             background: url(./ab_img/ab4.jpg) no-repeat center/cover;
@@ -203,8 +204,33 @@
         .spab{
             position: absolute;
             bottom: 0;
-            left: 0;
+            right: 0;
             /* 나의 부모는? .s5요소 */
+        }
+
+        /* 앱솔루트 끼리는 서로 겹친다! */
+        .absimg{
+            width: 92px;
+            height: 115px;
+            border: 4px ridge purple;
+            /* 액자틀모영 보더 */
+        }
+        /* 이미지가 앱솔루트! */
+        .absimg img{
+            position: absolute;
+            /* 겹치니까 마지막 이미지만 보인다! */
+        }
+        /* 마지막 이미지를 투명하게 */
+        .absimg img:last-child{
+            opacity: 0;
+            /* opacity는 투명도
+            (0 완전투명, 1 모두보임, 0.몇 반투명) */
+            transition: 1s;
+            /* 트랜지션: 속시이지 ->속성생략 all */            
+        }
+        /* 박스에 오버시 마지막 이미지 보이기 */
+        .absimg:hover img:last-child{
+            opacity: 1;
         }
 
     </style>
@@ -222,6 +248,12 @@
         <img src="./ab_img/ab2.jpg" alt="타노스">
     </div>
 
+    <!-- 앱솔루트 끼리는 서로 겹친다! -->
+    <div class="absimg">
+        <img src="./ab_img/ab3.jpg" alt="토르">
+        <img src="./ab_img/ab4.jpg" alt="닥스">
+    </div>
+
     <!-- 부모를 찾는 absolute요소 -->
     <div class="bx2 s5">s5
         <div class="bx2 s6">s6
@@ -236,12 +268,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
 
 
 
