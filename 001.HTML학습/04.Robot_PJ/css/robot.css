@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* 로봇 PJ CSS - robot.css */
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url(../images/bg.jpg) no-repeat fixed top/cover;
+}
+
+/* 공사중 아웃라인 */
+body *{
+    outline: 2px dashed lime;
+}
+
+/* 로봇머리 */
+#head{
+    position: relative;
+    /* 부모자격! */
+    width: 250px;
+    height: 250px;
+    background: url(../images/metal01.jpg) no-repeat center/cover;
+    margin: 0 auto; 
+    margin-top: 100px;
+    border-radius: 50px 50px 0 0;
+}
+/* 눈1 */
+#eye1{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    /* 부모는? #head*/
+
+    width: 50px;
+    height: 50px;
+    background: url(../images/e1.jpg) no-repeat 0/100% 100%;
+}
+/* 눈2 */
+#eye2{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    /* 부모는? #head*/
+
+    width: 50px;
+    height: 50px;
+    background: url(../images/e2.jpg) no-repeat 0/100% 100%;
+}
+/* 코 */
+#nose{
+    position: absolute;
+    top: 103px;
+    left: 104px;
+    /* 부모는? #head*/
+
+    width: 43px;
+    height: 65px;
+    background: url(../images/nose.jpg) no-repeat 0/100% 100%;
+}
+/* 입 */
+#mouth{
+    position: absolute;
+    bottom: 10px;
+    left: 70px;
+    /* 부모는? #head*/
+
+    width: 110px;
+    height: 60px;
+    background: url(../images/mouth.png) no-repeat 0/100% 100%;
+}
+/* 귀1 */
+#ear1{
+    position: absolute;
+    top: 72px;
+    left: -50px;
+    /* 부모는? #head*/
+
+    width: 50px;
+    height: 70px;
+    border-radius: 20px 0 0 20px;
+    background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+}
+/* 귀2 */
+#ear2{
+    position: absolute;
+    top: 72px;
+    right: -50px;
+    /* 부모는? #head*/
+
+    width: 50px;
+    height: 70px;  
+    border-radius: 0 20px 20px 0;
+    background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+}
+
+/* 로봇몸 */
+#body{
+    position: relative;
+    /* 부모자격 */
+    width: 250px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    background: url(../images/metal01.jpg) no-repeat center/cover;
+}
+
+/* 목 */
+#neck{
+    position: relative;
+    top: -50px;
+    left: 95px;
+    /* 부모는? #body */
+    width: 65px;
+    height: 50px;
+
+    background: url(../images/metal02.jpg) no-repeat;
+}
+
+/* 팔다리 공통 */
+.part{
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    background: url(../images/metal02.jpg) repeat-y 0/100%;
+}
+/* 왼팔 */
+#arm1{
+    top: 0;
+    left: -50px;
+}
+/* 오른팔 */
+#arm2{
+    top: 0;
+    right: -50px;
+}
+/* 왼다리 */
+#leg1{
+    top: 100%;
+    left: 0;
+}
+/* 오른다리 */
+#leg2{
+    top: 100%;
+    right: 0;
+}
