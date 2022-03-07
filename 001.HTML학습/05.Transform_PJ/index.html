@@ -21,6 +21,7 @@
             /* https://www.w3schools.com/css/css3_shadows.asp */
             background-color: rgba(0, 0, 0, 0.459);
         }
+
         /* 전체부모박스 */
         .cont{
             width: 1500px;
@@ -32,12 +33,14 @@
             margin: 100px auto;
             /* 블록가로중앙 - 마영오 */
         }
+
         /* 가상요소로 float해제하기 - 부모요소가 자식요소 높이값인식*/
         .cont::after{
             content: '';/* 필수속성 */
             display: block;/* clear속성적용위해 */
             clear: both;/* float해제 */
         }
+
         /* 캐릭터박스 공통 */
         .cont>div{
             width: 200px;
@@ -46,6 +49,7 @@
             float: left;
             /* 블록박스를 옆으로 흐르게 */
         }
+
         /* 이미지 맞춤 */
         .cont>div>img{
             width: 100%;
@@ -71,6 +75,7 @@
             /* 트랜지션: 속시이지 */
             transition: transform .6s;
         }
+
         /* 
             [ Transform 효과주기 ]
             - 선택요소의 크기, 회전, 이동, 기울임
@@ -94,6 +99,7 @@
              /* 트랜지션 시간 변경 */
 
          }
+         
         /* 
             2. rotateX(각도deg) - X축회전
          */
@@ -209,7 +215,7 @@
                 - 앱솔루트 끼리는 서로 겹쳐진다
                 - 순서는 나중에 그려진요소가 위에 온다
                */
-               
+
                /* 2개의 이미지를 겹치게한다 */
                #trans10 img{
                    position: absolute;
