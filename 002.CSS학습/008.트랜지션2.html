@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>트랜지션</title>
+    <title>트랜지션2 - 트랙4번 다름</title>
     <style>
         /* 
                 [ 트랜지션으로 애니메이션 설정하기 ]
 
                 - 트랜지션이란? CSS속성값이 변경되는 과정을
-                애니메이션으로 보여주는 속성
+                애니메이션으로 보여누는 속성
                 - 마우스 오버시 혹은 미리셋팅된 클래스에 설정하여
                 JS로 클래스를 요소에 부여해도 적용할 수 있다!
 
@@ -48,6 +48,9 @@
                 ->>>> 마우스 오버시에 트랜지션설정을 양방향 동일하게
                 설정하려면 :hover가 아닌 원본에 설정하면 된다!
             */
+        body{
+            padding-bottom: 400px;
+        }
         h1 {
             text-align: center;
         }
@@ -63,7 +66,25 @@
             position: relative;
             left: 0;
             /* 현재위치로 부터 이동! */
-            display: block; /* 인라인요소를 블록요소로 바꿈 */
+            display: block;
+            width: 200px;
+            height: 200px;
+            border: 5px solid #000;
+            background-color: #ff0;
+            border-radius: 50%;
+        }
+        #tr4 span{
+            position: relative;
+            left: 0;
+            /* 현재위치로 부터 이동! */
+            display: block;
+            width: 200px;
+            height: 200px;
+            border: none;
+            background-color: transparent;
+        }
+        #tr4 span b{
+            display: block;
             width: 200px;
             height: 200px;
             border: 5px solid #000;
@@ -111,7 +132,7 @@
             border-radius: 0;
             /* 원을 사각형으로! */
 
-            /* 트랜지션: 속시이지 -> 오버시 적용 */
+            /* 트랜지션: 속시이지 -> 오버시 적용! */
             transition: 1s ease-out;
             /* 모든 속성을 1초간 마지막에 천천히 애니 */
         }
@@ -122,21 +143,27 @@
             속시이지 순으로 셋팅하고 콤마로 구분한다!
         */
         #tr4 span{
-            transition: left 5s ease-in-out, 
-            /* left속성을 5초간 처음과 끝에 천천히 애니 */
-            background-color 2s ease-in 3s,
-            /* 배경색은 2초간 처음에 천천히 3초후 애니 */
-            boredr-radius 3s ease-out 5s,
-            /* 둥근모서리 3초간 나중에 천천히 5초후 애니 */
-            transform 3s linear 5s;
-            /* 트랜스폼 3초간 등속도로 5초후에 애니 */
-
+            transition: left 5s ease-in-out,
+                        /* left속성을 5초간 처음과 끝에 천천히 애니 */
+                        transform 3s linear 5s;
+                        /* 트랜드폼 3초간 등속도로 5초후에 애니 */
+        }
+        #tr4 span b{
+            transition: background-color 2s ease-in 3s,
+                        /* 배경색은 2초간 처음에 천천히 3초후 애니 */
+                        border-radius 3s ease-out 5s,
+                        /* 둥근모서리 3초간 나중에 천천히 5초후 애니 */
+                        transform 1s linear 8s;
+                        /* 트랜드폼 3초간 등속도로 5초후에 애니 */
         }
         #tr4:hover span{
             left: 70%;
+            transform: rotate(720deg);
+        }
+        #tr4:hover b{
             background-color: hotpink;
             border-radius: 0;
-            transform: rotate(720deg);                       
+            transform: scale(2);
         }
         
     </style>
@@ -160,9 +187,12 @@
         <span></span>
     </div>
 
-    <h2>4.원본에 트랜지션을 각 속성별로 다르게 준다</h2>
+    <h2>4.원본에 트랜지션을 각 속성별로 다르게 준다
+        <br>
+        트랜지션2는 여기만 다름!!!
+    </h2>
     <div id="tr4">
-        <span></span>
+        <span><b></b></span>
     </div>
 </body>
 
