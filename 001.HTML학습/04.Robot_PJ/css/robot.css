@@ -1,6 +1,19 @@
 @charset "utf-8";
 /* 로봇 PJ CSS - robot.css */
 
+/* 웹폰트 (CDN) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Righteous&display=swap');
+/* 
+font-family: 'Orbitron', sans-serif;
+font-family: 'Righteous', cursive;
+*/
+html{
+    scroll-behavior: smooth;
+    /* 내부 아이디 요소 위치로 이동시
+    스크롤 애니메이션을 부드럽게 처리함!
+    최상위 요소인 html에 셋팅함! */
+}
+
 html,body{
     margin: 0;
     padding: 0;
@@ -10,8 +23,82 @@ body{
 }
 
 /* 공사중 아웃라인 */
-body *{
+/* body *{
     outline: 2px dashed lime;
+} */
+
+/* 로봇페이지 로고 */
+h1#logo{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    /* fixed의 부모는 항상 보이는 화면! */
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin: 0;
+    
+    /* 글자정중앙 */
+    text-align: center; /* 가로중앙 */
+    line-height: 200px; /* 세로중앙 */
+
+    color: rgb(179, 243, 154);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 45px;
+    text-shadow: 2px 2px 2px #000;
+    /* 글자 그림자: x y blur 색 */
+    box-shadow: 0 0 20px 5px pink,
+                inset 0 0 20px 5px #000;
+    /* 박스 그림자: x y blur spread 색 */
+
+    /* 배경 */
+    background: pink url(../images/robot_03.png) no-repeat center 10px/160px;
+}
+
+/* 내용보기 링크 타이틀 */
+.link{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    /* 부모는? 보이는 화면 */    
+}
+/* 링크 a요소 */
+.link a{
+    font-family: 'Righteous', cursive;
+    font-size: 50px;
+    font-weight: normal;
+    color: lawngreen;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px #000;
+}
+/* 마우스 오버시 */
+.link a:hover{
+    color: orangered;
+    text-decoration: overline;
+}
+
+/* 위로이동버튼 */
+.btntop{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    /* 보이는화면 기준 */
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 50%;
+    color: blue;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+    background-color: #ccc;
+}
+/* 버튼오버시 */
+.btntop:hover{
+    background-color: #ff0;
+    color: red;
 }
 
 /* 로봇머리 */
@@ -216,6 +303,10 @@ body *{
 }
 /* 로봇 설명 제목 */
 #dcbx h2{
+    position: sticky;
+    top: 10px;
+    /* 스크롤시 top값 설정으로
+    위치를 고정할 수 있다! */
     font-size: 35px;
     text-align: center;
     color: lime;
