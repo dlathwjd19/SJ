@@ -160,8 +160,13 @@ body *{
 }
 /* 스크린 */
 #screen{
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: absolute
+    ;top: 21px;
+    left: 13px;    
     /* 부모는? #tv */
+
+    width: 136px;
+    height: 97px;
+    background-color: red;
+    border-radius: 13px;
 }
