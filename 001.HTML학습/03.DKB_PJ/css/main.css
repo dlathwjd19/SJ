@@ -30,17 +30,18 @@ ul,ol{
 
 /* 작업진행중 외곽선 */
 /* 별표시(*)는 모든요소를 선택시 사용 */
-body * {
+/* body * {
     outline: 1px dashed gray;
-   /* outline은 보더와 달리
-   주변요소에 전혀 영향을 주지 않는다! 
-   그래서 border는 박스요소에 필수포함 요소지만
-   outline은 필수요소가 아니다!!!
-   그리고 요소의 외곽선 바깥으로 보임!
+} */
 
-   사용법은 border와 유사함
-   outline: 두께 종류 색상; */
-}
+/* outline은 보더와 달리
+주변요소에 전혀 영향을 주지 않는다! 
+그래서 border는 박스요소에 필수포함 요소지만
+outline은 필수요소가 아니다!!!
+그리고 요소의 외곽선 바깥으로 보임!
+
+사용법은 border와 유사함
+outline: 두께 종류 색상; */
 
 /* 컨텐츠 파트 최상위부모 */
 body{
@@ -147,6 +148,7 @@ body{
 /******* 1. 상단영역 *******/
 #top{/* 겉박스 */
     background-color: #fff;
+    border-bottom: 1px solid #ccc;
 }
 .top{/* 속박스 */
     height: 125px;
@@ -185,6 +187,88 @@ body{
     font-size: 17px;
     line-height: 40px;
 }
+
+/* 서브메뉴 */
+.smenu{
+    position: absolute;
+    /* 젠틀앱솔루트 */
+    z-index: 1;
+    /* li 가상요소 after 앱솔루트보다 위! */
+    /* background-color: #fff; */
+
+    /* 서브메뉴 숨기기 */
+    height: 0;
+    overflow: hidden;
+
+    /* 트랜지션 : 속시이지 */
+    transition: heiht .4s ease-out;
+    
+}
+
+
+/* 서브 하위 ol */
+.smenu ol{
+    padding: 10px 0;
+}
+/* 서브 a */
+.smenu a{
+    font-size: 14px;
+    line-height: 30px;
+
+    /* 글자색+밑줄변경 */
+    color: #222;
+    text-decoration: none;
+}
+
+/* 하위메뉴가 있는 상위 li요소에 마우스 오버시
+가상요소로 페이지 끝까지 차지하는 흰색배경 만들기
+클래스가 sm이 부여된 li만 적용된다! */
+.gnb>ul>li.sm::after{
+    content: '';
+    display: block;/* div와 비슷! */
+    position: absolute;
+    /* top에 대한 설정이 없으므로 젠틀앱솔루트
+    a요소 아래에 그대로 위치함! */
+    left: 0;
+    /* 부모는? 보이는 화면 */
+    width: 100%;
+    /* 앱솔루트 크기에 %사용시 부모를 기준함! 
+    보이는 화면에 부모!*/
+    height: 0px;
+    background-color: #fff;
+
+    /* 세부위치조정은 마진으로!!! */
+    margin-top: 2px;
+    /* #top의 하단보더를 가리므로 아래쪽으로 위치이동함! */
+
+    /* 트랜지션 : 속시이지 */
+    transition: heiht .4s ease-out;
+}
+
+/* li.sm에 마우스 오버시 가상요소 내려오기! */
+/* 공통으로 하단보더설정 */
+.gnb>ul>li.sm:hover::after{
+    border-bottom: 2px solid red;
+}
+
+/* 높이값 각각 다르게 셋팅 */
+/* + 상위메뉴 li에 마우스 오버시 .smenu 보이기 동시코딩!!! */
+/* 프로그램소개 : 메뉴3개*30+20=110px */
+.gnb>ul>li.sm.sm1:hover::after,
+.gnb>ul>li.sm1:hover .smenu{
+    height: 110px;
+}
+/* 동영상 : 메뉴4개*30+20=140px */
+.gnb>ul>li.sm.sm2:hover::after,
+.gnb>ul>li.sm2:hover .smenu{
+    height: 140px;
+}
+/* 사진첩 : 메뉴2개*30+20=80px */
+.gnb>ul>li.sm.sm3:hover::after
+.gnb>ul>li.sm3:hover .smenu{
+    height: 80px;
+}
+
 
 
 
@@ -389,7 +473,8 @@ body{
 .cd p:first-of-type::first-letter{
     font-size: 30px;
     color: cyan;
-    text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
+    text-shadow: 1px 0 #000, -1px 0 #000,
+     0 1px #000, 0 -1px #000;
     /* 4개의 그림자로 글자 테두리 주기! */
 }
 
