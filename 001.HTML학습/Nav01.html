@@ -56,11 +56,63 @@
             /* 트랜지션: 속시이지 */
             transition: all .4s;
         }
-
         /* li에 마우스 오버시 a요소 디자인 변경 */
         .gnb>ul>li:hover>a{
             background-color: #c4dbf8;
-            color: rgb(9, 13, 247);
+            color: navy;
+        }
+
+        /* 서브메뉴 */
+        .smenu{
+            position: absolute;
+            /* 젠틀앱솔루트 */
+            background-color: #c4dbf8;
+
+            /* 박스 컨텐츠 숨기기 */
+            height: 0;
+            overflow: hidden;
+
+            /* 트랜지션: 속시이지 */
+            transition: heingt .4s ease-out;
+        }
+        /* 상위메뉴 li에 오버시 .smenu 보이기 */
+        /* 두번째 박스 li */
+        .gnb>ul>li:nth-child(2):hover .smenu{
+            height: 180px;
+            /* 서브메뉴 4개*40px+패딩(20px) */
+        }
+        /* 세번째 박스 li */
+        .gnb>ul>li:nth-child(3) .smenu{
+            height: 100px;
+            /* 서브메뉴 2개*40px+패딩(20px) */
+        }
+
+
+        /* 서브메뉴 ol */
+        .smenu ol{
+            padding: 10px;
+        }
+        /* 서브메뉴 a */
+        .smenu a{
+            display: block;
+            width: 180px;
+            /* 전체크기 200px 
+            - 부모ol 양쪽패딩 20px
+            180px + 20px = 200px */
+            line-height: 40px;
+            font-size: 14px;
+            
+            /* 글자색+밑줄 변경 */
+            color: navy;
+            text-decoration: none;
+
+            /* 트랜지션: 속시이지 */
+            transition: all .4s;
+        }
+        /* 서브메뉴 a에 오버시 */
+        .smenu a:hover{
+            background-color: #eeeeee;
+            color: rgb(253, 59, 59);
         }
     </style>
 </head>
@@ -75,9 +127,41 @@
             </li>
             <li>
                 <a href="#">웹개발</a>
+                <!-- 서브메뉴 -->
+                <div class="smenu">
+                    <ol>
+                        <li>
+                            <a href="#">웹디자인</a>
+                        </li>
+                        <li>
+                            <a href="#">HTML5+CSS3</a>
+                        </li>
+                        <li>
+                            <a href="#">jQuery</a>
+                        </li>
+                        <li>
+                            <a href="#">웹+모바일</a>
+                        </li>
+                    </ol>
+                </div>
             </li>
             <li>
                 <a href="#">게시판</a>
+                <!-- 서브메뉴 -->
+                <div class="smenu">
+                    <ol>
+                        <li>
+                            <a href="#">Q&amp;A</a>
+                            <!-- 특수문자표시
+                                엠퍼센트(&) : &amp;
+                                여는꺽쇠(<) : &lt;
+                                닫는꺽쇠(>) : &gt;
+                            -->
+                        </li>
+                        <li>
+                            <a href="#">방명록</a>
+                        </li>
+                </div>
             </li>
             <li>
                 <a href="#">프로필</a>
