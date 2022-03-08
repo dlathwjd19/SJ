@@ -196,15 +196,15 @@ body{
     /* li 가상요소 after 앱솔루트보다 위! */
     /* background-color: #fff; */
 
+
     /* 서브메뉴 숨기기 */
     height: 0;
     overflow: hidden;
 
     /* 트랜지션 : 속시이지 */
-    transition: heiht .4s ease-out;
+    transition: height .4s ease-out;
     
 }
-
 
 /* 서브 하위 ol */
 .smenu ol{
@@ -242,7 +242,7 @@ body{
     /* #top의 하단보더를 가리므로 아래쪽으로 위치이동함! */
 
     /* 트랜지션 : 속시이지 */
-    transition: heiht .4s ease-out;
+    transition: height .4s ease-out;
 }
 
 /* li.sm에 마우스 오버시 가상요소 내려오기! */
@@ -264,7 +264,7 @@ body{
     height: 140px;
 }
 /* 사진첩 : 메뉴2개*30+20=80px */
-.gnb>ul>li.sm.sm3:hover::after
+.gnb>ul>li.sm.sm3:hover::after,
 .gnb>ul>li.sm3:hover .smenu{
     height: 80px;
 }
@@ -330,6 +330,7 @@ body{
         1. 부모요소에 overflow:hidden 설정
         2. float자식요소 중 float이 아닌 마지막 요소에
          float해제 속성인  clear설정하기!
+
     */
 
     /* height: 200px; */
@@ -352,7 +353,6 @@ body{
     width: 100%;
     /* 이미지크기를 싸고 있는 부모박스에 맞춰라!
     height크기를 안주면 비율유지함! */
-
 }
 
 /* 캐릭터 이름이미지 박스 */
@@ -456,9 +456,9 @@ body{
     width: 15px;
     height: 30px;
     background: url(../images/bg_logo_a_01.png) no-repeat right -184px;
-    /* outline: 1px solid red; */
     vertical-align: -5px;
     margin-right: 5px;
+    /* outline: 1px solid red; */
 }
 /* 캐릭터 설명 문단 */
 .cd p{
