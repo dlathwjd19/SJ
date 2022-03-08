@@ -252,7 +252,7 @@ h1#logo{
     margin: 0 auto; 
     margin-top: 100px;
     border-radius: 50px 50px 0 0;
-    
+
 }
 
 /* 로봇애니 호출 클래스 : 로봇머리, 로봇몸 요소에서 호출! */
@@ -391,6 +391,14 @@ h1#logo{
 #leg2{
     top: 100%;
     right: 0;
+}
+/* 어깨공통 */
+.sh{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url(../images/metal01.jpg) no-repeat center/cover;
+
 }
 
 /* TV */
