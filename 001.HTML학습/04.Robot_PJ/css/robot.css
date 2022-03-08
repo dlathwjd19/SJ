@@ -121,6 +121,7 @@ h1#logo{
     }
 }/* logoAni2 키프레임 */
 
+
 /********************************************************* 
     [ CSS로 애니메이션 하기 ]
 
@@ -251,7 +252,22 @@ h1#logo{
     margin: 0 auto; 
     margin-top: 100px;
     border-radius: 50px 50px 0 0;
+    
 }
+
+/* 로봇애니 호출 클래스 : 로봇머리, 로봇몸 요소에서 호출! */
+.rAni{
+    /* 에니메이션: 이시이지반방마 */
+    animation: robotAni 1.5s ease-out 3s forwards;    
+}
+
+/* 로봇머리, 몸 제자리 키프레임 */
+@keyframes robotAni {
+    to{
+        left: 0;
+    }
+}/* robotAni 키프레임 */
+
 /* 눈1 */
 #eye1{
     position: absolute;
