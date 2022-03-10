@@ -271,33 +271,14 @@
         }
 
         /* 1000px이하 */
-        @media screen and (max-width:1000px) {
 
-            /* 출력글자 변경하기 */
-            .tit::after {
-                content: "1000px이하!";
-                color: yellow;
-            }
-
-            /* 기존이미지 숨기기 */
-            .screen img:nth-child(3) {
-                display: none;
-            }
-
-            /* 다음이미지 보이기 */
-            .screen img:nth-child(4) {
-                display: inline;
-            }
-
-        }
-
-        /*************** 900px 이하 ***************/
+        /*************** 900px 이하 ***************/ 
         @media screen and (max-width:900px) {
 
             /* 출력글자 변경하기 */
             .tit::after {
                 content: "900px이하!";
-                color: green;
+                color: yellow;
             }
 
             /* 기존이미지 숨기기 */
@@ -311,72 +292,68 @@
             }
 
         }
-
+        
         /* 900px 이하 */
-
+        
         /***************** 850px 이하 *****************/
         @media screen and (max-width:850px) {
 
             /* 출력글자 변경하기 */
             .tit::after {
                 content: "850px이하!";
-                color: blue;
+                color: green;
             }
 
             /* 기존이미지 숨기기 */
-            .screen img:nth-child(4) {
+            .screen img:nth-child(5) {
                 display: none;
             }
 
             /* 다음이미지 보이기 */
-            .screen img:nth-child(5) {
+            .screen img:nth-child(6) {
                 display: inline;
             }
-
+            
         }
-
+        
         /* 850px 이하 */
 
         /****************** 830px 이하 ******************/
+        
         @media screen and (max-width:830px) {
 
             /* 출력글자 변경하기 */
             .tit::after {
                 content: "830px이하!";
-                color: lightseagreen;
+                color: blue;
             }
 
             /* 기존이미지 숨기기 */
-            .screen img:nth-child(4) {
+            .screen img:nth-child(6) {
                 display: none;
             }
 
             /* 다음이미지 보이기 */
-            .screen img:nth-child(5) {
+            .screen img:nth-child(7) {
                 display: inline;
             }
 
         }
-
+        
         /* 830px 이하 */
 
         /***************** 가로모드 + 830px이하 *****************/
-        @media screen and (max-width:8px) {
+        @media screen and (orientation:landscape) and (max-width:830px) {
 
-            /* 출력글자 변경하기 */
-            .tit::after {
-                content: "8px이하!";
-                color: purple;
+            /* .bx의 가사용소 배경 변경하기 */
+            .bx::after {
+                background-position: top;
+                background-size: auto 60%;
             }
 
-            /* 기존이미지 숨기기 */
-            .screen img:nth-child(3) {
-                display: none;
-            }
-
-            /* 다음이미지 보이기 */
-            .screen img:nth-child(4) {
-                display: inline;
+            /* 스크린 위치변경 */
+            .screen {
+                top: 171px;
             }
 
         }
@@ -384,20 +361,72 @@
         /* 가로모드 + 830px이하 */
 
 
-
-
-
         /******************** 810px 이하 ********************/
+        @media screen and (max-width:810px) {
+
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "810px이하!";
+                color: purple;
+            }
+
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(7) {
+                display: none;
+            }
+
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(8) {
+                display: inline;
+            }
+
+        }
 
         /* 810px 이하 */
 
         /******************* 790px 이하 *******************/
+        @media screen and (max-width:790px) {
 
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "790px이하!";
+                color: hotpink;
+            }
+
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(8) {
+                display: none;
+            }
+
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(9) {
+                display: inline;
+            }
+
+        }
 
         /* 790px 이하 */
 
         /******************* 770px 이하 *******************/
+        @media screen and (max-width:770px) {
 
+            /* 출력글자 변경하기 */
+            .tit::after {
+                content: "770px이하!";
+                color: purple;
+            }
+
+            /* 기존이미지 숨기기 */
+            .screen img:nth-child(9) {
+                display: none;
+            }
+
+            /* 다음이미지 보이기 */
+            .screen img:nth-child(10) {
+                display: inline;
+            }
+
+        }
 
         /* 770px 이하 */
     </style>
