@@ -444,7 +444,7 @@ body{
 /* 캐릭터 설명 타이틀 */
 .cd h3{
     font-family: 'Do Hyeon', sans-serif;
-    font-size: 30px;
+    font-size: min(2vw,30px);
     font-weight: normal;
     padding: 5px 10px 0;
     /* 패딩: 위 양쪽 아래 */
@@ -463,7 +463,7 @@ body{
 /* 캐릭터 설명 문단 */
 .cd p{
     font-family: 'Gowun Dodum', sans-serif;
-    font-size: 17px;
+    font-size: min(1.5vw,20px);
     line-height: 1.7;/* 글자간격 */
     padding: 10px;
     text-align: justify;
@@ -471,7 +471,7 @@ body{
 }
 /* 캐릭터 설명 첫번째 글자 가상요소로 변경하기! */
 .cd p:first-of-type::first-letter{
-    font-size: 30px;
+    font-size: min(2vw,30px);
     color: cyan;
     text-shadow: 1px 0 #000, -1px 0 #000,
      0 1px #000, 0 -1px #000;
