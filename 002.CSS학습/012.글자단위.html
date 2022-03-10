@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,25 +49,51 @@
             - 부분만 변경하고 싶은 경우엔 em 또는 %를 써야할 것이다
 
 
-
          */
 
         /* em단위 */
         /* em은 배수단위이므로 기본크기에 곱한다! */
         /* html의 기본글자크기는 16px이다! */
 
-        .f1{
-            
+        .f1 {
+            font-size: 2em;
+            /* 
+                32px을 em으로 만들려면?
 
+                16px * ?em = 32px
+                ?em = 32px / 16px
+
+                [ em 계산법 ]
+                원하는 px / 상속된 px
+
+                - 상속된 px이란?
+                : html 문서에서 최상위 부모에 셋팅된
+                글자크기가 지식요소로 상속된다!
+                (글자크기 셋팅이 자식요소로 내려간다!)
+            */
         }
 
-        .f2{
-            
+        .f2 {
+            font-size: 0.75em;
+            /* 
+                내가 원하는 px : 24px
+                em = 24px / 상속된px
+                em = 24px / 32px
+                     = 0.75em
+
+            */
         }
 
-        .f3{
+        .f3 {
             font-size: 0.58em;
-            
+            /* 
+                내가 원하는 px : 14px
+                em = 14px / 상속된px
+                em = 14px / 24px
+                     = 0.58em
+
+            */
+
         }
 
         /* 
@@ -77,40 +104,61 @@
             원하는 px / html px (기본값 16px)
 
          */
-         .rf1{
-             
-         }
-         .rf2{
-             
-         }
-         .rf3{
-            
-         }
+        .rf1 {
+            /* 원하는 px -> 32px -> 32 / 16 = 2rem*/
+            font-size: 2rem;
+        }
 
-         /* 
+        .rf2 {
+            /* 원하는 px -> 24px -> 24 / 16 = 1.5rem*/
+            font-size: 1.5rem;
+        }
+
+        .rf3 {
+            /* 원하는 px -> 14px -> 14 / 16 = .87rem */
+            font-size: 0.87rem;
+        }
+
+        /* 
             % 단위 : em단위 계산법에 100을 곱한 것과 같다!
             즉, 부모요소에서 상속된 글자 크기의 상대적인 크기단위다!
-          */
-          .pf1{
-              
-          }
-          .pf2{
-              
-          }
-          .pf3{
-              
-          }
 
-          /* 미디어쿼리 */
-          
+            font-size: 2em; -> 200%
+            font-size: 0.75em; -> 75%
+            font-size: 0.58em; -> 58%
+
+          */
+        .pf1 {
+            font-size: 200%;
+        }
+
+        .pf2 {
+            font-size: 75%;
+        }
+
+        .pf3 {
+            font-size: 58%;
+        }
+
+        /* 미디어쿼리 */
+        @media screen and (max-width:800px) {
+            /* 최상위 부모의 글자크기만 변경하면
+            상대단위는 모두 변경된다! */
+            html{
+                font-size: 14px;
+                /* 기본글자크기는 16px */
+            }
+            /* 미디어쿼리 800px이하 */
+        }
 
 
     </style>
 </head>
+
 <body>
     <h1>em단위</h1>
-    <div class="f1">1.큰 제목입니다. 
-        <div class="f2">2.작은 제목입니다. 
+    <div class="f1">1.큰 제목입니다.
+        <div class="f2">2.작은 제목입니다.
             <div class="f3">3.내용입니다.</div>
         </div>
     </div>
@@ -118,8 +166,8 @@
     <hr>
 
     <h1>rem단위</h1>
-    <div class="rf1">1.큰 제목입니다. 
-        <div class="rf2">2.작은 제목입니다. 
+    <div class="rf1">1.큰 제목입니다.
+        <div class="rf2">2.작은 제목입니다.
             <div class="rf3">3.내용입니다.</div>
         </div>
     </div>
@@ -127,12 +175,13 @@
     <hr>
 
     <h1>%단위</h1>
-    <div class="pf1">1.큰 제목입니다. 
-        <div class="pf2">2.작은 제목입니다. 
+    <div class="pf1">1.큰 제목입니다.
+        <div class="pf2">2.작은 제목입니다.
             <div class="pf3">3.내용입니다.</div>
         </div>
     </div>
 
 
 </body>
+
 </html>
