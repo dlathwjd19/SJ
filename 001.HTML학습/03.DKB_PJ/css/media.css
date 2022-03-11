@@ -21,7 +21,7 @@
 
     /* 1. 숨기기 - GNB메뉴, 문구이미지, 하단링크, 
     서브메뉴, 메뉴배경가상요소 */
-    /* .gnb, */
+    .gnb,
     #dtxt,
     .blink,
     .smenu,
@@ -72,6 +72,12 @@
     .gnb>ul>li>a,
     .gnb>ul>li:hover>a{
         border-bottom: none;
+    }
+
+    /* 3.6. 상단영역 클래스 설정변경 */
+    /* .top에 클래스 on을 주면 하위요소 변경 */
+    .top.on .gnb{
+        display: block;
     }
 
     /* 4. 캐릭터 박스 레이아웃 변경 */
