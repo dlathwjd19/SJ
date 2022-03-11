@@ -243,13 +243,20 @@ body {
 }
 
 /********************* sns 메뉴 *********************/
-.snsbx{
-    overflow: hidden;
+.snsbx{ /* 최상위 박스 */
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* x축방향으로 자기크기의 절반 반대방향이동(중앙정렬) */
+    width: 1200px;
+    max-width: 100%;
+    /* 1200px이었다가 화면이 작아지면 100%로 변경 */
     outline: 2px dotted blue;
 }
-
 .sns{
     float: right;
+    margin-right: 50px;
     outline: 2px dotted red;
 }
 .sns ul::after{
@@ -259,11 +266,22 @@ body {
 }
 .sns li{
     float: left;
+    margin: 0 5px;
+}
+/* sns메뉴용 li만 디자인 */
+/* 두번째 li이후 모든 li형제들 : 틸드(~) 형제들 선택자 */
+.sns li:nth-child(2)~li{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(155, 245, 248);
 }
 .sns a{    
+    color: #222;
+    text-decoration: none;
+
     font-family: 'Nanum Gothic', sans-serif;
-    font-size: 1.7rem;
-    line-height: 40px;
+    font-size: 1.5rem;
+    line-height: 30px;
 }
 
 /* sns 설명글 숨기기 */
@@ -295,7 +313,6 @@ body {
 .gnb>ul>li>a {
     display: inline-block;
     /* 인라인블록이면 위아래로 영역이 줄간격만큼 확장됨! */
-
     color: #222;
     text-decoration: none;
     font-family: 'Nanum Gothic', sans-serif;
