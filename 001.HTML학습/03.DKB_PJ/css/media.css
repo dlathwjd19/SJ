@@ -26,7 +26,8 @@
     .blink,
     .smenu,
     .gnb>ul>li.sm::after,
-    .snsbx {
+    .snsbx,
+    #sel {
         display: none;
     }
 
