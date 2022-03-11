@@ -242,7 +242,36 @@ body {
     width: 100px;
 }
 
-/* GNB 메뉴 */
+/********************* sns 메뉴 *********************/
+.snsbx{
+    overflow: hidden;
+    outline: 2px dotted blue;
+}
+
+.sns{
+    float: right;
+    outline: 2px dotted red;
+}
+.sns ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.sns li{
+    float: left;
+}
+.sns a{    
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.7rem;
+    line-height: 40px;
+}
+
+/* sns 설명글 숨기기 */
+.ir{
+    display: none;
+}
+
+/******************** GNB 메뉴 ********************/
 .gnb {
     width: 569px;
     margin: 0 auto;
