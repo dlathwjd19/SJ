@@ -3,36 +3,79 @@
 
 /************** 1024px 이하 미디어쿼리 **************/
 @media screen and (max-width:1024px) {
-    html{
+    html {
         font-size: 8px;
     }
 
     /* 메뉴 글자 크기에 따른 gnb 가로크기변경 */
-    .gnb{
+    .gnb {
         width: 491px;
     }
-    
-}/* 1024px 이하 */
+
+}
+
+/* 1024px 이하 */
 
 /************** 800px 이하 미디어쿼리 **************/
 @media screen and (max-width:800px) {
 
-    /* 1. 숨기기 - GNB메뉴, 문구이미지, 하단링크 */
-    .gnb,#dtxt,.blink{
+    /* 1. 숨기기 - GNB메뉴, 문구이미지, 하단링크, 
+    서브메뉴, 메뉴배경가상요소 */
+    /* .gnb, */
+    #dtxt,
+    .blink,
+    .smenu,
+    .gnb>ul>li.sm::after {
         display: none;
     }
+
     /* 2. 보이기 - 햄버거버튼 */
-    .ham{
+    .ham {
         display: block;
     }
 
     /* 3.  높이값 자동 : 상단영역, 하단영역 */
-    .top, .info{
+    .top,
+    .info {
         height: auto;
     }
 
+    /* 3.5. GNB 디자인변경 */
+    .gnb {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .gnb>ul{
+        margin-top: 20vh;
+        /* 리스크가 60vh이므로 나머지 40vh 중
+        절반인 20vh만 밀어주면 리스트가 세로
+        중앙에 오게됨! */
+    }
+    .gnb>ul>li{
+        float: none;
+        /* float 없앰! */
+        text-align: center;
+    }
+    .gnb>ul>li>a{
+        font-size: 4vh;
+        line-height: 10vh;
+        /* 메뉴가 6개이므로 줄간격 60vh
+        즉, 보이는 높이 화면의 60%임 */
+        color: #fff;
+        /* 글자색 흰색 */
+    }
+    /* 오버시 하단 보더 없애기 */
+    .gnb>ul>li>a,
+    .gnb>ul>li:hover>a{
+        border-bottom: none;
+    }
+
     /* 4. 캐릭터 박스 레이아웃 변경 */
-    .cat{
+    .cat {
         width: 99%;
         /* 한줄에 하나의 캐릭터박스 옴 */
         margin-bottom: 3vh;
@@ -40,31 +83,38 @@
     }
 
     /* 5. 메인 컨텐츠 박스 : 높이값 해제 */
-    .cont{
+    .cont {
         height: auto;
         padding-bottom: 0;
     }
+
     /* 6. 캐릭터 부모박스 마진조정 */
-    #cbx{
+    #cbx {
         margin-top: 100px;
     }
+
     /* 7. 캐릭터 박스 마우스 오버시 이미지박스 올라오기 초기화 */
     .cat:hover .ci {
         margin-top: 0;
     }
+
     /* 8. 타이틀 글자 */
-    .cd h3{
+    .cd h3 {
         font-size: 7vw;
         padding: 2vw 4vw 0
     }
+
     /* 9. 내용 글자 */
-    .cd p{
+    .cd p {
         font-size: 4vw;
         padding: 5vw;
     }
+
     /* 10. 캐릭터박스 오버시 글자박스 높이값 */
     .cat:hover .cd {
         height: 50vh;
     }
 
-}/* 800px 이하 */
+}
+
+/* 800px 이하 */
