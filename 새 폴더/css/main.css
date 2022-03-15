@@ -1,51 +1,78 @@
 @charset "utf-8";
 
+/* 기본태그 초기화 */
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd{
     margin: 0;
     padding: 0;
 }
-
+/* 헤딩태그 글자크기 초기화 */
 h1,h2,h3,h4,h5,h6{
     font-size: 100%;
 }
 
-
-.bgc{
-    background-color: rgb(248, 193, 11);
-    /* url(../ra.png) no-repeat fixed 5% 2%/25%, */
-    width: 100%;
-    height: 800px;
-    margin: 0;
-    
-    
-  
-}
-
 body *{
-    outline: 2px dotted red;
+    outline: 2px dotted grey;
 }
 
+/* 컨텐츠 파트 최상위부모 */
+body{
+    
+    background: 
+    url(../ra.png) no-repeat 5% top/25%,
+    url(../raba01.jpg) no-repeat 50% 55px/1200px;
+
+
+}
+
+/* 공통클래스 */
+/* 속박스 */
 .ibx{
-    width: auto;
-    margin: 55px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.bgi{
 
-    /* display: block; */
-    width: 1100px;
-    height: 500px;
-    margin: 0 55px;
-}
 /* 상단 */
-#top{
+.top{
     height: 55px;
+    /* width: 1350px; */
 }
 /* 메인 */
-#cont{
-    height: 2000px;
+.cont{
+    max-width: 1920px;
+    /* 가장 큰 일반 해상도 크기 최대가로크기변경 */
+    height: 1500px;    
+    overflow: hidden;
+    /* 자식요소 마진탑포함 */
+}
+/* 캐릭터부모박스 */
+#cbx{
+    width: 90%;
+    /* 부모박스크기의 90%가로크기 */
+    margin: 0 auto;
+    /* 마영오 - 블록 가로 중앙 */
+    margin-top: 800px;
+    /* height: 300px; */
+    background-color: rgba(183, 173, 230, 0.603);
+    overflow: hidden;
+    /* float해제위해 */
+
+}
+
+/* 캐릭터1 박스 공통 */
+.cat1{
+    /* 4등분 가로 크기는?25% */
+    width: 25%;
+    float: left;
+    /* height: 200px; */
+    outline: 4px dotted red;
+}
+
+/* 캐릭터이미지 */
+.ci>img{
+    width: 100%;
 }
 /* 하단 */
-#info{
+.info{
     height: 150px;
 }
