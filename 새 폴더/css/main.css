@@ -51,20 +51,28 @@ body{
     /* 부모박스크기의 90%가로크기 */
     margin: 0 auto;
     /* 마영오 - 블록 가로 중앙 */
-    margin-top: 800px;
+    margin-top: 100px;
     /* height: 300px; */
     background-color: rgba(183, 173, 230, 0.603);
     overflow: hidden;
     /* float해제위해 */
 
 }
-
+/* 캐릭터소개 문구 */
+.cind>h1{
+    color: yellow;
+    text-align: center;
+    margin-top: 45%;
+    /* margin-bottom: 50px; */
+    font-size: 45px;
+}
 /* 캐릭터1 박스 공통 */
 .cat1{
-    /* 4등분 가로 크기는?25% */
+    /* 4등분 가로 크기는?25% */    
     width: 25%;
     float: left;
     /* height: 200px; */
+    border-radius: 50%;
     outline: 4px dotted red;
 }
 
