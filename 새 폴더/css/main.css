@@ -41,7 +41,7 @@ body{
 .cont{
     max-width: 1920px;
     /* 가장 큰 일반 해상도 크기 최대가로크기변경 */
-    height: 1500px;    
+    height: 2000px;    
     overflow: hidden;
     /* 자식요소 마진탑포함 */
 }
@@ -51,7 +51,7 @@ body{
     /* 부모박스크기의 90%가로크기 */
     margin: 0 auto;
     /* 마영오 - 블록 가로 중앙 */
-    margin-top: 100px;
+    margin-top: 60px;
     /* height: 300px; */
     background-color: rgba(183, 173, 230, 0.603);
     overflow: hidden;
@@ -66,19 +66,22 @@ body{
     /* margin-bottom: 50px; */
     font-size: 45px;
 }
-/* 캐릭터1 박스 공통 */
-.cat1{
+/* 캐릭터 박스 공통 */
+.cat{
     /* 4등분 가로 크기는?25% */    
-    width: 25%;
+    width: 24%;
+    margin: 0 .5%;
+    /* 양쪽마진0.5% */
     float: left;
+    /* 캐릭터박스 옆쪽으로 */
     /* height: 200px; */
-    border-radius: 50%;
     outline: 4px dotted red;
 }
 
 /* 캐릭터이미지 */
 .ci>img{
     width: 100%;
+    border-radius: 50%;
 }
 /* 하단 */
 .info{
