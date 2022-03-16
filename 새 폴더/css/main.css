@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&display=swap');
+
+/* font-family: 'Black Han Sans', sans-serif;
+font-family: 'Gaegu', cursive; */
+
+
 /* 기본태그 초기화 */
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd{
     margin: 0;
@@ -47,15 +53,14 @@ body{
 }
 /* 캐릭터부모박스 */
 #cbx{
-    width: 90%;
+    width: 80%;
     /* 부모박스크기의 90%가로크기 */
     margin: 0 auto;
     /* 마영오 - 블록 가로 중앙 */
-    margin-top: 60px;
+    /* margin-top: 60px;  캐릭터박스에 마진값줌*/
     /* height: 300px; */
     background-color: rgba(183, 173, 230, 0.603);
     overflow: hidden;
-    /* float해제위해 */
 
 }
 /* 캐릭터소개 문구 */
@@ -70,19 +75,48 @@ body{
 .cat{
     /* 4등분 가로 크기는?25% */    
     width: 24%;
-    margin: 0 .5%;
+    margin: 5% .5%;
     /* 양쪽마진0.5% */
     float: left;
+    overflow: hidden;
     /* 캐릭터박스 옆쪽으로 */
     /* height: 200px; */
     outline: 4px dotted red;
 }
 
 /* 캐릭터이미지 */
-.ci>img{
-    width: 100%;
+.ci img{
+    width:100%;
     border-radius: 50%;
 }
+/* 캐릭터 설명박스 */
+.cd{
+    /* height: 0px; */
+    /* .cat오버시 250px높이 값 변경 */
+    overflow-y: scroll;
+
+    background: rgba(240, 240, 6, 0.5);
+    margin-top: 15px;
+
+    border-radius: 20px 0 0 20px;
+}
+/* 캐릭터설명타이틀 */
+.cd h3{
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    padding: 5px 10px 0;
+}
+
+/* 캐릭터설명 문단 */
+.cd p{
+    font-family: 'Gaegu', cursive;
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 10px;
+    /* text-align: justify; 양쪽정렬 */
+}
+
 /* 하단 */
 .info{
     height: 150px;
