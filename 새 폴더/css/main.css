@@ -15,6 +15,11 @@ html,body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd{
 h1,h2,h3,h4,h5,h6{
     font-size: 100%;
 }
+/* ul, ol 초기화 */
+ul,ol{
+    list-style: none;
+    /* 블릿표시자없앰 */
+}
 
 body *{
     outline: 2px dotted grey;
@@ -57,10 +62,48 @@ body{
 
 
 /* 상단 */
-.top{
+#top{/* 겉박스-바깥쪽포함 */
+    background-color: pink;
+}
+.top{/* 속박스 */
     height: 55px;
     /* width: 1350px; */
 }
+
+
+/* 로고 */
+#logo{
+    padding: 5px;
+    text-align: right;
+    font-size: 40px;
+}
+/* gnb메뉴  */
+.gnb{
+    width: 580px;
+    margin: 0 auto;
+
+}
+/* 가상요소로 clear 설정하기 */
+.gnb>ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.gnb>ul>li{
+    float: left;
+    padding: 0 15px;
+}
+.gnb>ul>li>a{
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 80px;
+}
+
+
+
+
+
 /* 메인 */
 .cont{
     max-width: 1920px;
@@ -126,12 +169,12 @@ body{
     height: 0px;
     /* .cat오버시 250px높이 값 변경 */
     overflow-y: scroll;
-
+    
     background: rgba(240, 240, 6, 0.5);
     margin-top: 15px;
-
+    
     border-radius: 20px 0 0 20px;
-
+    
     transition: height .4s ease-out;
 }
 /* 트랜지션 애니메이션 효과 transition: 속시이지 */

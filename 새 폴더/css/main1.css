@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/* 기본태그 초기화 */
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd{
+    margin: 0;
+    padding: 0;
+}
+/* 헤딩태그 글자크기 초기화 */
+h1,h2,h3,h4,h5,h6{
+    font-size: 100%;
+}
+
+body * {
+    outline: 1px dashed gray;
+}
+
+
+body{
+    background: 
+    url(../ra.png) no-repeat fixed 10px 10px/25%,
+    url(../raba01.jpg) no-repeat fixed center/cover;
+}
+
+/* 속박스 */
+.ibx{
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 상단영역 */
