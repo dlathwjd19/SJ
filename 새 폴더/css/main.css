@@ -202,6 +202,51 @@ body{
 }
 
 /* 하단 */
-.info{
-    height: 150px;
+#info{/* 겉박스 */
+    background-color: rgba(228, 250, 133, 0.733);
+}
+.info{/* 속박스 */
+    height: 180px;
+    padding: 15px;
+    box-sizing: border-box;
+    /* 크기유지- 보더,패딩포함 */
+}
+/* 하단링크 */
+.blink{
+    width: 741px;
+    margin: 0 auto;
+}
+.blink ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.blink li{
+    float: left;
+    padding: 0 15px;
+}
+/* 하단링크 a */
+.blink a{
+    color: black;
+    text-decoration: none;
+    font: bold 15px/39px 'Gaegu', cursive;
+
+    /* font: 스두크/줄체
+    스타일 두께 크기/줄간격 글자체 */
+}
+/* 마우스오버시a요소 */
+.blink a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+/* 회사주소박스 */
+.addr{
+    width: 741px;
+    margin: 0 auto;
+    border: 4px double #222;
+    font: 17px/2 'Gaegu', cursive;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;/* 크기유지 */
 }
