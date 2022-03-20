@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&display=swap');
+
 /* 기본태그 초기화 */
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd{
     margin: 0;
@@ -10,22 +12,118 @@ h1,h2,h3,h4,h5,h6{
     font-size: 100%;
 }
 
+/* ul,ol초기화 */
+ul,
+ol {
+    list-style: none;
+    /* 블릿 표시자 없앰 */
+}
+
 body * {
     outline: 1px dashed gray;
 }
 
-
 body{
-    background: 
-    url(../ra.png) no-repeat fixed 10px 10px/25%,
-    url(../raba01.jpg) no-repeat fixed center/cover;
+    background: url(../raba01.jpg) no-repeat fixed center/cover;
+    overflow-x: hidden;
+    /* 가로스크롤없앰 */
 }
 
-/* 속박스 */
-.ibx{
-    min-width: 1200px;
+.logo img{
+    margin: 15px;
+    width: 20%;
+    height: auto;
+}
+
+/* 메인영역 */
+.cont{
+    min-width: 1920px;
+    height: 800px;
+    overflow: hidden;
+    /* 자식요소 마진탑포함! */
+    padding-bottom: 150px;
+}
+/* 캐릭터부모박스 */
+#cbx{
+    width: 90%;
     margin: 0 auto;
+    
+    outline: 2px solid red;
+    margin-top: 20%;
 }
 
+/* 가상요소로 clear설정하기! */
+#cbx::after {
+    content: '';
+    display: block;
+    /* div와 비슷 */
+    clear: both;
+    /* float와 끊어서 부모가 자식을 인식함! */
+}
 
-/* 상단영역 */
+/* 캐릭터박스 공통 */
+.cat{
+    width: 23%;
+    margin: 0 1%;
+    float: left;
+
+    outline: 1px solid #fff;
+
+    cursor: pointer;
+}
+
+/* 캐릭터이미지 */
+.ci>img {
+    width: 70%;
+    border-radius: 50%;
+    margin-left: 15%;
+}
+/* 캐릭터설명 */
+.cd{
+    height: 0px;
+    overflow-y: scroll;
+
+    background: url(../cd.jpg);
+    margin-top: 5px;
+
+    border-radius: 10px 0 0 10px;
+
+    transition: height .4s ease-out;
+}
+/* 캐릭터 마우스오버시 */
+.cat:hover .cd{
+    height: 200px;
+}
+
+/* 캐릭터설명타이틀 */
+.cd h3{
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    padding: 5px 10px 0;
+}
+
+/* 캐릭터설명 문단 */
+.cd p{
+    font-family: 'Gaegu', cursive;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 10px;
+    text-align: justify;
+    /* 양쪽 정렬 */
+}
+
+/* 하단영역 */
+#info {
+    /* 겉박스 */
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.info {
+    /* position: relative; */
+    /* 부모자격 - .sel 선택박스 */
+    /* 속박스 */
+    height: 241px;
+    padding: 15px;
+    box-sizing: border-box;
+    /* 크기유지 - 보더, 패딩포함 */
+}
