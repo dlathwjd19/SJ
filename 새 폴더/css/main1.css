@@ -22,9 +22,9 @@ ol {
     /* 블릿 표시자 없앰 */
 }
 
-body * {
+/* body * {
     outline: 1px dashed gray;
-}
+} */
 
 body{
     background: url(../raba01.jpg) no-repeat fixed center/cover;
@@ -34,8 +34,28 @@ body{
 /* 라바 로고이미지 */
 .logo img{
     margin: 15px;
-    width: 20%;
-    height: auto;
+    width: 23%;
+}
+
+/********** 공통 클래스 **********/
+
+/* 스크롤바 다지인 클래스 */
+/* -webkit- 벤더사명(크롬,사파리) 접두어 */
+.scbar::-webkit-scrollbar {
+    /* 전체 스크롤바 크기변경 */
+    width: 7px;
+}
+
+.scbar::-webkit-scrollbar-thumb {
+    /* 스크롤바 */
+    background-color: #666;
+    border-radius: 5px;
+}
+
+.scbar::-webkit-scrollbar-track {
+    /* 스크롤바 트랙 */
+    background-color: #ddd;
+    border-radius: 5px;
 }
 
 /************* 메인영역 *************/
@@ -51,7 +71,7 @@ body{
     width: 90%;
     margin: 0 auto;
     
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
     margin-top: 20%;
 }
 
@@ -70,21 +90,27 @@ body{
     margin: 0 1%;
     float: left;
 
-    outline: 1px solid #fff;
+    /* outline: 1px solid #fff; */
 
     cursor: pointer;
 }
 /* .cat에 마우스 오버시 .ci의 마진탑을 마이너스로 설정! */
 .cat:hover .ci {
     margin-top: -57%;
+    
 }
-
+/* 마우스 오버시 이미지테두리 */
+.cat:hover .ci>img{
+    padding: 0;
+    border: 5px solid #f8c10b;
+}
 /* 캐릭터이미지 */
 .ci>img {
     width: 70%;
     border-radius: 50%;
     margin-left: 15%;
     /* 이미지박스 가운데 오게 margin-left로 정렬 */
+    
 }
 
 
@@ -97,14 +123,14 @@ body{
     background: url(../cd.jpg);
     margin-top: 5px;
 
-    border-radius: 2
-    0px 0 0 20px;
+    border-radius: 20px 0 0 20px;
 
     transition: height .4s ease-out;
 }
 /* .cat 캐릭터 마우스오버시 높이값변경 */
 .cat:hover .cd{
     height: 230px;
+    
 }
 
 /* 캐릭터설명타이틀 */
