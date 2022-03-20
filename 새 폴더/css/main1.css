@@ -2,6 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&display=swap');
 
+/* font-family: 'Black Han Sans', sans-serif;
+font-family: 'Gaegu', cursive; */
+
 /* 기본태그 초기화 */
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd{
     margin: 0;
@@ -116,14 +119,60 @@ body{
 /* 하단영역 */
 #info {
     /* 겉박스 */
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .info {
-    /* position: relative; */
+    position: relative;
     /* 부모자격 - .sel 선택박스 */
     /* 속박스 */
-    height: 241px;
+    height: 170px;
     padding: 15px;
     box-sizing: border-box;
     /* 크기유지 - 보더, 패딩포함 */
+}
+/* 하단링크 */
+.blink {
+    max-width: 758px;
+    margin: 0 auto;
+}
+/* 가상요소 clear */
+.blink ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.blink li {
+    float: left;
+    padding: 0 15px;
+}
+
+/* 하단링크 a */
+.blink a {
+    color: #fff;
+    text-decoration: none;
+    /* font-family: 'Nanum Gothic', sans-serif; */
+    font: bold 18px/2 'Nanum Gothic', sans-serif;
+    /* 
+        font: 스두크/줄체
+        font: 스타일 두께 크기/줄간격 글자체
+    */
+}
+
+/* 마우스 오버시 a요소 */
+.blink a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* 회사주소박스 */
+.addr {
+    color: #fff;
+    max-width: 758px;
+    margin: 10px auto;
+    border: 4px double lightgray;
+    font: 18px/2 'Gaegu';
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    /* 크기유지 */
 }
