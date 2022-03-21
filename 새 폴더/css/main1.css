@@ -61,7 +61,7 @@ body{
 /************* 메인영역 *************/
 .cont{
     max-width: 1920px;
-    height: 1200px;
+    height: 1100px;
     overflow: hidden;
     padding-bottom: 150px;
 }
@@ -72,16 +72,16 @@ body{
     margin: 0 auto;
     
     /* outline: 2px solid red; */
+    
     margin-top: 20%;
+    left: 85px;
 }
 
 /* 가상요소로 clear설정하기! */
 .fcat::after {
     content: '';
     display: block;
-    /* div와 비슷 */
     clear: both;
-    /* float와 끊어서 부모가 자식을 인식함! */
 }
 /* 두번째 캐릭터박스 */
 .scat{
@@ -90,7 +90,8 @@ body{
     margin: 50% auto;
     
     /* outline: 2px solid red; */
-    margin-top: 15%;
+    margin-top: 50%;
+    left: 85px;
 }
 
 /* 가상요소로 clear설정하기! */
@@ -99,7 +100,6 @@ body{
     display: block;
     /* div와 비슷 */
     clear: both;
-    /* float와 끊어서 부모가 자식을 인식함! */
 }
 
 /* 캐릭터박스 공통 */
@@ -132,7 +132,6 @@ body{
 }
 
 
-
 /* 캐릭터설명 */
 .cd{
     height: 0px;
@@ -159,6 +158,7 @@ body{
     padding: 5px 10px 0;
 }
 
+
 /* 캐릭터설명 문단 */
 .cd p{
     font-family: 'Gaegu', cursive;
@@ -175,13 +175,11 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
 }
 .info {
-    position: relative;
-    /* 부모자격 - .sel 선택박스 */
+    /* position: relative; */
     /* 속박스 */
     height: 170px;
     padding: 15px;
     box-sizing: border-box;
-    /* 크기유지 - 보더, 패딩포함 */
 }
 /* 하단링크 */
 .blink {
@@ -205,10 +203,7 @@ body{
     text-decoration: none;
     /* font-family: 'Nanum Gothic', sans-serif; */
     font: bold 18px/2 'Nanum Gothic', sans-serif;
-    /* 
-        font: 스두크/줄체
-        font: 스타일 두께 크기/줄간격 글자체
-    */
+  
 }
 
 /* 마우스 오버시 a요소 */
@@ -227,5 +222,4 @@ body{
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
-    /* 크기유지 */
 }
