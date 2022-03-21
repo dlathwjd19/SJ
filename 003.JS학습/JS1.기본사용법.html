@@ -340,6 +340,49 @@
             text-shadow: 1px 1px 1px #000;
             line-height: 100px;
         }
+
+        /* 원모양박스 */
+        .원이야 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+
+            /* 배경공통 */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* 원박스 개별배경이미지 */
+        .원이야:nth-child(1){
+            right: 400px;
+            background-image: url(./images/01.png);
+        }
+        .원이야:nth-child(2){
+            right: 200px;
+            background-image: url(./images/02.png);
+        }
+        .원이야:nth-child(3){
+            right: 0;
+            background-image: url(./images/03.png);
+        }
+
+        /* 사각형으로 변할 원박스 */
+        .넌뭐냐{
+            position: absolute;
+            top: 400px;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            white-space: nowrap;
+            /* 줄바꿈방지 */
+            border-radius: 50%;
+            background: #bcd4b4 url(./images/prog.jpg) no-repeat center/auto 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -350,5 +393,15 @@
         도대체 <span id="name"></span>
     </p>
     
+    <div class="박스야">
+        <!-- 원모양박스 -->
+        <div class="원이야"></div>
+        <div class="원이야"></div>
+        <div class="원이야"></div>
+
+        <!-- 사각형으로 변할 원박스 -->
+        <div class="넌뭐냐"></div>
+    </div>
+
 </body>
 </html>
