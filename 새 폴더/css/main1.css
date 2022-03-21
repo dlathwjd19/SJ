@@ -61,9 +61,8 @@ body{
 /************* 메인영역 *************/
 .cont{
     max-width: 1920px;
-    height: 990px;
+    height: 1200px;
     overflow: hidden;
-    /* 자식요소 마진탑포함! */
     padding-bottom: 150px;
 }
 /* 첫번째 캐릭터박스 */
@@ -91,7 +90,7 @@ body{
     margin: 50% auto;
     
     /* outline: 2px solid red; */
-    
+    margin-top: 15%;
 }
 
 /* 가상요소로 clear설정하기! */
