@@ -29,8 +29,8 @@ body *{
 body{
     
     background: 
-    url(../ra.png) no-repeat 5% top/25%,
-    url(../raba01.jpg) no-repeat 50% 55px/1200px;
+    url(../img/ra.png) no-repeat 5% top/25%,
+    url(../img/raba01.jpg) no-repeat 50% 55px/1200px;
     
     /* background-color: rgb(248, 193, 11);  전체배경*/
 

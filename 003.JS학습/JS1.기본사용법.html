@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>JS1. 자바스크립트 기본 + DOM선택법</title>
-    
     <script>
         // 한줄주석
         /* 여러줄 주석 */
@@ -52,7 +51,7 @@
 
             [ JS의 화면출력 ]
             1. document.write(메시지) - html문서 상단에 출력
-            2. alert(내용) - 팝업형식의 경고차응로 출력
+            2. alert(내용) - 팝업형식의 경고창으로 출력
             3. console.log(내용) - 콘솔창에 출력
             -> 개발시에 많이 사용함
             -> 콘솔은 브라우저 엔진에서 관할하는 내부출력모드
@@ -105,6 +104,56 @@
         // 화면출력3
         //console.log("여기가 콘솔모드인가?")
 
+        /******************************************************** 
+            함수명: 보여줘
+            기능: .pbox의 디자인을 변경한다!
+        ********************************************************/
+       function 보여줘(){
+            // 1. 함수호출확인
+            console.log("나야나!!!");
+
+            // 2. HTML 변경하기! ////////////////////////
+            // 변경대상: #name
+            document
+            // html 문서 전체 객체
+            .getElementById("name")
+            // 가져와요소아이디로(아이디명)
+            .innerHTML = '<img src="images/kim.png" alt="김비서가 왜그럴까?">';
+            // innerHTML = 값
+            // 선택요소에 html코드를 넣어준다!
+
+            //3. CSS 변경하기 ///////////////////////////
+            // 대상: .pbox
+
+            // 대상을 재사용하도록 변수에 할당한다!
+            // var 는 변수를 선언하는 키워드!
+            var 목표 = document.getElementsByClassName("pbox") //클래스요소
+            .item(0); //첫번째 요소
+
+            // 3-1. 글자색 변경하기
+            목표.style.color = "lime";
+            // style 스타일시트 객체
+            // 스타일시트 속성은 모두 JS변수로 만들어져있다!
+
+            // 3-2. 글자크기 변경하기
+            목표.style.fontSize = "50px";
+
+            // 3-4. 트랜지션 주기
+            목표.style.transition = "2s";
+
+            // 3-5. 배경이미지 넣기
+            목표.style.background = "url(./images/kimbs.jpg) no-repeat top/cover";
+
+            // 3-6. 원모양 만들기
+            목표.style.borderRadius = "50%";
+
+            // 3-7. 글자중앙정렬
+            목표.style.textAlign = "center";
+
+            // 3-8. 줄간격
+            목표.style.lineHeight = "300px";
+
+       }//////// 보여줘 함수 ////////
     </script>
 
     <style>
@@ -114,19 +163,20 @@
             left: 0;
             margin: 0;
             padding: 0;
-            font-size: 5vw;
+            font-size: 24px;
             width: 700px;
             height: 600px;
             border: 4px solid purple;
             color: yellow;
             text-shadow: 1px 1px 1px #000;
+            line-height: 100px;
         }
     </style>
 </head>
 <body>
 
     <!-- 드라마소개박스 -->
-    <p class="pbox" title="여기를 클릭하세요!">
+    <p class="pbox" title="여기를 클릭하세요!" onclick="보여줘()">
         나는 요즘 매일 생각한다! <br>
         도대체 <span id="name"></span>
     </p>

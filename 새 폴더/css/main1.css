@@ -27,7 +27,7 @@ ol {
 } */
 
 body{
-    background: url(../raba01.jpg) no-repeat fixed center/cover;
+    background: url(../img/raba01.jpg) no-repeat fixed center/cover;
     overflow-x: hidden;
     /* 가로스크롤없앰 */
 }
@@ -120,7 +120,7 @@ body{
     height: 0px;
     overflow-y: scroll;
 
-    background: url(../cd.jpg);
+    background: url(../img/cd.jpg);
     margin-top: 5px;
 
     border-radius: 20px 0 0 20px;
