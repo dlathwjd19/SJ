@@ -61,13 +61,14 @@ body{
 /************* 메인영역 *************/
 .cont{
     max-width: 1920px;
-    height: 800px;
+    height: 990px;
     overflow: hidden;
     /* 자식요소 마진탑포함! */
     padding-bottom: 150px;
 }
-/* 캐릭터부모박스 */
-#cbx{
+/* 첫번째 캐릭터박스 */
+.fcat{
+    position: absolute;
     width: 90%;
     margin: 0 auto;
     
@@ -76,7 +77,25 @@ body{
 }
 
 /* 가상요소로 clear설정하기! */
-#cbx::after {
+.fcat::after {
+    content: '';
+    display: block;
+    /* div와 비슷 */
+    clear: both;
+    /* float와 끊어서 부모가 자식을 인식함! */
+}
+/* 두번째 캐릭터박스 */
+.scat{
+    position: absolute;
+    width: 90%;
+    margin: 50% auto;
+    
+    /* outline: 2px solid red; */
+    
+}
+
+/* 가상요소로 clear설정하기! */
+.scat::after {
     content: '';
     display: block;
     /* div와 비슷 */
