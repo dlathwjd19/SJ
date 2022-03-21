@@ -25,15 +25,16 @@ body *{
     outline: 2px dotted grey;
 }
 
-/* 컨텐츠 파트 최상위부모 */
 body{
-    
-    background: 
-    url(../img/ra.png) no-repeat 5% top/25%,
-    url(../img/raba01.jpg) no-repeat 50% 55px/1200px;
-    
-    /* background-color: rgb(248, 193, 11);  전체배경*/
+    background: url(../img/raba01.jpg) no-repeat fixed center/cover;
+    overflow-x: hidden;
+    /* 가로스크롤없앰 */
+}
 
+/* 라바 로고이미지 */
+.logo img{
+    margin: 15px;
+    width: 23%;
 }
 
 /* 공통클래스 */
@@ -106,11 +107,11 @@ body{
 
 /* 메인 */
 .cont{
-    max-width: 1920px;
+   
+    max-width: 1200px;
     /* 가장 큰 일반 해상도 크기 최대가로크기변경 */
-    height: 2000px;    
-    overflow: hidden;
-    /* 자식요소 마진탑포함 */
+    height: 990px;
+    
 }
 /* 캐릭터부모박스 */
 #cbx{
@@ -132,16 +133,10 @@ body{
     clear: both;
     /* float을 끊어서 부모가 자식을 인시 */
 }
-/* 캐릭터소개 문구 */
-.cind>h1{
-    color: yellow;
-    text-align: center;
-    margin-top: 55%;
-    margin-bottom: 50px;
-    font-size: 45px;
-}
+
 /* 캐릭터 박스 공통 */
 .cat{
+    
     /* 4등분 가로 크기는?25% */    
     width: 24%;
     margin: 5% .5%;
@@ -150,6 +145,42 @@ body{
     /* 캐릭터박스 옆쪽으로 */
     /* height: 200px; */
     outline: 4px dotted red;
+}
+/* 첫번째 캐릭터박스 */
+.fcat{
+    position: absolute;
+    width: 90%;
+    margin: 0 auto;
+    
+    /* outline: 2px solid red; */
+    margin-top: 20%;
+}
+
+/* 가상요소로 clear설정하기! */
+.fcat::after {
+    content: '';
+    display: block;
+    /* div와 비슷 */
+    clear: both;
+    /* float와 끊어서 부모가 자식을 인식함! */
+}
+/* 두번째 캐릭터박스 */
+.scat{
+    position: absolute;
+    width: 90%;
+    margin: 50% auto;
+    
+    /* outline: 2px solid red; */
+    
+}
+
+/* 가상요소로 clear설정하기! */
+.scat::after {
+    content: '';
+    display: block;
+    /* div와 비슷 */
+    clear: both;
+    /* float와 끊어서 부모가 자식을 인식함! */
 }
 /* 캐릭터이미지박스 */
 .ci{
@@ -206,6 +237,7 @@ body{
     background-color: rgba(228, 250, 133, 0.733);
 }
 .info{/* 속박스 */
+    
     height: 180px;
     padding: 15px;
     box-sizing: border-box;
