@@ -28,7 +28,6 @@ body *{
     background: url(../images/curtain.jpg) repeat-x;
 }
 
-
 /******************************** 2. 메인영역 ********************************/
 #cont {
     position: relative;
@@ -47,6 +46,7 @@ body *{
     height: 398px;
     background-color: #000;
 }
+
 /* 스크린 아이프레임 */
 #screen iframe{
     width: 100%;
