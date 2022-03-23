@@ -118,13 +118,14 @@
         #jshow {
             position: absolute;
             top: -17px;
-            left: 140px;
+            left: 149px;
             width: 322px;
             height: 322px;
             background: url(./images/ifshow.jpg) no-repeat;
-            transform: scale(.3);
-            /* 크기줄이기 */
-            outline: 1px solid silver;
+            background-position: 322px 0;/* 이미지위치이동보이기 */
+            transform: scale(.3); /* 크기줄이기 */
+            transition: all .4s ease-out;
+            /* outline: 1px solid silver; */
         }
 
         /* IR(배경이미지설명 숨기기) */
