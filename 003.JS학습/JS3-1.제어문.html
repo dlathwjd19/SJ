@@ -47,14 +47,62 @@
                 // 1. 숫자가 아닌 경우 메시지 출력
                 jexp.innerText = "숫자를 입력하세요!"
 
+                // 2. 글자색 초기화(바뀌었을 수 있으므로)
+                jexp.style.color = "#000";
+
+                // 3. 칭찬스티커 초기화(바뀌었을 수 있으므로)
+                jshow.style.backgroundPosition = "322px 0";
+
+                // 4. 입력창 내용지우기
+                jumsu.value = ""; // 빈 문자 값을 넣으면 지워짐
+
+                // 5. 입력창에 포커스주기(버튼클릭 한 경우)
+                jumsu.focus();
+                // focus() JS내장함수 입력창에 커서가 간다!
+
+
                 // 아래쪽 코드를 실행하지 않도록 함수나가기
                 return;
                 // 리턴은 함수를 나가는 키워드!
                 // return 값 -> 어떤 값을 가지고 나감
-                // 함수에서 어디로 돌아가나?
-                
+                // 함수에서 어디로 돌아가나? 호출한 곳으로!
 
             } //////// if ////////
+
+            
+            ////////////////////////////
+            // 2.5-1. 숫자범위 판별하기//
+            ////////////////////////////
+
+            // 0~100 사이수가 아닌 경우 걸러내기!
+            // 조건: 0미만 이거나 100초과인 경우
+
+            if(score < 0 || score > 100){
+
+                // 1. 숫자 번위가 아닌 경우 메시지 출력
+                jexp.innerText = "0이상 100이하의 숫자만 입력하세요!";
+
+                // 2. 글자색 초기화(바뀌었을 수 있으므로)
+                jexp.style.color = "#000";
+
+                // 3. 칭찬스티커 초기화(바뀌었을 수 있으므로)
+                jshow.style.backgroundPosition = "322px 0";
+
+                // 4. 입력창 내용지우기
+                jumsu.value = ""; // 빈 문자 값을 넣으면 지워짐
+
+                // 5. 입력창에 포커스주기(버튼클릭 한 경우)
+                jumsu.focus();
+                // focus() JS내장함수 입력창에 커서가 간다!
+
+
+                // 아래쪽 코드를 실행하지 않도록 함수나가기
+                return;
+                // 리턴은 함수를 나가는 키워드!
+                // return 값 -> 어떤 값을 가지고 나감
+                // 함수에서 어디로 돌아가나? 호출한 곳으로!
+
+            } //////////// if ////////////
 
 
             /////////////////////////
@@ -188,7 +236,18 @@
     <h2>if문 연습</h2>
     <h3 id="jexp">평가출력</h3>
     <label for="jumsu">점수입력:</label>
-    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3">
+    <input type="text" id="jumsu" placeholder="점수를 입력하세요!" maxlength="3" onkeypress="if(event.keyCode===13)jumsu()">
+    <!-- 
+        onkeypress 키보드를 치면 발생하는 이벤트
+        if 조건문
+        조건식: event.keyCode === 13
+        -> 키보드의 키코드가 13이냐? 엔터키 눌렀냐?
+        -> 엔터키의 키코드는 13번이다!
+        -> true이면 jumsu() 라는 함수를 호출해라!
+
+        참고) 키코드 참조: 아스키코드
+        https://www.w3schools.com/charsets/ref_html_ascii.asp
+     -->
     <button class="sbtn" onclick="jumsu()">평가하기</button>
 
     <!-- 칭찬스티커 -->
@@ -208,6 +267,14 @@
         - 웹접근성(평등의 원칙) 측면에서 라벨은 input요소의
         필수요소로 사용할 것을 권고하고 있다!(리더기가 읽음)
      -->
+
+     <!--  switch case문 -->
+     <h2>switch case문 연습</h2>
+     <h3 id="info">국번안내</h3>
+     <label for="local">지역명 입력:</label>
+     <input type="text" id="local" placeholder="지역명에 '도'를 빼고 쓰세요!" onkeypress="if(event.keyCode===13)local()">
+     <button class="sbtn" onclick="local">국번문의</button>
+
 </body>
 
 </html>
