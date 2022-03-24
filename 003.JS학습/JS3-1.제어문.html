@@ -42,7 +42,7 @@
 
             console.log("숫자가 아니니?", isNaN(score));
 
-            if(isNaN(score)) {
+            if (isNaN(score)) {
 
                 // 1. 숫자가 아닌 경우 메시지 출력
                 jexp.innerText = "숫자를 입력하세요!"
@@ -285,10 +285,10 @@
 
             // 4. 메시지 만들기
             // msg변수에 최종 출력내용을 다시 담아서 변경함
-            if(msg === "esc"){
+            if (msg === "esc") {
                 msg = "등록되지 않은 지역입니다!"
             } ///// if /////
-            else{
+            else {
                 msg = `${txt}의 지역번호는 ${msg}입니다!`;
             } ///// else /////
 
@@ -329,6 +329,30 @@
              -> default에는 break문을 쓰지 않는다!
 
         **************************************************/
+
+        /*************************************************** 
+            함수명: gugu
+            기능: 선택박스에서 선택된 구구단을 출력함
+            연결이벤트: change
+                -> 선택박스(select)의 option 선택이
+                변경될때 발생하트 이벤트
+        ***************************************************/
+       function gugu(U){ 
+        // U - select요소 자신을 전달하는 변수
+        // 함수내부로 전달하는 변수를 파라미터 변수라 함
+
+        // 0. 전달값 읽기
+        var opt = U.value;
+        // value는 선택된 option의 value값!
+
+        // 1. 함수호출확인
+        console.log("구구단을 외자!",opt);
+
+        
+
+       } ///////////////// gugu함수 ////////////////////
+
+
     </script>
     <!-- 스타일시트 -->
     <style>
@@ -357,7 +381,7 @@
         }
 
         /* 구구단 출력박스 */
-        .gugu{
+        .gugu {
             width: 300px;
             height: 300px;
             border: 2px dashed blue;
@@ -422,7 +446,8 @@
     <!-- for문 연습 -->
     <h2>for문 연습</h2>
     <h3>구구단 출력하기</h3>
-     <select name="sel" id="sel">
+    <select name="sel" id="sel" onchange="gugu(this)">
+        <!-- this키워드 : select박스 자신의 정보를 보냄 -->
         <option value="1">구구단을 선택하세요!</option>
         <option value="2">2단</option>
         <option value="3">3단</option>
