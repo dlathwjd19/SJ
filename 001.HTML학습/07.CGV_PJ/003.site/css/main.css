@@ -103,7 +103,7 @@ body *{
     transition: top .4s ease-out;
 }
 /* 부모 li에 마우스 오버시 설명박스 올라오기 */
-.mlist ul>li:hover movtxt{
+.mlist ul>li:hover .movtxt{
     top: 0;
 }
 
