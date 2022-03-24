@@ -64,6 +64,9 @@ body *{
     /* 부모는? #cont */
     transform: translateX(-50%);
     /* x축 중앙이동 -> 정중앙 */
+
+    overflow: hidden;
+    /* 영화설명 숨기기 - 부모자격이 있는 요소가 숨길수 있음! */
 }
 /* ul 플렉스박스 */
 .mlist ul{
@@ -79,6 +82,39 @@ body *{
     width: 99px;
     height: 140px;
 }
+
+/* 영화정보박스 */
+.movtxt{
+    position: absolute; /* 겹쳐져야하기때문에 앱솔 */
+    top: 100%;/* 부모의 높이값 만큼  */
+    /* 부모는 .mlist */
+    width: 99px;
+    height: 140px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /* 글자셋팅 */
+    font-family: 'Cute Font', cursive;
+    font-size: 14px;
+    line-height: 2;
+    text-align: center;
+
+    /* 트랜지션: 속시이지 */
+    transition: top .4s ease-out;
+}
+/* 부모 li에 마우스 오버시 설명박스 올라오기 */
+.mlist ul>li:hover movtxt{
+    top: 0;
+}
+
+/* 첫번째 li 영화제목 */
+.movtxt li:first-child{
+    color: aqua;
+    font-size: 17px;
+    letter-spacing: -1px;
+    margin-top: 30%;
+}
+
 
 /******************************** 3. 하단영역 ********************************/
 #info {
