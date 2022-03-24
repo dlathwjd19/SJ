@@ -10,9 +10,9 @@ body{
 }
 
 /* 공사중표시 */
-body *{
+/* body *{
     outline: 1px dashed lime;
-}
+} */
 
 /* 레이아웃 공통클래스 */
 .part{
@@ -26,7 +26,7 @@ body *{
 #top{
     position: relative;
     /* z-index적용위해 relative줌 + 부모자격 (부모자격이있어야 z-index적용가능/부모자격있어야 GNB 우측이동가능) */
-    z-index: 999;밑으로 떨여져서 옆으로보내기위해?
+    z-index: 999;/* 밑으로 떨여져서 옆으로보내기위해? */
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
 }
@@ -70,6 +70,27 @@ h1.tit{
     font-family: 'Jua', sans-serif;
     font-size: 20px;
 }
+/* GNB 서브메뉴 */
+.smenu{
+    position: absolute;
+    width: 140px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+}
+
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+/* 서브메뉴 li */
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
+}
+
 /******************************** 2. 메인영역 ********************************/
 #cont {
     position: relative;
