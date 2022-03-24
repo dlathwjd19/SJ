@@ -24,6 +24,9 @@ body *{
 
 /******************************** 1. 상단영역 ********************************/
 #top{
+    position: relative;
+    /* z-index적용위해 relative줌 + 부모자격 (부모자격이있어야 z-index적용가능/부모자격있어야 GNB 우측이동가능) */
+    z-index: 999;밑으로 떨여져서 옆으로보내기위해?
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
 }
@@ -49,6 +52,24 @@ h1.tit{
     }    
 } /* 키프레임 */
 
+/* 1-2. 전체메뉴(GNB) */
+.gnb{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    /* 부모는 ? #top */
+}
+/* GNB ul */
+.glist{
+    display: flex;
+    /* 플렉스박스 */
+}
+/* GNB li 리스트 */
+.glist>li{
+    padding: 0 10px;
+    font-family: 'Jua', sans-serif;
+    font-size: 20px;
+}
 /******************************** 2. 메인영역 ********************************/
 #cont {
     position: relative;
