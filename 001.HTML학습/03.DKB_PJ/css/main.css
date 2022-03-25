@@ -535,19 +535,22 @@ body {
     transform: translateY(-200%);
     opacity: 0;
 
-    /* 애니메이션: 이시이지반방마 */
-    animation: catAni 1s ease-out 3s forwards;
 }
 
 /* 캐릭터박스 애니 시차주기 */
-.cat:nth-child(2){
-    animation-duration: 3.5s;/* 지은탁 */
+.cat:nth-child(1){ /* 도깨비 */
+    /* 애니메이션: 이시이지반방마 */
+    animation: catAni 1s ease-out 3s forwards;
 }
-.cat:nth-child(3){
-    animation-duration: 4s;/* 저승사자 */
+/* 캐릭터박스 애니 시차주기 */
+.cat:nth-child(2){ /* 지은탁 */
+    animation: catAni 1s ease-out 3.5s forwards;
 }
-.cat:nth-child(4){
-    animation-duration: 4.5s;/* 써니 */
+.cat:nth-child(3){ /* 저승사자 */
+    animation: catAni 1s ease-out 4s forwards;
+}
+.cat:nth-child(4){ /* 써니 */
+    animation: catAni 1s ease-out 4.5s forwards;
 }
 
 /* 캐릭터박스 키프레임 */
