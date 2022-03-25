@@ -175,7 +175,24 @@ h1.tit{
 }
 /* 영사기이미지 */
 #cam img{
-    width: 50px;
+    position: relative;
+    z-index: 1; /* 포지션이 스택틱이 아닌경우 적용됨 그래서 렐러티브로줌 */
+    /* 영사기 이미지가 빔박스보다 위! */
+    width: 50px;    
+}
+
+/* 빔박스 */
+.beam{
+    position: absolute;
+    top: -16px;
+    right: 8px;
+    /* 부모는? #cam */
+    width: 200px;
+    height: 70px;
+    background: url(../images/bim.png) no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    outline: 2px dotted yellow;
 }
 
 /******************************** 2. 메인영역 ********************************/
