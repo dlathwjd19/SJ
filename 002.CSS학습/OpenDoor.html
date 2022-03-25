@@ -56,6 +56,15 @@
             (이 거리는 기준점에서 소실점까지의 거리임)
         ********************************************/
         perspective: 480px;
+
+        /************************************************** 
+            [ 뷰포인트(관찰자위치) 변경옵션 ]
+            perpective-origin : 가로 세로;
+            - 가로축 : left, center, right, px, %등 단위
+            - 세로축 : top, center, bottom, px, %등 단위
+            -> 두 값 중에 하나만 쓸 수 있고 복합일 경우 
+            2가지 같이 셋팅함!
+        **************************************************/
     }   
     /* 문짝 */
     .door{
@@ -125,16 +134,129 @@
         position: absolute;
         top: 0;
         /* 부모는? .frame */
+        z-index: -1;
         width: 150px;
         height: 280px;
         overflow: hidden;
     }
     /* 엘사이미지 */
     #elsa img{
-        margin-left: 50px;
+        margin-left: 130px;
         margin-top: 28px;
-        transform: rotate(-10deg);
+        transform: rotate(0);
         transform-origin: bottom; /* 아래쪽 중심으로 */
+
+        /* 애니메이션:이시이지반방마 */
+        animation: elsa 1s ease-in-out infinite alternate;
+        /* 애니메이션 상태관리하기 */
+        animation-play-state: paused;
+    }
+    /* 오버시 엘사 동작하기 */
+    .cont:hover #elsa img{
+        animation-play-state: running;
+    }
+    /* 엘사 키프레임 */
+    @keyframes elsa {
+        to{
+            transform: rotate(-10deg);
+        }
+    } /* 키프레임 */
+
+
+
+
+
+/********************* 전체 창문 부모 *********************/
+.cont2{
+        position: absolute;
+        top: 210px;
+        left: 70%;
+        width: 150px;
+        height: 150px;
+        background-color: #900;
+    }
+    /* 창틀 */
+    .frame2{
+        position: relative;
+        top: 10px;
+        width: 130px;
+        height: 130px;
+        margin: 0 auto;
+        background: url(images/seashore.jpg) no-repeat top/auto 200%;
+
+        /******************************************** 
+            [ 3D 원근설정 ]    
+            1. 셋팅위치: 
+            3D원근 설정을 할 대상의 부모 요소
+            2. 설정방법: 
+            perspective: 수치;
+            - 수치는 px단위로 숫자가 클수록 소실점이 먼것이므로
+            각도가 작악짐
+            (이 거리는 기준점에서 소실점까지의 거리임)
+        ********************************************/
+        perspective: 500px;
+
+        /************************************************** 
+            [ 뷰포인트(관찰자위치) 변경옵션 ]
+            perpective-origin : 가로 세로;
+            - 가로축 : left, center, right, px, %등 단위
+            - 세로축 : top, center, bottom, px, %등 단위
+            -> 두 값 중에 하나만 쓸 수 있고 복합일 경우 
+            2가지 같이 셋팅함!
+        **************************************************/
+    }   
+    /* 창문 */
+    .door2{
+        position: relative;
+        /* 부모자격 - .handle */
+        width: 130px;
+        height: 130px;
+        background-color: rgba(204, 153, 0, 0.5);
+
+        text-align: center;
+        /* 글자중앙 */
+        writing-mode: vertical-lr;
+        /* 
+            글자진행방향 설정속성
+            writing-mode
+            옵션값
+            horizontal-tb 가로글자 방향 위에서 아래(기본값)
+            vartical-rl 세로글자 방향 오른쪽에서 왼쪽으로
+            vartical-lr 세로글자 방향 왼쪽에서 오른쪽으로
+        */
+
+        padding: 0 30px;
+        border: 5px solid red;
+        box-sizing: border-box;
+        /* 박스크기유지 */
+
+        /* 창문 X축으로 회전하기 */
+        transform: rotateX(0);
+        /* 회전축 변경하기 */
+        transform-origin: top;
+        /* 
+            트랜스폼 회전축 변경속성
+            transform-origin: 가로축, 세로축
+            - 가로축 : left, center, right, px, %등 단위
+            - 세로축 : top, center, bottom, px, %등 단위
+        */
+        transition: all .4s;        
+    }
+    /* 오버시 창문열기 */
+    .cont2:hover .door2{
+        transform: rotateX(65deg);
+    }
+
+    /* 창문 손잡이 */
+    .handle2{
+        position: absolute;
+        bottom: 10px;
+        left: calc(50% - 10px);
+        /* 부모는? .door2 */
+
+        width: 20px;
+        height: 5px;
+        background-color: blue;
     }
 
 </style>
@@ -154,6 +276,21 @@
             <!-- 엘사박스 -->
             <div id="elsa">
                 <img src="./images/elsa.png" alt="엘사">
+            </div>
+        </div>
+    </div>
+
+    <!-- 전체창문 부모 -->
+    <div class="cont2">
+        <!-- 창문 열었을때 뚫린부분 -->
+        <div class="frame2">
+            <!-- 창문짝 -->
+            <div class="door2">
+                여기에 <br>
+                마우스 <br>
+                오버해
+                <!-- 손잡이 -->
+                <div class="handle2"></div>
             </div>
         </div>
     </div>
