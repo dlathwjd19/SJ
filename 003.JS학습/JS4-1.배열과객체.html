@@ -77,8 +77,8 @@
                 "삼일절",
                 "태극기",
                 1919,
-                function (){
-                     alert("대한독립만세!");
+                function () {
+                    alert("대한독립만세!");
                 }
             ];
 
@@ -86,7 +86,7 @@
             // -> 배열값으로 익명함수도 넣을 수 있다!
 
             // 배열변수 개수 찍기 : length
-            console.log("arr2배열개수:",arr2.length);
+            console.log("arr2배열개수:", arr2.length);
 
             // 출력대상: txt2
             let txt2 = document.querySelector("#txt2");
@@ -102,7 +102,7 @@
             // 이벤트 속성을 JS에서 설정하기!!!
             // 기존엔 html 요소에 직접 이벤트속성을 썼으나
             // JS코드 블록 안에서 요소의 이벤트를 직접 할당함!
-            txt2.onclick = function(){
+            txt2.onclick = function () {
                 // arr2배열의 함수를 호출!
                 arr2[3]();
                 // 함수 호출시 소괄호 필수!!
@@ -129,12 +129,12 @@
 
             // 배열값 전체 찍기: valueOf()
             // -> 배열값 전체를 콤마로 구 분하여 출력함
-            console.log("arr3 배열전체값:",arr3.valueOf());
+            console.log("arr3 배열전체값:", arr3.valueOf());
             // 참고로 변수만 찍어도 브라우저가 valueOf()를 해줌!^^
 
             // 변수 전체찍기에서 사이에 구분자 변경하기
             // join(구분자) -> 구분자는 특수문자 등 구분하는 문자
-            console.log("arr3 배열구분자 변경:",arr3.join("^"));
+            console.log("arr3 배열구분자 변경:", arr3.join("^"));
             // joun()은 구분자를 넣은 문자데이터다!
 
             // 배열사이에 별(★)을 넣어서 출력할 것!
@@ -194,19 +194,21 @@
                 - 객체명.속성명
 
             ******************************************************/
+
             
             const SHK = new Object({
-                "너의 이름은?":"김수현",
-                "생일":"1988년 2월 16일",
-                "키":"180cm",
-                "몸무게":"65kg",
-                "성별":"남자",
-                "비밀번호":7777,
-                "팬레터":function(){
+                "너의 이름은?": "김수현",
+                "생일": "1988년 2월 16일",
+                "키": "180cm",
+                "몸무게": "65kg",
+                "성별": "남자",
+                "비밀번호": 7777,
+                "팬레터": function () {
                     // 1. 메시지 띄우기
                     alert("오빠, 지금뭐해?");
                     // 2. 배경이미지 넣기
-                    txt4.style.background = "url(https://file2.nocutnews.co.kr/newsroom/image/2020/01/01/20200101093641185867_0_786_786.jpg) repeat-x top/auto 100%";
+                    txt4.style.background =
+                        "url(https://file2.nocutnews.co.kr/newsroom/image/2020/01/01/20200101093641185867_0_786_786.jpg) repeat-x top/auto 100%";
                     // 3. 글자색
                     txt4.style.color = "#fff";
                     // 4. 글자그림자
@@ -226,9 +228,9 @@
             let txt4 = document.querySelector("#txt4");
 
             txt4.innerText =
-            `당신이 좋아하는 남자배우는? ${SHK["너의 이름은?"]}`;
+                `당신이 좋아하는 남자배우는? ${SHK["너의 이름은?"]}`;
             txt4.innerText +=
-            ` / 몸무게를 아세요? ${SHK["몸무게"]}`;
+                ` / 몸무게를 아세요? ${SHK["몸무게"]}`;
 
             // 객체에 셋팅된 함수를 보통 "메서드"라고 부른다!
             // 이 메서드를 호출해 보자!
@@ -269,9 +271,70 @@
                 -> 반드시 변수형 속성명을 따옴표로 싸서
                 문자형으로 표시해야함
                 dbj[name] -> 에러남
+
             ***************************************************/
 
-            
+
+            // 객체 생성하기
+            const GU = {
+                name: "공유",
+                tall: "184cm",
+                weight: "74kg",
+                com: "매니지먼트 숲",
+                work: "도깨비,부산행",
+                // function(){} 대신 ()=>{} 화살표함수
+                msg: (txt) => { // txt는 전달변수
+                    // 1. 메시지 띄우기
+                    alert("팬레터:" + txt);
+
+                    // 2. 공유 이미지 배경에 넣기
+                    txt5.style.background =
+                        "url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Gong_Yoo_%28Sep_2016%29.png/250px-Gong_Yoo_%28Sep_2016%29.png) repeat-x top/auto 100%";
+                    // 3. 글자색변경
+                    txt5.style.color = "#fff";
+                    // 4. 글자그림자(테두리)
+                    txt5.style.textShadow =
+                        "1px 0 #000,-1px 0 #000,0 1px #000,0 -1px #000";
+                    // 5. 높이값 설정
+                    txt5.style.height = "100px";
+                    // 6. 트랜지션
+                    txt5.style.transition = "2s ease-in-out .5s";
+                    // 7. 줄간격
+                    txt5.style.lineHeight = "30px";
+                    // 8. 상단패딩
+                    txt5.style.paddingTop = "100px";
+
+                } //// msg메서드 ////
+            }; ////////// GU객체 ///////////
+
+            // GU 객체 출력하기 /////
+            // 출력대상 : #txt5
+            let txt5 = document.querySelector("#txt5");
+
+            // 줄간격 조정
+            txt5.style.lineHeight = "24px";
+
+            // 내용출력
+            txt5.innerHTML = `저는 ${GU.name}입니다.
+            몸무게는 비밀인데요 그래도 말씀드리자면
+            ${GU.weight}입니다. ㅎㅎㅎ <br>
+            제 대표작은 ${GU.work}입니다. <br>
+            제 소속사는 모르시는 분들이 많은데
+            ${GU.com}입니다. 빠이빠이~!`;
+
+            // 툴팁 띄우기
+            txt5.setAttribute("title", GU.name + "의 팬레터를 확인하세요! 바로클릭!");
+            // setAttribute(속성명,속성값) -  JS내장함수
+
+            // 손가락 모양
+            txt5.style.cursor = "pointer";
+
+            // 공유박스 클릭시 GU객체 메서드 호출하기
+            //txt5.onclick = function(){};
+            txt5.onclick = () => {
+                GU.msg("\n공유오빠, 오징어게임 싸다구 멋졌어요! \n차기작도 기대해요! 화이팅!!!");
+                // \n은 alert창에서 줄바꿈해줌!
+            }; ////// click 함수 //////
 
 
 
