@@ -62,6 +62,13 @@
                     // 선택된 배열값은?
                     console.log("선택배열:",data);
 
+                    // 2. 해당요소(.mminfo)에 배열값 넣기
+                    let idx = 0;
+                    for(let y of data){
+                        minfo[idx].innerText = y;
+                        idx++; // 1씩 증가
+                    } ///// for of /////
+
                 }; //// click 함수 ////
 
            } ///////// for of문 /////////////
