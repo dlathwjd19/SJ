@@ -72,7 +72,7 @@
         }; ///////////////// mvi 객체 //////////////////////
 
         /////// 로드구역 ////////////////////////////////
-        window.addEventListener("DOMContentLoaded",()=>{
+        window.addEventListener("DOMContentLoaded", () => {
 
             console.log("로딩완료!");
 
@@ -89,85 +89,100 @@
             // 대상변수 할당하기
             // 이벤트 대상: button
             let btn = document.querySelectorAll("button");
-            console.log("버튼개수:",btn.length);
+            console.log("버튼개수:", btn.length);
 
             // 대상변수 click설정하기 ////
             // for of문 사용!
-            for(let x of btn){
+            for (let x of btn) {
                 // x는 버튼요소 자신
                 // ((중요)) for문에서 let으로 선언된 지역변수는
                 // for문 내부의 익명함수 내부로 전달된다!
                 // 반면 var 로 선언하면 전역변수로 마지막 값이 덮어씀
 
                 // 버튼에 click이벤트 속성설정하기
-                x.onclick = ()=>{
+                x.onclick = () => {
                     // console.log("버튼텍스트:",x.innerText);
                     // 1. 버튼 텍스트 읽어오기
                     let btxt = x.innerText;
 
                     // 2. 버튼 텍스트에 해당하는 객체할당하기!
                     let data = mvi[btxt]; // 객체명[속성명]
-                    console.log("할당객체:",data);
+                    console.log("할당객체:", data);
 
                     // 3. 해당요소에 데이터 넣어주기
                     // for in 문 사용!!!
-                    for(let z in data){
+                    for (let z in data) {
                         // z변수는 객체의 속성명이다!
                         // 속성값은 객체변수[속성명] -> data[z]
                         // console.log("변수z:",z);
                         // console.log("객체값:",data[z]);
 
                         // 각 속성명에 해당하는 데이터 셋팅
-                        switch (z){
+                        switch (z) {
                             // 1. 포스터 넣기
                             case "포스터":
                                 document.querySelector(".photo").
-                                innerHTML = `<img src="${data[z]}" alt="포스터">`; break;
-                            // 2. 제목 넣기
+                                innerHTML = `<img src="${data[z]}" alt="포스터">`;
+                                break;
+                                // 2. 제목 넣기
                             case "제목":
                                 document.querySelector(".tit").
-                                innerText = 
-                                `제목: ${data[z]}`; 
+                                innerText =
+                                    `제목: ${data[z]}`;
                                 break;
-                            // 3. 장르 넣기
+                                // 3. 장르 넣기
                             case "개요":
                                 document.querySelector(".sum").
-                                innerText = 
-                                `장르: ${data[z]}`; 
+                                innerText =
+                                    `장르: ${data[z]}`;
                                 break;
-                            // 4. 감독 넣기
+                                // 4. 감독 넣기
                             case "감독":
                                 document.querySelector(".dir").
-                                innerText = 
-                                `감독: ${data[z]}`; 
+                                innerText =
+                                    `감독: ${data[z]}`;
                                 break;
-                            // 5. 배우 넣기
+                                // 5. 배우 넣기
                             case "출연":
                                 document.querySelector(".act").
-                                innerText = 
-                                `배우: ${data[z]}`; 
+                                innerText =
+                                    `배우: ${data[z]}`;
                                 break;
-                            
+
                         } ////// switch case ////////
 
                         // 영화 한마디 넣기 ///
                         // for of 문으로 문자데이터 잘라넣기
                         // 한글자씩 span태그로 싸서 해당요소에 넣음!
-                        if(z==="문구"){
+                        if (z === "문구") {
                             // 문구데이터 담기
                             let txt = data[z];
-                            console.log("문구데이터:",txt);
+                            console.log("문구데이터:", txt);
                             // 만들어진 span태그 문구를 담을 변수
-                            //let newtxt = "";
+                            let newtxt = "";
 
                             // 문구 데이터를 for of로 하나씩 나누기
-                            for(let m of txt){
-                                console.log("한글자씩:",m);
-                                newtxt += `<span>${m}</span>`;
+                            for (let m of txt) {
+                                console.log("한글자씩:", m);
+                                if (m === " ") // 스페이스일 경우
+                                    newtxt += "&nbsp;&nbsp;&nbsp;";
+                                else // 그 밖에 문자일 경우
+                                    newtxt += `<span>${m}</span>`;
                             } //////////for of /////////
 
+                            // &nbsp; 는 띄어쓰기 특수문자처리
+                            // 특수문자는 엔퍼센드와 세미콜론 사이에
+                            // 표현함 -> &...;
+                            // nbsp -> No-Break Space(줄바꿈없는 공백)
+
                             // 문구데이터를 넣을 대상에 출력!
-                            document.puerySelector
+                            document.querySelector(".show")
+                            .innerHTML = newtxt;
+
+                            // 영화 하남디 타이틀 보이기
+                            document.querySelector(".showtit")
+                            .style.display = "block";
+
 
                         } //////////// if ///////////
 
@@ -195,9 +210,8 @@
                 객체[변수] 로 쓰면 됨!
 
         **************************************************/
-
     </script>
-    
+
 </head>
 
 <body>
