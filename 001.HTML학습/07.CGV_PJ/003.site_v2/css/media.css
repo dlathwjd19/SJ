@@ -84,10 +84,12 @@
 
 /************* 600px 이하 시작 *************/
 @media screen and (max-width:600px) {
+
     /* 메인영역 비율변경 */
     #cont.rbx::before {
         padding-top: 150%;
     }
+    
     /* 메인 배경 속성변경 */
     #cont{
         background-position: top;
