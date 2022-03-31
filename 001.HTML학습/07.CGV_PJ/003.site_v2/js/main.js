@@ -45,7 +45,7 @@ window.addEventListener("load",() => {
             // 1. 클래스 초기화함수 호출
             resetFn();
             // 2. 해당 li요소 클래스 on 넣기
-            x.classLista.add("on");
+            x.classList.add("on");
         }; //////// click /////////
     } //////// for of ///////////////////
 
