@@ -30,7 +30,7 @@ window.addEventListener("load",() => {
     // 대상: .glist ul>li
     let mlist = document.querySelectorAll(".mlist ul>li");
 
-    console.log("리스트개수:",mlist.lenght);
+    console.log("리스트개수:",mlist.length);
 
     // 클래스 초기화 함수 ////////
     const resetFn = ()=>{
