@@ -56,6 +56,7 @@ body *{
 }
 .plist h2{
     color: white;
+    margin-bottom: 10px;
 }
 /* ul플렉스박스 */
 .plist ul{
