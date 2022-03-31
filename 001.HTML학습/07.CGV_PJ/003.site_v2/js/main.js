@@ -33,10 +33,10 @@ window.addEventListener("load",() => {
     console.log("리스트개수:",mlist.length);
 
     // 클래스 초기화 함수 ////////
-    const resetFn = ()=>{
-        for(let x of mlist) 
+    function resetFn() {
+        for (let x of mlist)
             x.classList.remove("on");
-    }; ////////// restFn 함수 ////////////
+    } ////////// restFn 함수 ////////////
 
     // 대상만큼 click이벤트 설정하기
     // for of 사용!
