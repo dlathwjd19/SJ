@@ -50,13 +50,21 @@ body *{
 /* 인기프로그램 선택메뉴 */
 .plist{
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 2%;
+    left: 13%;
     /* 부모는? #cont */
+}
+.plist h2{
+    color: white;
 }
 /* ul플렉스박스 */
 .plist ul{
     display: flex;
+    
+}
+
+.plist ul>li{
+    margin: 0 10px;
 }
 
 .plist img{
