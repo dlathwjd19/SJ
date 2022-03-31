@@ -14,6 +14,7 @@ html,body{
 }
 body{
     overflow-x: hidden;
+    /* 가로스크롤 없앰 body만 준다! */
 }
 
 /* 2. a요소 리셋 */
