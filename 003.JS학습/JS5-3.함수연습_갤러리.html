@@ -266,7 +266,7 @@
                 // console.log("자동넘김버튼개수:",abtn.length);
 
                 // 인터발용 변수
-
+                let autoI;
 
                 // 자동넘김버튼 클릭시
                 abtn[0].onclick = () => {
@@ -280,19 +280,47 @@
                     abtn[1].style.display = "inline-block";
 
                     // 인터벌함수 호출!
-                    setInterval(()=>chgImg(1),1000);
+                    autoI = setInterval(()=>chgImg(1),1000);
                     // setInterval(함수,시간);
                     // 함수호출시 전달값이 없다면 함수명만 쓸 수 있음
                 }; ////////// click함수 ///////////
 
 
                 // 멈춤버튼 클릭시 인터발지우기!
+                abtn[1].onclick = () => {
+
+                    // 자기자신 숨기기
+                    event.currentTarget.style.display="none"
+
+                    // 자동넘김 버튼 보이기
+                    abtn[0].style.display = "inline-block";
+
+                    // 인터발지우기
+                    // 반드시 변수에 담긴 인터발을 지울 수 있다!
+                    clearInterval(autoI);
+                }; //////// click 함수 ///////////
 
 
                 /// 타임아웃 함수로 미니언즈 애니하기! ///////
                 // 원리: 미리셋팅된 클래스를 미니언즈요소에
                 // 일정시간 후 넣고/빼고/넣기를 해준다!!!
                 // 변경대상: #mini
+                let mini = document.querySelector("#mini");
+
+                // 2초 후에 미니언즈에 class = "on1" 넣기
+                setTimeout(
+                    ()=>mini.classList.add("on1")
+                ,2000);
+
+                // 4초 후에 미니언즈에 class = "on1" 빼기
+                setTimeout(
+                    ()=>mini.classList.remove("on1")
+                ,4000);
+
+                // 6초 후에 미니언즈에 class = "on2" 넣기
+                setTimeout(
+                    ()=>mini.classList.add("on2")
+                ,6000);
 
 
             }); //////// 로드구역 ////////////////
