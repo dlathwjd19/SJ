@@ -322,6 +322,14 @@
                     ()=>mini.classList.add("on2")
                 ,6000);
 
+                // 8초 후에 미니언즈에 class = "on2" 빼기 / "on1" 넣기
+                setTimeout(
+                    ()=>{
+                        mini.classList.toggle("on1");
+                        mini.classList.toggle("on2");
+                    }
+                ,8000);
+
 
             }); //////// 로드구역 ////////////////
         /////////////////////////////////////
