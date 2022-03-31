@@ -55,11 +55,14 @@
     /* 회사정보 */
     #info address {
         text-align: center;
+        padding: 0;
+        /* 기존 패딩 위, 왼쪽 없앰 */
     }
 
     /* 회사정보 */
     #info address span {
         display: block;
+        padding: 5vw;
     }
 
     /* 하단로고 이미지 */
@@ -102,6 +105,35 @@
         height: 28.8%;
     }
 
+    /* 예고편 선택메뉴 */
+    .mlist {
+        width: 90vw;
+        /* 가로크기지정 */
+        bottom: 3%;
+    }
+
+    /* ul 플렉스박스 */
+    .mlist ul {
+        flex-wrap: wrap;
+        /* 줄바꿈 */
+    }
+
+    /* 포스터 이미지크기 */
+    .mlist img {
+        width: 28vw;
+        /* 한줄에 3개 오도록 크기조정 */
+    }
+    /*이미지설명 박스 */
+    .movtxt {
+        width: 28vw;
+        /* 한줄에 3개 오도록 크기조정 */
+        font-size: 2vw;
+    }
+    .movtxt li:first-child{
+        font-size: 2vw;
+    }
+
 }
+
 
 /************* 600px 이하 끝 ***************/
