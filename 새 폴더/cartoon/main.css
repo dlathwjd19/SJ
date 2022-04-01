@@ -4,7 +4,7 @@
 @import url(./reset.css);
 
 body{
-    background-color: #000;
+    background-color: grey;
 }
 /* 공사중 */
 body *{
@@ -19,8 +19,29 @@ body *{
 
 /************************** 상단 **************************/
 #top{
-    height: 100px;
+    height: 150px;
 }
+#logo img{
+    width: 110px;
+}
+#logo{
+    padding: 15px;
+    text-align: center;
+}
+
+.gnb{
+    position: absolute;
+    /* 부모는 ? #top */
+    right: 50%;
+}
+.glist{
+    display: flex;
+    
+}
+.glist>li{
+    font-size: 20px;
+}
+
 
 /************************** 메인 **************************/
 
