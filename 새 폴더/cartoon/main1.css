@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+body *{
+    outline: 1px dashed red;
+}
+
+/* 속박스 */
+.ibx{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 상단 */
+.top{
+    position: relative;
+    height: 200px;
+}
+.logo{
+    text-align: center;
+    padding: 10px;
+}
+.login{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.login li{
+    display: inline-block;
+    margin: 15px 10px 0 0;
+}
+.gnb{
+    position: absolute;
+}
+
+
+/* main */
+.cont{
+    position: relative;
+    height: 1000px;
+}
+#screen{
+    position: absolute;
+    top: 50px;
+    left: 17%;
+    /* 부모는? #cont */
+    width: 800px;
+    height: 400px;
+    background-color: yellow;
+}
+/* 스크린 아이프레임 */
+#screen iframe{
+    width: 100%;
+    height: 100%;    
+}
+
+.plist{
+    position: absolute;
+}
+.plist ul{
+    display: flex;
+}
+.plist img{
+    width: 250px;
+    margin: 0 10px; 
+}
+
+/* 하단 */
+.info{
+    height: 200px;
+}
