@@ -55,13 +55,21 @@ body *{
 
 .plist{
     position: absolute;
+    bottom:10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.plist h1{
+    margin-bottom: 10px;
 }
 .plist ul{
     display: flex;
 }
+.plist ul>li{
+    margin: 0 10px; 
+}
 .plist img{
     width: 250px;
-    margin: 0 10px; 
 }
 
 /* 하단 */
