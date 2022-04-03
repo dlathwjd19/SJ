@@ -34,8 +34,13 @@ body *{
 .glist{
     display: flex;
     justify-content: center;
-    background: url(./img/bar.PNG) ;
+    background-image: url(./img/bar.PNG) ;
+    /* opacity: 0.5; */
 }
+.glist::before{
+    position: relative;
+}
+
 .gnb li{
     text-align: center;
     
