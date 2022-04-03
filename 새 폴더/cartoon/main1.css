@@ -3,7 +3,9 @@
 body *{
     outline: 1px dashed red;
 }
-
+/* body{
+    background-color: #000;
+} */
 /* 속박스 */
 .ibx{
     max-width: 1200px;
@@ -32,6 +34,7 @@ body *{
 .glist{
     display: flex;
     justify-content: center;
+    background: url(./img/bar.PNG) ;
 }
 .gnb li{
     text-align: center;
@@ -46,8 +49,10 @@ body *{
     width: 200px;
     line-height: 50px;
     font-size: 20px;
+    /* background-color: black; */
 
-    /* color: #fff; */
+    color: #fff;
+    
     text-decoration: none;
     /* 글자색, 밑줄은 반드시 a요소에서 셋팅! */
 
@@ -67,10 +72,16 @@ body *{
     /* 트랜지션: 속시이지 */
     transition: height .4s ease-out;
 }
+.subm:hover{
+    background:black;
+}
 /* 상위 li메뉴에 마우스 오버시 서브메뉴 보이기 */
 /* 첫번째 메뉴 서브메뉴 */
 .gnb>ul>li:nth-child(1):hover .subm{
     height: 180px;
+}
+.gnb>ul>li:nth-child(2):hover .subm{
+    height: 100px;
 }
 /* 세번째 메뉴 서브메뉴 */
 .gnb>ul>li:nth-child(3):hover .subm{
