@@ -22,14 +22,18 @@ body *{
 .login{
     display: flex;
     justify-content: flex-end;
-    
+    /* padding: 10px 10px; */
 }
 .login li{
     display: inline-block;
-    margin: 15px 10px 0 0;
+    margin: 8px 10px;
 }
-.gnb{
-    position: absolute;
+.glist{
+    display: flex;
+    justify-content: center;
+}
+.glist>li{
+    padding: 8px 100px;
 }
 
 
