@@ -28,18 +28,84 @@ body *{
     display: inline-block;
     margin: 8px 10px;
 }
+
 .glist{
     display: flex;
     justify-content: center;
 }
-.glist a{
-    font-size: 20px;
-    text-decoration: none;
-}
 .gnb li{
-    padding: 11px 100px;
+    text-align: center;
+    
 }
 
+/* a요소 */
+.gnb>ul>li>a{
+    /* a는 inline요소이므로 크기적용안됨! */
+    /* 그래서 block으로 변경! */
+    display: block;
+    width: 200px;
+    line-height: 50px;
+    font-size: 20px;
+
+    /* color: #fff; */
+    text-decoration: none;
+    /* 글자색, 밑줄은 반드시 a요소에서 셋팅! */
+
+    /* 트랜지션: 속시이지 */
+    transition: all .4s;
+}
+
+/* 서브메뉴 */
+.subm{
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    /* 높이값 0, 넘치는 자식요소 숨기기로 서브안보이게함! */
+    background-color: #d5eeff;
+    z-index: 1;
+
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
+}
+/* 상위 li메뉴에 마우스 오버시 서브메뉴 보이기 */
+/* 첫번째 메뉴 서브메뉴 */
+.gnb>ul>li:nth-child(1):hover .subm{
+    height: 180px;
+}
+/* 세번째 메뉴 서브메뉴 */
+.gnb>ul>li:nth-child(3):hover .subm{
+    height: 100px;
+}
+/* 마지막 메뉴 서브메뉴 */
+.gnb>ul>li:last-child:hover .subm{
+    height: 100px;
+}
+
+/* 서브메뉴 ol */
+.subm ol{
+    padding: 10px;
+}
+/* 서브메뉴 a */
+.subm a{
+    display: block;
+    width: 180px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+
+    /* a요소 필수 재설정! 글자색+밑줄해제 */
+    color: navy;
+    text-decoration: none;
+
+    /* 트랜지션: 속시이지 */
+    transition: all .4s;
+}
+
+/* 서브메뉴 a에 오버시 */
+.subm a:hover{
+    background-color: #f0f0f0;
+    color: #ff5411;
+}
 
 
 /*********************** main ***********************/
