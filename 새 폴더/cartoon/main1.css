@@ -59,9 +59,10 @@ body *{
     display: block;
     width: 200px;
     line-height: 50px;
-    font-size: 30px;
+    font-size: 32px;
     /* background-color: black; */
-    font-family: 'Do Hyeon', sans-serif;
+    
+    font-family: 'Jua', sans-serif;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 
     color: #fff;
@@ -139,6 +140,9 @@ body *{
     position: absolute;
     left: 17%;
     margin-top:20px;
+    
+    font-size: 15px;
+    font-family: 'Do Hyeon', sans-serif;
 }
 #screen{
     position: absolute;
@@ -166,6 +170,7 @@ body *{
 }
 .plist h1{
     margin-bottom: 10px;
+    font-family: 'Do Hyeon', sans-serif;
 }
 .plist ul{
     display: flex;
@@ -190,6 +195,8 @@ body *{
     font-size: 15px;
     line-height: 2;
     text-align: center;
+    font-weight: bold;
+
 
     /* 트랜지션: 속시이지 */
     transition: top .4s ease-out;
