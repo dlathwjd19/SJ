@@ -86,18 +86,46 @@
             "파인애플":"fruits_13",
             "망고":"fruits_24",
             "오렌지":"fruits_03",
-            "체리":"fruits_05",
+            "체리":"fruits_05"
         }; /// forObj 객체 ///////////
 
-        // 3. 대상요소
+        // 3. 대상요소 //////////////////////////////
         // (1) 배열정보출력 : .showit
         let showit = document.querySelector(".showit");
         // (2) 배열로 이미지 출력 : .cont
         let cont = document.querySelector(".cont");
         // (3) 조작버튼 요소들 : .mbtn
-        let mbtn = document.querySelector(".mbtn");
+        let mbtn = document.querySelectorAll(".mbtn");
         // (4) 선택박스 : #sel
         let sel = document.querySelector("#sel");
+
+        // 4. 처음 배열 출력하기 //////
+        showit.innerText = fruit.join("*");
+        // join(구분자) -> 배열 사이에 구분자를 넣고 문자로 변환
+
+        // 5. 과일 주세요~! 버튼 클릭시 배열 정보로 과일 
+        // 박스 만들고 이미지 출력하기!
+        // 대상: .mbtn 중 1번째 -> mbtn[0]
+        mbtn[0].onclick = ()=>{
+            // 1. 호출확인
+            console.log("과일주세요~!");
+
+            // 2. 변경내용: 배열의 과일만큼 ul>li 을
+            // 만들어서 html로 .cont에 출력하기!
+            let temp = "<ul>";
+
+            // forEach() 배열전용 메서드 사용!
+            // forEach((값,순번,객체)=>{})
+            // 대상: fruti 배열변수
+            fruit.forEach((val)=>{
+                // 배열값 확인
+                console.log("배열값:",val)
+                temp += `<li></li>`;
+            }); /////// forEach //////
+
+
+        } /////////// Click ///////////////
+
 
 
        });/////////// 로드구역 ///////////////////////////
