@@ -1,4 +1,9 @@
 @charset "utf-8";
+/* 카툰네트워크 메인 CSS */
+
+@import url(./reset1.css);
+@import url(core1.css);
+/* 외부 CSS */
 
 body *{
     outline: 1px dashed red;
@@ -10,6 +15,7 @@ body *{
 .ibx{
     max-width: 1200px;
     margin: 0 auto;
+
 }
 
 /*********************** 상단 ***********************/
@@ -53,8 +59,10 @@ body *{
     display: block;
     width: 200px;
     line-height: 50px;
-    font-size: 20px;
+    font-size: 30px;
     /* background-color: black; */
+    font-family: 'Do Hyeon', sans-serif;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 
     color: #fff;
     
@@ -108,7 +116,7 @@ body *{
     text-align: center;
 
     /* a요소 필수 재설정! 글자색+밑줄해제 */
-    color: navy;
+    color: #000;
     text-decoration: none;
 
     /* 트랜지션: 속시이지 */
