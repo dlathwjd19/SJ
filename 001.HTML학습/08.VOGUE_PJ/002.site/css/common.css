@@ -5,6 +5,7 @@
 .top{
     min-height: 206px;
 }
+
 /* 1-1. 상단메뉴 */
 .tmenu{
     display: flex;
@@ -19,6 +20,7 @@
     /* 옆으로 흐르는 등분할 박스 */
     /* 높이값 100%도 자동! */
 }
+
 /* 1-1-1. sns박스 */
 .sns a{
     width: 16px;
@@ -48,6 +50,12 @@
 /* 유투브 아이콘 조정 */
 .sns a.fi-youtube-play{
     font-size: 11px;
+}
+/* 유투브 가상요소 크기조정!(x축만) */
+.sns a.fi-youtube-play::before{
+    transform: scale(1.2);
+    display: inline-block;
+    /* inline은 트랜스폼이 적용안됨! */
 }
 /* sns 마지막 a요소에 카스이미지 배경이미지로 넣기! */
 .sns a:last-child{
