@@ -120,9 +120,15 @@
             fruit.forEach((val)=>{
                 // 배열값 확인
                 console.log("배열값:",val)
-                temp += `<li></li>`;
+                temp += `
+                <li style="background:url(./addimg/${frObj[val]}.png) no-repeat center/cover">${val}</li>`;
             }); /////// forEach //////
 
+            //temp 변수 마무리
+            temp += "</ul>";
+
+            // 화면출력
+            cont.innerHTML = temp;
 
         } /////////// Click ///////////////
 
