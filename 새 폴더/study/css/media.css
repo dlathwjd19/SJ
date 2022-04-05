@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* CGV PJ 미디어쿼리 CSS - media.css */
+/* 카툰네트워크 미디어쿼리 CSS - media.css */
 
 /************* 1300px 이하 시작 *************/
 @media screen and (max-width:1300px) {
@@ -86,7 +86,7 @@
 @media screen and (max-width:600px) {
 
     /* 타이틀  */
-    h1.tit{
+   / h1.logo{
         font-size: 9vw;
         white-space: nowrap;
     }

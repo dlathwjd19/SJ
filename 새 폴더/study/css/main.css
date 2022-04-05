@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* CGV PJ 메인페이지 CSS - main.css */
+/* 카툰네트워크 메인페이지 CSS - main.css */
 
 /* 외부 CSS합치기 */
 @import url(./reset.css);
@@ -10,9 +10,9 @@ body{
 }
 
 /* 공사중표시 */
-/* body *{
+body *{
     outline: 1px dashed lime;
-} */
+}
 
 /* 레이아웃 공통클래스 */
 .part{
@@ -27,30 +27,14 @@ body{
     position: relative;
     /* z-index적용위해 relative줌 + 부모자격 (부모자격이있어야 z-index적용가능/부모자격있어야 GNB 우측이동가능) */
     z-index: 999;/* 밑으로 떨여져서 옆으로보내기위해? */
-    height: 80px;
-    background: url(../images/curtain.jpg) repeat-x;
+    height: 100px;
 }
 
-/* 1-1. 페이지 타이틀 */
-h1.tit{
-    font-family: 'Jua', sans-serif;
-    color: aquamarine;
-    font-size: 40px;
+/* 1-1. 상단로고 */
+h1.logo{
     text-align: center;
-    line-height: 80px;
-
-    /* 그림자를 이용한 Glow효과 */
-    text-shadow: 0 0 4px aquamarine;
-
-    /* 애니메이션: 이지이징반방마 */
-    animation: titAni .5s ease-in infinite alternate;
+    padding: 5px;
 }
-/* 타이틀 글로우 효과 애니메이션 키프레임 */
-@keyframes titAni {
-    to{
-        text-shadow: 0 0 12px aquamarine;
-    }    
-} /* 키프레임 */
 
 /* 1-2. 전체메뉴(GNB) */
 .gnb{
@@ -169,78 +153,12 @@ h1.tit{
     /* 인라인요소 오른쪽 끝으로 보냄! */
 }
 
-/* 영사기 박스 */
-#cam{
-    position: absolute;
-    bottom: -14px;
-    right: -51px;
-    /* 부모는? .gnb */
-}
-/* 영사기이미지 */
-#cam img{
-    position: relative;
-    z-index: 1; /* 포지션이 스택틱이 아닌경우 적용됨 그래서 렐러티브로줌 */
-    /* 영사기 이미지가 빔박스보다 위! */
-    width: 50px;   
-    
-    /* 영사기 회전 */
-    transform:  rotate(25deg);
-    /* 양수값은 시계방향 */
-
-    /* 트랜지션: 속시이지*/
-    transition: .5s ease-out .3s;
-    /* 돌아올땐 0.3초 기다려! */
-}
-/* GNB에 마우스 오버시 영사기 회전하기 */
-.gnb:hover #cam img{
-    transform: rotate(0deg);
-    transition-delay: 0s;
-    /* 오버시엔 기다리지마 */
-}
-
-/* 빔박스 */
-.beam{
-    position: absolute;
-    top: -16px;
-    right: 8px;
-    /* 부모는? #cam */
-    width:0; /* width: 200px; */
-    height: 70px;
-    background: url(../images/bim.png) no-repeat;
-    background-position: right center;
-    background-size: auto 100%;
-    /* outline: 2px dotted yellow; */
-
-    /* 트랜지션: 속시이지*/
-    transition: width .3s linear; /* linera선형 */
-}
-/* GNB 마우시 오버시 영사기 쏘기 */
-.gnb:hover .beam{
-    width: 200px;
-    transition-delay: .5s;
-    /* 오버시에 0.5초 기다려! */
-
-    /* 빔 오버시 애니메이션: 이지이시반방마 alternate왓다갔다*/
-    animation: beamAni .04s linear infinite alternate;
-}
-
-/* 빔이 너울너울 거리도록 애니메이션 키프레임 */
-@keyframes beamAni {
-    from{
-        opacity: 0.9;
-    }
-    to{
-        opacity: 0.5;
-    }    
-} /* beamAni */
-
 /******************************** 2. 메인영역 ********************************/
 #cont {
     position: relative;
     /* 부모자격 (#screen의 부모자격주기위해 relateiv줌) */
     /* height: 788px; 
     -> 비율유지위해 높이값을 없앰!*/
-    background: url(../images/bg.jpg) no-repeat 0/cover;
 }
 /* 메인 상영관 이미지와 같은 비율로 패딩탑 밀기 설정 */
 /* #cont는 이미 .rbx 때문에 가상요소 before가 있음! */
@@ -260,12 +178,12 @@ h1.tit{
 부모를 따라 자연스럽게 비율유지가 된다!!! */
 #screen{
     position: absolute;
-    top: 17.2%;
-    left: 21.3%;
+    top: 10%;
+    left: 11.3%;
     /* 위치이동시 부모는? #cont */
-    width: 58.6%;
-    height: 50.7%;    
-    background-color: #000;
+    width: 75.6%;
+    height: 64.7%;    
+    background-color: #000;   
 }
 
 /* 스크린 아이프레임 */
@@ -277,8 +195,8 @@ h1.tit{
     /* 아이프레임 기본보더 없앰! */
 }
 
-/* 2-2. 예고편 선택메뉴 */
-.mlist{
+/* 2-2. 인기프로그램 선택메뉴 */
+.plist{
     position: absolute;
     bottom:7%;/* 퍼센트로 변경! */
     left: 50%;
@@ -288,13 +206,13 @@ h1.tit{
 
 }
 /* ul 플렉스박스 */
-.mlist ul{
+.plist ul{
     display: flex;
     perspective: 480px;
     /* 원근설정-적용할 요소의 부모박스에 설정 */
 }
 /* 각 리스트 */
-.mlist ul>li{
+.plist ul>li{
     position: relative;
     /* 부모자격 */    
     overflow: hidden;
@@ -312,14 +230,14 @@ h1.tit{
 }
 /* li에 마우스 오버시 x축회전 일어남!
 + 클래스 on을 주면 일어남! */
-.mlist ul>li:hover,
-.mlist ul>li.on{
+.plist ul>li:hover,
+.plist ul>li.on{
     transform: rotateX(0deg);
     z-index: 1;
     outline: 1px solid aquamarine;
 }
 
-.mlist img{
+.plist img{
     width: min(8vw,99px);
     /* min(유동사이즈,특정사이즈) 작은쪽 선택
     -> 최대크기 지정의 효과! */
@@ -328,7 +246,7 @@ h1.tit{
 }
 
 /* 영화정보박스 */
-.movtxt{
+.ptxt{
     position: absolute; /* 겹쳐져야하기때문에 앱솔 */
     top: 100%;/* 부모의 높이값 만큼  */
     /* 부모는 .mlist ul>li */
@@ -348,12 +266,12 @@ h1.tit{
     transition: top .4s ease-out .3s;
 }
 /* 부모 li에 마우스 오버시 설명박스 올라오기 */
-.mlist ul>li:hover .movtxt{
+.plist ul>li:hover .movtxt{
     top: 0;
 }
 
 /* 첫번째 li 영화제목 */
-.movtxt li:first-child{
+.ptxt li:first-child{
     color: aqua;
     font-size: min(1.2vw,17px);
     white-space: nowrap; /* 줄바꿈방지 */
