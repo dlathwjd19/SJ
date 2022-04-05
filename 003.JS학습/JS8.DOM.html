@@ -10,7 +10,7 @@
             function () {
 
                 // 로드구역 확인
-                console.log("로딩완료!");
+                // console.log("로딩완료!");
 
                 ////////////////////////////////////////////////////////
                 //// #div01의 각 메뉴에 마우스 오버시 하위메뉴 보이기 ////
@@ -19,7 +19,7 @@
                 // 이벤트 대상: .smenu
                 let smenu = document.querySelectorAll(".smenu");
                 
-                console.log("메뉴개수:",smenu.length);
+                // console.log("메뉴개수:",smenu.length);
 
                 // 이벤트종류: mouseover / mouseout
                 // 변경대상: .smenu > div
@@ -40,7 +40,7 @@
 
                         // 2. 서브메뉴 ol요소의 높이값 읽어오기
                         let hv = tg.querySelector("ol").offsetHeight;
-                        console.log("ol의 높이값:",hv);
+                        // console.log("ol의 높이값:",hv);
 
                         // 3. 서브메뉴 열리기 (보정값 + 10)
                         tg.style.height = (hv + 10) + "px";
@@ -75,10 +75,22 @@
                 /////////////////////////////////////////////////////////
 
                 // 이벤트 대상: .smenu ol a
+                let link = document.querySelectorAll(".smenu ol a");
+                // console.log("서브링크개수:",link.length);
                 
                 // 이벤트 종류: click
                 // 변경내용: 클릭시 새창으로 사이트열기
-                
+                for( let x of link){
+                    // 클릭 이벤트 설정하기
+                    x.onclick = () => {
+
+                        // 1. a요소의 텍스트 읽어오기
+                        let txt = x.innerText;
+                        console.log("링크테스트",txt);
+
+                    }; ///// click 함수 //////
+                    
+                } //////////// for of //////////////////
 
 
                 // html 컬렉션 참고:
