@@ -154,6 +154,19 @@
 .gnb li:last-child{
     padding-right: 0;
 }
+/* 마지막 li의 a 돋보기 */
+.gnb li:last-child a{
+    font-weight: bold;
+    padding-top: 12px;
+}
+/* GNB 링크 트랜지션 */
+.gnb a{
+    transition: color .2s linear;
+}
+/* 오버시 a요소  */
+.gnb a:hover{
+    color: red;
+}
 
 /************************ 3. 하단영역 ************************/
 .info{
