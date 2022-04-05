@@ -86,7 +86,7 @@
 @media screen and (max-width:600px) {
 
     /* 타이틀  */
-   / h1.logo{
+    h1.logo{
         font-size: 9vw;
         white-space: nowrap;
     }
@@ -114,14 +114,14 @@
     }
 
     /* 예고편 선택메뉴 */
-    .mlist {
+    .plist {
         width: 90vw;
         /* 가로크기지정 */
         bottom: 3%;
     }
 
     /* ul 플렉스박스 */
-    .mlist ul {
+    .plist ul {
         flex-wrap: wrap;
         /* 줄바꿈 */
     }
