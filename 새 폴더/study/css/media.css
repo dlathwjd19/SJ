@@ -5,9 +5,9 @@
 @media screen and (max-width:1300px) {
 
     /* GNB 메뉴 */
-    .gnb {
+    /* .gnb {
         right: 60px;
-    }
+    } */
 }
 
 /************* 1300px 이하 끝 ***************/
@@ -72,10 +72,12 @@
     }
 
     /* sns박스 */
-    ul.sns {
+    .sns {
         position: static;
-        justify-content: center;
-        padding: 20px 0;
+        /* justify-content: center; */
+        /* padding: 20px 0; */
+        text-align: center;
+        
     }
 }
 
@@ -86,10 +88,10 @@
 @media screen and (max-width:600px) {
 
     /* 타이틀  */
-    h1.logo{
+    /* h1.logo{
         font-size: 9vw;
         white-space: nowrap;
-    }
+    } */
 
     /* 메인영역 비율변경 */
     #cont.rbx::before {
@@ -97,13 +99,13 @@
     }
 
     /* 메인 배경 속성변경 */
-    #cont{
-        background-position: top;
+    /* #cont{ */
+        /* background-position: top; */
         /* 배경위치 top만 쓰면 가로는 자동 center */
-        background-size: 130%;
+        /* background-size: 130%; */
         /* 배경크기에 수치를 하나만쓰면 
         가로크기임(세로자동) */
-    }
+    /* } */
 
     /* 스크린 위치,크기조정 */
     #screen {
@@ -115,30 +117,30 @@
 
     /* 예고편 선택메뉴 */
     .plist {
-        width: 90vw;
+        width: 68vw;
         /* 가로크기지정 */
-        bottom: 3%;
+        top: 45%;
     }
 
     /* ul 플렉스박스 */
     .plist ul {
         flex-wrap: wrap;
         /* 줄바꿈 */
-    }
+    } 
 
     /* 포스터 이미지크기 */
-    .mlist img {
-        width: 28vw;
-        /* 한줄에 3개 오도록 크기조정 */
+    .plist img {
+        width: 32vw;
+        /* 한줄에 2개 오도록 크기조정 */
     }
     /*이미지설명 박스 */
-    .movtxt {
-        width: 28vw;
-        /* 한줄에 3개 오도록 크기조정 */
-        font-size: 2vw;
+    .ptxt {
+        width: 32vw;
+        /* 한줄에 2개 오도록 크기조정 */
+        font-size: 2.5vw;
     }
-    .movtxt li:first-child{
-        font-size: 2vw;
+    .ptxt li:first-child{
+        font-size: 3.5vw;
     }
 
 }

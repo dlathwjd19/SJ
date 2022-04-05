@@ -23,131 +23,150 @@ body *{
 }
 
 /******************************** 1. 상단영역 ********************************/
-#top{
-    position: relative;
+/* #top{ */
+    /* position: relative; */
     /* z-index적용위해 relative줌 + 부모자격 (부모자격이있어야 z-index적용가능/부모자격있어야 GNB 우측이동가능) */
-    z-index: 999;/* 밑으로 떨여져서 옆으로보내기위해? */
-    height: 100px;
-}
+  
+    /* height: 150px; */
+/* } */
 
 /* 1-1. 상단로고 */
 h1.logo{
     text-align: center;
-    padding: 5px;
+    padding: 10px;
 }
 
 /* 1-2. 전체메뉴(GNB) */
 .gnb{
-    position: absolute;
-    bottom: 5px;
-    right: 15px;
+    /* position: absolute; */
+    /* bottom: 5px; */
+    /* right: 15px; */
     /* 부모는 ? #top */
+    background-image: url(../img/bar.PNG);
+    
+    /* width: 530px; */
+    /* position: absolute; */
+    /* margin: 0 auto; */
+    
+}
+/* a요소 */
+.gnb>ul>li>a{
+    /* a는 inline요소이므로 크기적용안됨! */
+    /* 그래서 block으로 변경! */
+    display: block;
+    width: 200px;
+    line-height: 50px;
+    font-size: 32px;
+    
+    font-family: 'Jua', sans-serif;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    /* 글자테두리 */
+    color: #fff;
+    
+    text-decoration: none;
+    /* 글자색, 밑줄은 반드시 a요소에서 셋팅! */
+
+    /* 트랜지션: 속시이지 */
+    transition: all .4s;
 }
 /* GNB ul */
 .glist{
-    position: relative;
-    z-index: 1;
+    /* position: relative; */
+    /* z-index: 1; */
     /* 메뉴가 영사기보다 위! */
     display: flex;
+    justify-content: center;
     /* 플렉스박스 */
 }
 /* GNB li 리스트 */
 .glist>li{
-    position: relative;
-    /* 부모자격 - .smenu */
-    padding: 0 10px;
-    padding-bottom: 5px;
+    /* position: relative; */
+    /* 부모자격 - .subm */
+    /* padding: 0 10px;
+    /* padding-bottom: 5px; */
     /* 아래쪽 패딩으로 서브메뉴 간극없앰 */
-    font-family: 'Jua', sans-serif;
-    font-size: 20px;
+    /* font-family: 'Jua', sans-serif; */
+    /* font-size: 20px; */
+    text-align: center;
+    
 }
 /* GNB 서브메뉴 */
-.smenu{
+.subm{
     position: absolute;
-    left: 50%; /* 주기위해 부모가 누구? .glist>li */
-    transform: translate(-50%,5px);
-    /* x축 방향으로 자신의 크기의 절반 왼쪽이동(중앙맞춤)
-    y축 방향으로 5px이동 */
-    width: 140px;
-    background: url(../images/bg_smenu.png) no-repeat center/cover;
-    padding: 3px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #fff;
-
-    display: none; /* 처음에 안보임! */
-}
-/* 상위메뉴 li에 마우스 오버시 하위메뉴 보이기 */
-.glist>li:hover .smenu{
-    display: block;
-}
-
-/* 가상요소로 삼각형 만들기 */
-.smenu::before{
-    content: '';
-    display: block;
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    /* 부모는? .smenu */
-    transform: translateX(-50%);
-    /* x축 정중앙이동 */
-
-    /* 삼각형만들기 */
-    width: 0;
     height: 0;
-    border-bottom: 10px solid #353535;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    /* 양쪽보더는 투명색(transparent) 
-    border-top으로 하면 역삼각형이 나옴 */
+    overflow: hidden;
+    /* 높이값 0, 넘치는 자식요소 숨기기로 서브안보이게함! */
+    background-color: #d5eeff;
+    z-index: 1;
 
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
+}
+
+/* 상위 li메뉴에 마우스 오버시 서브메뉴 보이기 */
+/* 첫번째 메뉴 서브메뉴 */
+.gnb>ul>li:nth-child(1):hover .subm{
+    height: 180px;
+}
+.gnb>ul>li:nth-child(2):hover .subm{
+    height: 100px;
+}
+/* 세번째 메뉴 서브메뉴 */
+.gnb>ul>li:nth-child(3):hover .subm{
+    height: 100px;
+}
+/* 마지막 메뉴 서브메뉴 */
+.gnb>ul>li:last-child:hover .subm{
+    height: 100px;
 }
 
 /* 서브메뉴 ol */
-.smenu ol{
-    border: 1px solid #ccc;
+.subm ol{
     padding: 10px;
 }
-/* 서브메뉴 li */
-.smenu li{
-    font-size: 16px;
-    line-height: 2;
-}
-/* 서브메뉴 li중 보더탑 구분선 class */
-.bdt{
-    border-top: 1px solid #ccc;
-}
-/* 서브메뉴 a요소 확장 */
-.smenu a{
+/* 서브메뉴 a */
+.subm a{
     display: block;
-    /* li부모요소 가로 끝까지 차지함! */
+    width: 180px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+
+    /* a요소 필수 재설정! 글자색+밑줄해제 */
+    color: #000;
+    text-decoration: none;
+
+    /* 트랜지션: 속시이지 */
+    transition: all .4s;
 }
-/* 서브메뉴 a에 마우스 오버시 글자색 빨강 */
-.smenu a:hover{
-    color: red;
+/* 서브메뉴 a에 오버시 */
+.subm a:hover{
+    background-color: #f0f0f0;
+    color: #ff5411;
 }
+
 /* 서브메뉴 a에 오버시 가상요소로 이모지  보이기 */
 /* 이모지는 윈도우키+세미콜론(;) 단축키임! */
 /* "영화" 메뉴 이모지 */
-.glist>li:nth-child(1) .smenu li a:hover::after{
+.glist>li:nth-child(1) .subm li a:hover::after{
     content: '😍';
     float: right;
     /* 인라인요소 오른쪽 끝으로 보냄! */
 }
 /* "예매" 메뉴 이모지 */
-.glist>li:nth-child(2) .smenu li a:hover::after{
+.glist>li:nth-child(2) .subm li a:hover::after{
     content: '👀';
     float: right;
     /* 인라인요소 오른쪽 끝으로 보냄! */
 }
 /* "극장" 메뉴 이모지 */
-.glist>li:nth-child(3) .smenu li a:hover::after{
+.glist>li:nth-child(3) .subm li a:hover::after{
     content: '😻';
     float: right;
     /* 인라인요소 오른쪽 끝으로 보냄! */
 }
 /* "이벤트&컬처" 메뉴 이모지 */
-.glist>li:nth-child(4) .smenu li a:hover::after{
+.glist>li:nth-child(4) .subm li a:hover::after{
     content: '🎁';
     float: right;
     /* 인라인요소 오른쪽 끝으로 보냄! */
@@ -160,10 +179,10 @@ h1.logo{
     /* height: 788px; 
     -> 비율유지위해 높이값을 없앰!*/
 }
-/* 메인 상영관 이미지와 같은 비율로 패딩탑 밀기 설정 */
+/* 메인 동영상 이미지와 같은 비율로 패딩탑 밀기 설정 */
 /* #cont는 이미 .rbx 때문에 가상요소 before가 있음! */
 #cont::before{
-    padding-top: 65.66%;
+    padding-top: 82.66%;
     /* 패딩탑 비율만 셋팅함!
         비율계산:
         가로 : 세로 = 100 : x
@@ -178,12 +197,12 @@ h1.logo{
 부모를 따라 자연스럽게 비율유지가 된다!!! */
 #screen{
     position: absolute;
-    top: 10%;
-    left: 11.3%;
+    top: 8%;
+    left: 12.3%;
     /* 위치이동시 부모는? #cont */
     width: 75.6%;
-    height: 64.7%;    
-    background-color: #000;   
+    height: 51.7%;    
+    background-color: #fff;   
 }
 
 /* 스크린 아이프레임 */
@@ -194,11 +213,19 @@ h1.logo{
     border: none;
     /* 아이프레임 기본보더 없앰! */
 }
-
+.plist>h1{
+    /* position: absolute; */
+    left: 17%;
+    /* margin-top:20px; */
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: min(3vw,25px);
+    font-family: 'Do Hyeon', sans-serif;
+}
 /* 2-2. 인기프로그램 선택메뉴 */
 .plist{
     position: absolute;
-    bottom:7%;/* 퍼센트로 변경! */
+    top: 67%;
     left: 50%;
     /* 부모는? #cont */
     transform: translateX(-50%);
@@ -208,8 +235,6 @@ h1.logo{
 /* ul 플렉스박스 */
 .plist ul{
     display: flex;
-    perspective: 480px;
-    /* 원근설정-적용할 요소의 부모박스에 설정 */
 }
 /* 각 리스트 */
 .plist ul>li{
@@ -220,25 +245,12 @@ h1.logo{
     - 부모자격이 있는 요소가 숨길수 있음! */
     margin: 0 min(1vw,9px);
     /* 양쪽 마진만 9px과 1vw중 작은것! */
-    transform: rotateX(40deg);
-    /* x축회전 */
-    transform-origin: bottom;
-    /* 회전축 세로방향 하단으로 변경 */
-    
-    /* 트랜지션:속시이지 */
-    transition: transform .4s ease-out;
-}
-/* li에 마우스 오버시 x축회전 일어남!
-+ 클래스 on을 주면 일어남! */
-.plist ul>li:hover,
-.plist ul>li.on{
-    transform: rotateX(0deg);
-    z-index: 1;
-    outline: 1px solid aquamarine;
+   
 }
 
+
 .plist img{
-    width: min(8vw,99px);
+    width: min(15vw,200px);
     /* min(유동사이즈,특정사이즈) 작은쪽 선택
     -> 최대크기 지정의 효과! */
     /* height: 140px; 
@@ -248,35 +260,38 @@ h1.logo{
 /* 영화정보박스 */
 .ptxt{
     position: absolute; /* 겹쳐져야하기때문에 앱솔 */
-    top: 100%;/* 부모의 높이값 만큼  */
+    top: 100%;
+    /* 부모의 높이값 만큼  */
     /* 부모는 .mlist ul>li */
-    width: min(8vw,99px);
+    width: min(15vw,200px);
     /* 이미지 가로크기와 똑같이 잡는다! */
     height: 100%;
 
     background-color: rgba(0, 0, 0, 0.7);
 
     /* 글자셋팅 */
-    font-family: 'Cute Font', cursive;
-    font-size: min(1.2vw,14px);
-    line-height: 2;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: min(1vw,16px);
+    line-height: 1.5;
     text-align: center;
 
     /* 트랜지션: 속시이지 - li가 일어난 후 지연시간 0.3초 */
     transition: top .4s ease-out .3s;
+
+   
 }
 /* 부모 li에 마우스 오버시 설명박스 올라오기 */
-.plist ul>li:hover .movtxt{
+.plist ul>li:hover .ptxt{
     top: 0;
 }
 
 /* 첫번째 li 영화제목 */
 .ptxt li:first-child{
     color: aqua;
-    font-size: min(1.2vw,17px);
+    font-size: min(1.7vw,18px);
     white-space: nowrap; /* 줄바꿈방지 */
     letter-spacing: -1px;
-    margin-top: 30%;
+    margin-top: 7%;
 }
 
 
@@ -291,8 +306,8 @@ h1.logo{
     color: #c4c4c4;
     font-style: normal;
     font-family: 'Cute Font', cursive;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 25px;
+    line-height: 30px;
     
     /* 안쪽여백 */
     padding-top: 20px;
@@ -306,43 +321,32 @@ h1.logo{
 }
 
 /* 3-2. sns박스 */
-ul.sns{
+.sns{
     position: absolute;
-    top: 35px;
+    top: 20px;
     right: 20px;
     /* 부모는? #info */
-
-    display: flex;
-    /* 플렉스박스 */
 }
-.sns li{
-    width: 34px;
-    height: 34px;
-    background: url(../images/sprites_logo.png) no-repeat;
+.sns img{
+    filter: grayscale(100%);
+}
+/* .sns li{ */
+    /* width: 48px;
+    height: 48px;
+    background: url(../img/Youtube_icon-icons.com_66802.png) no-repeat; */
     /* outline: 1px solid lime; */
-    margin: 0 2px;
+    /* margin: 0 2px; */
 
-    filter: grayscale(100%)
+    
     /* 필터 : 흑백처리 */
-}
+/* } */
 /* 오버시 컬러 */
-.sns li:hover{
+.sns img:hover{
     filter: grayscale(0%);
+    outline: 4px dotted orangered;
+    border-radius: 30%;
 }
 
-/* 배경위치 */
-/* 페이스북 */
-.sns li:first-child{
-    background-position: -510px -429px;
-}
-/* 트위터 */
-.sns li:nth-child(2){
-    background-position: -551px -429px;
-}
-/* 인스타그램 */
-.sns li:last-child{
-    background-position: -594px -429px;
-}
 /* sns a링크 확장 */
 .sns a{
     display: block;
