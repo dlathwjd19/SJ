@@ -2,66 +2,29 @@
 /* 카툰네트워크 미디어쿼리 CSS - media1.css */
 
 
-/************* 1024 이하 시작 *************/
-@media screen and (max-width:1024px) {
-    
-
-    /* GNB 메뉴 */
-    .gnb {
-        width: 1005px;
-    }
-}
-
-/************* 1024 이하 끝 ***************/
-
-
-/************* 800 이하 시작 *************/
-@media screen and (max-width:800) {
-
-    /* 1. 숨기기
-    - GNB 서브메뉴 메뉴배경가상요소 선택박스 */
-    .gnb,.subm,.glist{
-        display: none;
-    }
-
-     /* 3.5. GNB 디자인변경하기 */
-     .gnb {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-}
-
-/************* 800 이하 끝 ***************/
-
-
-
-/************* 780px 이하 시작 *************/
-@media screen and (max-width:780px) {
+/************* 800px 이하 시작 *************/
+@media screen and (max-width:800px) {
 
     /* 하단영역 */
-    #info {
+    .info {
         height: auto;
     }
 
     /* 회사정보 */
-    #info address {
+    .info address {
         text-align: center;
         padding: 0;
         /* 기존 패딩 위, 왼쪽 없앰 */
     }
 
     /* 회사정보 */
-    #info address span {
+    .info address span {
         display: block;
         padding: 5vw;
     }
 
     /* 하단로고 이미지 */
-    #info img {
+    .info img {
         float: none;
         margin-right: 0;
     }
@@ -74,18 +37,13 @@
     }
 }
 
-/************* 780px 이하 끝 ***************/
+/************* 800px 이하 끝 ***************/
 
 
 /************* 600px 이하 시작 *************/
 @media screen and (max-width:600px) {
 
-    /* 타이틀  */
-    h1.tit{
-        font-size: 9vw;
-        white-space: nowrap;
-    }
-
+    
     /* 메인영역 비율변경 */
     #cont.rbx::before {
         padding-top: 150%;

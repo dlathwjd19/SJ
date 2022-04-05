@@ -3,6 +3,7 @@
 
 @import url(./reset1.css);
 @import url(core1.css);
+@import url(common.css);
 /* 외부 CSS */
 
 body *{
@@ -36,12 +37,14 @@ body *{
     display: inline-block;
     margin: 8px 10px;
 }
-
+.gnb{
+    background-image: url(./img/bar.PNG) ;
+    
+}
 .glist{
     display: flex;
     justify-content: center;
-    background-image: url(./img/bar.PNG) ;
-    /* opacity: 0.5; */
+    
 }
 .glist::before{
     position: relative;
@@ -131,7 +134,7 @@ body *{
 }
 
 
-/*********************** main ***********************/
+/*********************** 메인 ***********************/
 .cont{
     position: relative;
     height: 1000px;
