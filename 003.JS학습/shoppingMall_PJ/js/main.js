@@ -61,7 +61,6 @@ window.addEventListener("load", () => {
             // 일정시간 후 한 번 실행하는 타이밍함수는? setTimeout
             setTimeout(() => {
                 // (2) 첫번째 슬라이드 li를 잘라서 맨뒤로 보낸다!
-
                 slide.appendChild(sli[0]);
                 // appendChild(요소) - 선택요소 맨뒤이동
 
@@ -70,13 +69,15 @@ window.addEventListener("load", () => {
                 slide.style.transition = "none";
                 // 트랜지션 없어야 애니메이션 안보임!
 
-
             }, 600); /// 타임아웃 ///
 
 
         } ///////// if ///////////
+
+
         // 2-2. 왼쪽 버튼
         else {
+            // li요소 대상
             // (1) 먼저 맨뒤의 슬라이드 li를 맨앞으로 이동
             slide.insertBefore(sli[sli.length-1],sli[0]);
             // insertBefore(넣을놈, 넣을놈전놈)
@@ -97,6 +98,7 @@ window.addEventListener("load", () => {
         } /////////// else ////////////
 
     }; /////////////// goSide 함수 //////////////////
+
 
     // 오른쪽 버튼 클릭시 
     abtn[1].onclick = () => goSlide(1);
