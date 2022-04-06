@@ -131,12 +131,12 @@
     /* 포스터 이미지크기 */
     .plist img {
         width: 32vw;
+        padding-bottom: 10%;
         /* 한줄에 2개 오도록 크기조정 */
     }
     /*이미지설명 박스 */
     .ptxt {
         width: 32vw;
-        /* 한줄에 2개 오도록 크기조정 */
         font-size: 2.5vw;
     }
     .ptxt li:first-child{
