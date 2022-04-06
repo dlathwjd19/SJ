@@ -11,16 +11,14 @@ window.addEventListener("load", () => {
         3. 변경 대상: 슬라이드 박스(#slide)
         4. 기능흐름: 
 
-        (1) 오른쪽버튼 클릭시 다음슬라이드가
-            나타나도록 슬라이드박스의 top값을
-            -100%로 이동시킨다!
-        -> 이때 바깥에 나가있는 첫번째 슬라이드 li를 잘라서
-        맨뒤로 보낸다! 동시에 lfet값을 0으로 변겅함!
+        -> 클래스 on 넣기 전에 초기화 기본!
 
-        (2) 왼쪽버튼 클릭시
-            먼저 맨뒤의 슬라이드 li를 맨앞으로 이동시킨다!
-            이떄 top -100%로 변경한다!
-            이후 top값을 0으로 변경하여 애니메이션함
+        (1) 오른쪽버튼 클릭시 다음슬라이드에
+            class="on" 넣기
+
+        (2) 왼쪽버튼 클릭시 이전슬라이드에
+            class="on" 넣기
+            
         
         5. 추가기능: 슬라이드 위치표시 블릿
         - 블릿대상 : .indic li
@@ -32,26 +30,21 @@ window.addEventListener("load", () => {
 
     // 이벤트 대상 : .abtn
     let abtn = document.querySelectorAll(".abtn");
-    // 변경대상 : 슬라이드 -> #slide
+    // 변경 대상 : 슬라이드 -> #slide
     let slide = document.querySelector("#slide");
+    // 변경 대상: 슬라이드 li요소들 -> #slide li
+    let sli = slide.querySelectorAll("li");
     // 변경 대상: 블릿 -> .indic li
     let indic = document.querySelectorAll(".indic li");
-    console.log("블릿개수:",indic.length);
+    // console.log("블릿개수:",indic.length);
 
-    // 슬라이드 li에 순번 속성 주기! ///////
-    // 주는 이유: li가 잘려서 이동하므로 순서가 항상 바뀌므로
-    // 고유한 순서를 지정하기 위함!
-    // 지정방법: li에 data-속성명 으로 사용자 정의 속성을 준다!
-    // (사용자 정의 속성은 data-로 시작하는 속성명이다!)
-    // 한 번만 실행하는 재귀호출 함수 -> (함수)()
-    (()=>{ /////////////////////////////////////////////////
-        // 대상: $slide li
-        let tg = slide.querySelectorAll("li");
-        for(let i=0; i<tg.length; i++){
-            tg[i].setAttribute("data-seq",i);
-        } ////////// for /////////////////
-    })(); //////////////////////////////////////////////////
+    // 슬라이드 번호 변수
+    let sno = 0; // 첫 번호는 0
 
+    // 슬라이드 한계값을 위한 개수
+    const lmt = sli.length;
+    console.log("슬라이드 개수:",lmt);
+    
     // 광클금지 상태값
     let prot = 0; // 1-금지, 0-허용
 
@@ -72,8 +65,7 @@ window.addEventListener("load", () => {
         // 1. 전달값 및 호출확인
         console.log("이동!", dir);
 
-        // 1.5 슬라이드 li요소들 변수할당!
-        let sli = slide.querySelectorAll("li");
+        
 
         // 2. 방향분기 /////////////
 
