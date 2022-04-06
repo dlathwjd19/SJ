@@ -10,9 +10,9 @@ body{
 }
 
 /* 공사중표시 */
-body *{
+/* body *{
     outline: 1px dashed lime;
-}
+} */
 
 /* 레이아웃 공통클래스 */
 .part{
@@ -23,12 +23,6 @@ body *{
 }
 
 /******************************** 1. 상단영역 ********************************/
-/* #top{ */
-    /* position: relative; */
-    /* z-index적용위해 relative줌 + 부모자격 (부모자격이있어야 z-index적용가능/부모자격있어야 GNB 우측이동가능) */
-  
-    /* height: 150px; */
-/* } */
 
 /* 1-1. 상단로고 */
 h1.logo{
@@ -38,17 +32,9 @@ h1.logo{
 
 /* 1-2. 전체메뉴(GNB) */
 .gnb{
-    /* position: absolute; */
-    /* bottom: 5px; */
-    /* right: 15px; */
-    /* 부모는 ? #top */
     background-image: url(../img/bar.PNG);
-    
-    /* width: 530px; */
-    /* position: absolute; */
-    /* margin: 0 auto; */
-    
 }
+
 /* a요소 */
 .gnb>ul>li>a{
     /* a는 inline요소이므로 크기적용안됨! */
@@ -71,24 +57,12 @@ h1.logo{
 }
 /* GNB ul */
 .glist{
-    /* position: relative; */
-    /* z-index: 1; */
-    /* 메뉴가 영사기보다 위! */
     display: flex;
     justify-content: center;
-    /* 플렉스박스 */
 }
 /* GNB li 리스트 */
 .glist>li{
-    /* position: relative; */
-    /* 부모자격 - .subm */
-    /* padding: 0 10px;
-    /* padding-bottom: 5px; */
-    /* 아래쪽 패딩으로 서브메뉴 간극없앰 */
-    /* font-family: 'Jua', sans-serif; */
-    /* font-size: 20px; */
     text-align: center;
-    
 }
 /* GNB 서브메뉴 */
 .subm{
@@ -145,51 +119,14 @@ h1.logo{
     color: #ff5411;
 }
 
-/* 서브메뉴 a에 오버시 가상요소로 이모지  보이기 */
-/* 이모지는 윈도우키+세미콜론(;) 단축키임! */
-/* "영화" 메뉴 이모지 */
-.glist>li:nth-child(1) .subm li a:hover::after{
-    content: '😍';
-    float: right;
-    /* 인라인요소 오른쪽 끝으로 보냄! */
-}
-/* "예매" 메뉴 이모지 */
-.glist>li:nth-child(2) .subm li a:hover::after{
-    content: '👀';
-    float: right;
-    /* 인라인요소 오른쪽 끝으로 보냄! */
-}
-/* "극장" 메뉴 이모지 */
-.glist>li:nth-child(3) .subm li a:hover::after{
-    content: '😻';
-    float: right;
-    /* 인라인요소 오른쪽 끝으로 보냄! */
-}
-/* "이벤트&컬처" 메뉴 이모지 */
-.glist>li:nth-child(4) .subm li a:hover::after{
-    content: '🎁';
-    float: right;
-    /* 인라인요소 오른쪽 끝으로 보냄! */
-}
-
 /******************************** 2. 메인영역 ********************************/
 #cont {
     position: relative;
     /* 부모자격 (#screen의 부모자격주기위해 relateiv줌) */
-    /* height: 788px; 
-    -> 비율유지위해 높이값을 없앰!*/
 }
-/* 메인 동영상 이미지와 같은 비율로 패딩탑 밀기 설정 */
-/* #cont는 이미 .rbx 때문에 가상요소 before가 있음! */
+
 #cont::before{
     padding-top: 82.66%;
-    /* 패딩탑 비율만 셋팅함!
-        비율계산:
-        가로 : 세로 = 100 : x
-        x = 세로 * 100 / 가로
-        x = 788 * 100 / 1200
-        x = 65.66
-    */
 }
 
 /* 2-1. 스크린 박스 */
@@ -259,9 +196,8 @@ h1.logo{
 
 /* 영화정보박스 */
 .ptxt{
-    position: absolute; /* 겹쳐져야하기때문에 앱솔 */
+    position: absolute;
     top: 100%;
-    /* 부모의 높이값 만큼  */
     /* 부모는 .mlist ul>li */
     width: min(15vw,200px);
     /* 이미지 가로크기와 똑같이 잡는다! */
@@ -275,10 +211,7 @@ h1.logo{
     line-height: 1.5;
     text-align: center;
 
-    /* 트랜지션: 속시이지 - li가 일어난 후 지연시간 0.3초 */
     transition: top .4s ease-out .3s;
-
-   
 }
 /* 부모 li에 마우스 오버시 설명박스 올라오기 */
 .plist ul>li:hover .ptxt{
@@ -289,7 +222,7 @@ h1.logo{
 .ptxt li:first-child{
     color: aqua;
     font-size: min(1.7vw,18px);
-    white-space: nowrap; /* 줄바꿈방지 */
+    white-space: nowrap;
     letter-spacing: -1px;
     margin-top: 7%;
 }
@@ -316,7 +249,6 @@ h1.logo{
 /* 하단로고 이미지 */
 #info img{
     float: left;
-    /* 이미지 자신은 왼쪽, 글자는 오른쪽에 흐르게함 */
     margin-right: 20px;
 }
 
@@ -330,17 +262,8 @@ h1.logo{
 .sns img{
     filter: grayscale(100%);
 }
-/* .sns li{ */
-    /* width: 48px;
-    height: 48px;
-    background: url(../img/Youtube_icon-icons.com_66802.png) no-repeat; */
-    /* outline: 1px solid lime; */
-    /* margin: 0 2px; */
 
-    
-    /* 필터 : 흑백처리 */
-/* } */
-/* 오버시 컬러 */
+/* sns 오버시 컬러 */
 .sns img:hover{
     filter: grayscale(0%);
     outline: 4px dotted orangered;
