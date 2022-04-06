@@ -118,7 +118,15 @@ h1.logo{
     background-color: #f0f0f0;
     color: #ff5411;
 }
+.ham{
+    display: none;
+    position: absolute;
+    font-size: 70px;
+    top: 0%;
+    right: 5%;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 
+}
 /******************************** 2. 메인영역 ********************************/
 #cont {
     position: relative;

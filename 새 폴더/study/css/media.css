@@ -4,6 +4,27 @@
 /************* 780px 이하 시작 *************/
 @media screen and (max-width:780px) {
 
+    .gnb{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px;
+        height: 37px;
+    }
+
+    .glist{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .glist li{
+        width: 100%;
+        text-align: center;
+    }
+    .ham{
+        display: block;
+    }
+
     /* 하단영역 */
     #info {
         height: auto;

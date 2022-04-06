@@ -27,7 +27,7 @@ window.addEventListener("load",() => {
     // 인기프로그램 동영상 코드 객체 ///
     const mcode = {
         "위 베이비 베어스":"xkBPklt3Ju4",
-        "슈퍼텐 시간탐험대":"7oDR3iuaH8A",
+        "슈퍼텐 시간탐험대":"1gyvD5fxNIE",
         "그리지와 레밍스 월드투어":"01wgWeMonWQ",
         "브레드 이발소 시즌2":"k9A7TxQWnjU",
     }; ///// mcode객체 /////
@@ -69,7 +69,7 @@ window.addEventListener("load",() => {
             resetFn();
             // 2. 해당 li요소 클래스 on 넣기
             x.classList.add("on");
-        }; //////// click /////////
-    } //////// for of ///////////////////
+        }; 
+    }
 
 }); ///////// 로딩구역 //////////////////////////
