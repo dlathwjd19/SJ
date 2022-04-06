@@ -1,97 +1,9 @@
 @charset "utf-8";
 /* 카툰네트워크 미디어쿼리 CSS - media.css */
 
-/************* 1300px 이하 시작 *************/
-@media screen and (max-width:1300px) {
-
-    /* GNB 메뉴 */
-    /* .gnb {
-        right: 60px;
-    } */
-}
-
-/************* 1300px 이하 끝 ***************/
-
-
-/************* 1050px 이하 시작 *************/
-@media screen and (max-width:1050px) {
-
-    /* GNB ul */
-    .glist {
-        top: 139px;
-        left: 54px;
-        padding-top: 6px;
-        flex-direction: column;
-        /* 수직방향 */
-        align-items: flex-end;
-        /* 진행방향 수직으로 아래쪽(오른쪽) */
-        display: none;
-    }
-
-    /* GNB에 마우스 오버시 .glist보이기 */
-    .gnb:hover .glist {
-        display: flex;
-        /* 원본 display로 감!*/
-    }
-
-    /* 마우스 오버시 서브메뉴 숨기기 */
-    .glist>li:hover .smenu {
-        display: none;
-    }
-}
-
-/************* 1050px 이하 끝 ***************/
-
-
-
 /************* 780px 이하 시작 *************/
 @media screen and (max-width:780px) {
-    /* 숨기기 - gnb메뉴 , 서브메뉴 */
-    .gnb,
-    #dtxt,
-    .blink,
-    .smenu,
-    .gnb>ul>li.sm::after,
-    .snsbx,
-    #sel {
-        display: none;
-    }
 
-    /* 2. 보이기 - 햄버거버튼 */
-    .ham {
-        display: block;
-        color: #fff;
-    }
-
-    /* 3.5. GNB 디자인변경하기 */
-    .gnb {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: #fff;
-    }
-    .gnb>ul{
-        margin-top: 20vh;
-        /* 리스트가 60vh이므로 나머지 40vh 중
-        절반인 20vh만 밀어주면 리스트가 세로
-        중앙에 오게됨! */
-    }
-    .gnb>ul>li{
-        float: none;
-        /* float 없앰! */
-        text-align: center;
-    }
-    .gnb>ul>li>a{
-        font-size: 4vh;
-        line-height: 10vh;
-        /* 메뉴가 6개이므로 줄간격 60vh
-        즉, 보이는 높이값화면의 60%임 */
-        color: #fff;
-        /* 글자색 흰색 */
-    }
-    
     /* 하단영역 */
     #info {
         height: auto;
@@ -126,31 +38,15 @@
     }
 }
 
-/************* 780px 이하 끝 ***************/
 
 
 /************* 600px 이하 시작 *************/
 @media screen and (max-width:600px) {
 
-    /* 타이틀  */
-    /* h1.logo{
-        font-size: 9vw;
-        white-space: nowrap;
-    } */
-
     /* 메인영역 비율변경 */
     #cont.rbx::before {
         padding-top: 150%;
     }
-
-    /* 메인 배경 속성변경 */
-    /* #cont{ */
-        /* background-position: top; */
-        /* 배경위치 top만 쓰면 가로는 자동 center */
-        /* background-size: 130%; */
-        /* 배경크기에 수치를 하나만쓰면 
-        가로크기임(세로자동) */
-    /* } */
 
     /* 스크린 위치,크기조정 */
     #screen {
@@ -189,6 +85,3 @@
     }
 
 }
-
-
-/************* 600px 이하 끝 ***************/
