@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>JS - Slide Images</title>
+    <title>JS - Slide Images 페이드효과</title>
     <link rel="stylesheet" href="css/main.css">
     <!-- 외부JS삽입 -->
     <script src="js/main3.js"></script>
@@ -26,6 +26,12 @@
         #slide li.on{
             opacity: 1;
             z-index: 1;
+        }
+
+        /* 양쪽이동버튼+블릿박스 z-index위로! */
+        .abtn,.indic {
+            z-index: 1;
+            /* 나중것이 위에~! */
         }
 
     </style>
