@@ -1,4 +1,4 @@
-// 쇼핑몰 배너 JS //
+// 쇼핑몰 배너 JS - 세로방향 //
 // 로드구역 ////////////
 window.addEventListener("load", () => {
 
@@ -12,15 +12,15 @@ window.addEventListener("load", () => {
         4. 기능흐름: 
 
         (1) 오른쪽버튼 클릭시 다음슬라이드가
-            나타나도록 슬라이드박스의 left값을
+            나타나도록 슬라이드박스의 top값을
             -100%로 이동시킨다!
         -> 이때 바깥에 나가있는 첫번째 슬라이드 li를 잘라서
         맨뒤로 보낸다! 동시에 lfet값을 0으로 변겅함!
 
         (2) 왼쪽버튼 클릭시
             먼저 맨뒤의 슬라이드 li를 맨앞으로 이동시킨다!
-            이떄 left -100%로 변경한다!
-            이후 left값을 0으로 변경하여 애니메이션함
+            이떄 top -100%로 변경한다!
+            이후 top값을 0으로 변경하여 애니메이션함
         
         5. 추가기능: 슬라이드 위치표시 블릿
         - 블릿대상 : .indic li
@@ -80,8 +80,8 @@ window.addEventListener("load", () => {
         // 2-1. 오른쪽버튼 /////////
         if (dir) { // dir === 1 이면 true
 
-            // (1) 슬라이드박스의 left값을 -100%로 이동
-            slide.style.left = "-100%";
+            // (1) 슬라이드박스의 top값을 -100%로 이동
+            slide.style.top = "-100%";
             slide.style.transition = ".6s ease-out";
 
             // 슬라이드 이동 후 (2),(3) 실행함!
@@ -91,8 +91,8 @@ window.addEventListener("load", () => {
                 slide.appendChild(sli[0]);
                 // appendChild(요소) - 선택요소 맨뒤이동
 
-                // (3) 동시에 left값을 0으로 변경함!
-                slide.style.left = "0";
+                // (3) 동시에 top값을 0으로 변경함!
+                slide.style.top = "0";
                 slide.style.transition = "none";
                 // 트랜지션 없어야 애니메이션 안보임!
 
@@ -110,15 +110,15 @@ window.addEventListener("load", () => {
             // insertBefore(넣을놈, 넣을놈전놈)
             // sli.length-1 -> 컬렉션 마지막번호는 [개수-1]
 
-            // (2) 이떄 left -100%로 변경한다!(트랜지션없음!)
-            slide.style.left="-100%"
+            // (2) 이떄 top -100%로 변경한다!(트랜지션없음!)
+            slide.style.top="-100%"
             slide.style.transition = "none";
 
-            // (3) 이후 left값을 0으로 변경하여 애니메이션함
+            // (3) 이후 top값을 0으로 변경하여 애니메이션함
             // 주의 : 위의 설정코드와 분리를 위해 setTimeout으로
             // 약간의 시차를 줌!
             setTimeout(() => {
-                slide.style.left="0"
+                slide.style.top="0"
                 slide.style.transition = ".6s ease-out";
             }, 10); /// 0.01초 시차! ///
 
