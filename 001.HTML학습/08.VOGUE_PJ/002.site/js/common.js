@@ -9,6 +9,8 @@ window.addEventListener("DOMContentLoaded", () => {
     let scTop;
     // 상단영역 - #top
     let topA = document.querySelector("#top");
+    // 위로가기 버튼 - .tbtn
+    let tbtn = document.querySelector(".tbtn");
 
     /****************************** 
         [윈도우 스크롤 이벤트 함수]
@@ -23,9 +25,25 @@ window.addEventListener("DOMContentLoaded", () => {
         // this는 화살표함수에서 window객체임!
         console.log("스위:", scTop);
 
+        ///////////////////////////////
+        // 상단메뉴 슬림 변경하기 ///////
+        ///////////////////////////////
+
         // 1. 스크롤 위치가 100px 이상일때 
         // 변경사항: #top에 클래스 on 넣기
-        if(scTop >= 100) topA.classList.add("on");
+        if(scTop >= 100) tbtn.classList.add("on");
+
+        // 2. 스크롤 위치가 100px 미만일때(else)
+        // 변경사항: #top에 클래스 on 제거
+        else tbtn.classList.remove("on");
+
+        ///////////////////////////////
+        ///// 위로가기 버튼 보이기기 ////
+        ///////////////////////////////
+
+        // 1. 스크롤 위치가 200px 초과일때 
+        // 변경사항: #top에 클래스 on 넣기
+        if(scTop > 200) topA.classList.add("on");
 
         // 2. 스크롤 위치가 100px 미만일때(else)
         // 변경사항: #top에 클래스 on 제거
