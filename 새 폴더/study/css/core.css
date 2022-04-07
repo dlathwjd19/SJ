@@ -2,8 +2,6 @@
 /* 카툰네트워크 공통핵심 CSS - core.css */
 /* 웹폰트, 공용클래스 */
 
-/*********** 1. 웹폰트 : CDN ***********/
-/* Cute Font, Jua, Audiowide 체 */
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Audiowide&family=Cute+Font&family=Jua&display=swap');
 /* 
     font-family: 'Do Hyeon', sans-serif;
@@ -34,13 +32,13 @@
     right: 0;
 }
 
-/* IR(Image Replacement) 클래스 */
+/* IR(Image Replacement) 클래스
 .ir{
     display: block;
     width: 0;
     height: 0;
     overflow: hidden;
 }
-
+ */
 
 

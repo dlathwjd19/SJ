@@ -6,21 +6,13 @@
 **********************************************/
 function chgMV(pvid){ 
 
-    // 1. 함수호출 확인!
-    // console.log("나아냐", pvid);
-
-    // 2. 대상선정: #screen iframe
     var tg = document.querySelector("#screen iframe");
 
-    // 3. 변경내용: 대상의 src속성 변경하기
+    //  src속성 변경하기
     tg.src = `https://www.youtube.com/embed/${pvid}?autoplay=1&playsinline=1`;
-
-    
-
-}////////// chgMV 함수 ///////
+}
 
 
-////// 로딩구역 //////////
 window.addEventListener("load",() => {
 
     console.log("로딩완료!");
@@ -35,7 +27,7 @@ window.addEventListener("load",() => {
     // 포스터 a요소 클릭시 프로그램 변경하기
     // 대상 : .plist a
     let plink = document.querySelectorAll(".plist a");
-    console.log("a링크개수:",plink.length);
+
     // 클릭이벤트 속성 셋팅
     for(let x of plink){
         x.onclick = () => {
@@ -46,7 +38,6 @@ window.addEventListener("load",() => {
             return false;
             
         }; ///// click 함수 /////
-
     } /////////// for of ////////////
 
     // 포스터 메뉴 li 클릭시 li에 클래스 on넣기
@@ -59,17 +50,17 @@ window.addEventListener("load",() => {
     function resetFn() {
         for (let x of plist)
             x.classList.remove("on");
-    } ////////// restFn 함수 ////////////
+    }
 
     // 대상만큼 click이벤트 설정하기
     // for of 사용!
-    for(let x of plist){
-        x.onclick = ()=>{
-            // 1. 클래스 초기화함수 호출
-            resetFn();
-            // 2. 해당 li요소 클래스 on 넣기
-            x.classList.add("on");
-        }; 
-    }
+    // for(let x of plist){
+    //     x.onclick = ()=>{
+    //         // 1. 클래스 초기화함수 호출
+    //         resetFn();
+    //         // 2. 해당 li요소 클래스 on 넣기
+    //         x.classList.add("on");
+    //     }; 
+    // }
 
-}); ///////// 로딩구역 //////////////////////////
+}); 
