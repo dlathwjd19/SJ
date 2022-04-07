@@ -2,7 +2,7 @@
 /* 카툰네트워크 메인페이지 CSS - main.css */
 
 /* 외부 CSS합치기 */
-@import url(./reset.css);
+@import url(reset.css);
 @import url(core.css);
 
 body{
@@ -17,12 +17,10 @@ body{
 /* 레이아웃 공통클래스 */
 .part{
     max-width: 1200px;
-    /* 최대 1200px, 이하일땐 auto */
     margin: 0 auto;
-    /* 마영오 - 가로중앙 */
 }
 
-/******************************** 1. 상단영역 ********************************/
+/********************** 1. 상단영역 *************************/
 
 /* 1-1. 상단로고 */
 h1.logo{
@@ -37,8 +35,6 @@ h1.logo{
 
 /* a요소 */
 .gnb>ul>li>a{
-    /* a는 inline요소이므로 크기적용안됨! */
-    /* 그래서 block으로 변경! */
     display: block;
     width: 200px;
     line-height: 50px;
@@ -48,12 +44,7 @@ h1.logo{
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     /* 글자테두리 */
     color: #fff;
-    
     text-decoration: none;
-    /* 글자색, 밑줄은 반드시 a요소에서 셋팅! */
-
-    /* 트랜지션: 속시이지 */
-    transition: all .4s;
 }
 /* GNB ul */
 .glist{
@@ -69,11 +60,10 @@ h1.logo{
     position: absolute;
     height: 0;
     overflow: hidden;
-    /* 높이값 0, 넘치는 자식요소 숨기기로 서브안보이게함! */
-    background-color: #d5eeff;
+    /* 높이값 0, 넘치는 자식요소 숨기기로 서브안보이게 */
+    background-color: #fff;
     z-index: 1;
 
-    /* 트랜지션: 속시이지 */
     transition: height .4s ease-out;
 }
 
@@ -110,8 +100,6 @@ h1.logo{
     color: #000;
     text-decoration: none;
 
-    /* 트랜지션: 속시이지 */
-    transition: all .4s;
 }
 /* 서브메뉴 a에 오버시 */
 .subm a:hover{
@@ -124,13 +112,11 @@ h1.logo{
     font-size: 70px;
     top: 0%;
     right: 5%;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-
 }
-/******************************** 2. 메인영역 ********************************/
+
+/*********************** 2. 메인영역 ***********************/
 #cont {
     position: relative;
-    /* 부모자격 (#screen의 부모자격주기위해 relateiv줌) */
 }
 
 #cont::before{
@@ -138,13 +124,10 @@ h1.logo{
 }
 
 /* 2-1. 스크린 박스 */
-/* 비율유지박스 자식으로 위치와 크기를 %로 설정하면
-부모를 따라 자연스럽게 비율유지가 된다!!! */
 #screen{
     position: absolute;
     top: 8%;
     left: 12.3%;
-    /* 위치이동시 부모는? #cont */
     width: 75.6%;
     height: 51.7%;    
     background-color: #fff;   
@@ -156,12 +139,9 @@ h1.logo{
     height: 100%;
     /* w,h부모기준 */
     border: none;
-    /* 아이프레임 기본보더 없앰! */
 }
 .plist>h1{
-    /* position: absolute; */
     left: 17%;
-    /* margin-top:20px; */
     margin-bottom: 5px;
     color: #fff;
     font-size: min(3vw,25px);
@@ -172,9 +152,7 @@ h1.logo{
     position: absolute;
     top: 67%;
     left: 50%;
-    /* 부모는? #cont */
     transform: translateX(-50%);
-    /* x축 중앙이동 -> 정중앙 */
 
 }
 /* ul 플렉스박스 */
@@ -184,44 +162,33 @@ h1.logo{
 /* 각 리스트 */
 .plist ul>li{
     position: relative;
-    /* 부모자격 */    
     overflow: hidden;
-    /* 영화설명 숨기기 
-    - 부모자격이 있는 요소가 숨길수 있음! */
     margin: 0 min(1vw,9px);
-    /* 양쪽 마진만 9px과 1vw중 작은것! */
-   
 }
 
 
 .plist img{
     width: min(15vw,200px);
-    /* min(유동사이즈,특정사이즈) 작은쪽 선택
-    -> 최대크기 지정의 효과! */
-    /* height: 140px; 
-    -> 가로크기만 줘서 비율유지함! */
 }
 
 /* 영화정보박스 */
 .ptxt{
     position: absolute;
     top: 100%;
-    /* 부모는 .mlist ul>li */
     width: min(15vw,200px);
-    /* 이미지 가로크기와 똑같이 잡는다! */
     height: 100%;
 
     background-color: rgba(0, 0, 0, 0.7);
 
     /* 글자셋팅 */
     font-family: 'Do Hyeon', sans-serif;
-    font-size: min(1vw,16px);
+    font-size: min(1.2vw,16px);
     line-height: 1.5;
     text-align: center;
 
     transition: top .4s ease-out .3s;
 }
-/* 부모 li에 마우스 오버시 설명박스 올라오기 */
+/* 마우스 오버시 설명박스 올라오기 */
 .plist ul>li:hover .ptxt{
     top: 0;
 }
@@ -236,10 +203,9 @@ h1.logo{
 }
 
 
-/******************************** 3. 하단영역 ********************************/
+/************************** 3. 하단영역 **************************/
 #info {
     position: relative;
-    /* 부모자격 - .sns */
     height: 100px;
 }
 /* 회사정보 */

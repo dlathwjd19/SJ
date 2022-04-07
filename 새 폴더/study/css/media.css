@@ -34,7 +34,6 @@
     #info address {
         text-align: center;
         padding: 0;
-        /* 기존 패딩 위, 왼쪽 없앰 */
     }
 
     /* 회사정보 */
@@ -52,10 +51,7 @@
     /* sns박스 */
     .sns {
         position: static;
-        /* justify-content: center; */
-        /* padding: 20px 0; */
         text-align: center;
-        
     }
 }
 
@@ -80,14 +76,12 @@
     /* 예고편 선택메뉴 */
     .plist {
         width: 68vw;
-        /* 가로크기지정 */
         top: 45%;
     }
 
     /* ul 플렉스박스 */
     .plist ul {
         flex-wrap: wrap;
-        /* 줄바꿈 */
     } 
 
     /* 포스터 이미지크기 */
