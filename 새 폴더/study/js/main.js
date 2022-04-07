@@ -42,15 +42,15 @@ window.addEventListener("load",() => {
 
     // 포스터 메뉴 li 클릭시 li에 클래스 on넣기
     // 대상: .glist ul>li
-    let plist = document.querySelectorAll(".plist ul>li");
+    // let plist = document.querySelectorAll(".plist ul>li");
 
     // console.log("리스트개수:",plist.length);
 
     // 클래스 초기화 함수 ////////
-    function resetFn() {
-        for (let x of plist)
-            x.classList.remove("on");
-    }
+    // function resetFn() {
+    //     for (let x of plist)
+    //         x.classList.remove("on");
+    // }
 
     // 대상만큼 click이벤트 설정하기
     // for of 사용!
