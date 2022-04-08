@@ -79,7 +79,7 @@
 
         /* circle 설정 */
         .c1 {
-            fill: none;            
+            fill: none;
             /* 채우기 - 긱본색은 검정
             투명(transparent), none(없음)
             */
@@ -115,16 +115,15 @@
             -> 이 값을 0으로 만들면서
             애니메이션한다!!!
             */
-            stroke-dashoffset:310%;
+            stroke-dashoffset: 310%;
             /* 트랜지션: 속시이지 */
             transition: stroke-dashoffset .7s ease-in-out;
-
         }
 
         /* .c1에 마우스 오버시 
         선부터 시작하는 위치로 변경함! */
         .btns:hover .c1 {
-            stroke-dashoffset:0;
+            stroke-dashoffset: 0;
         }
 
         /* 두번째 원 */
@@ -145,23 +144,23 @@
         .btns3 {
             background-image: url(images/doc.jpg);
         }
-        
+
         /* 네번째 원 */
         .btns4 {
-            width: 150px;
+            width: 20%;
+            min-width: 75px;
             background-image: url(images/wan.jpg);
         }
+
         /* 완다 svg */
-        .btns4 svg{
+        .btns4 svg {
+            width: 200%;
             transform: rotate(0);
         }
-            /* width: 70px;
-            height: 300px;
-        } */
 
-        /* .btns4::before {
-            padding-top: 200%;
-        } */
+        .btns4::before {
+            padding-top: 100%;
+        }
 
         /* 마블로고 */
         .marvel svg {
@@ -169,19 +168,20 @@
             top: -50px;
             width: 100%;
         }
-        .marvel{
+
+        .marvel {
             position: fixed;
-            top:10%;
+            top: 10%;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1;
             /* outline: 1px solid red; */
-            
+
             width: 20%;
         }
 
         /* svg text 박스 */
-        .svgtxt{
+        .svgtxt {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -199,7 +199,7 @@
 <body>
     <!-- svg 마블로고 -->
     <div class="marvel">
-        
+
     </div>
 
 
@@ -209,6 +209,14 @@
             <!-- 아이언맨 박스 -->
             <div class="btns">
                 <svg viewBox="0 0 300 300">
+                    <!-- 
+                        viewBox 속성을 셋팅해야 크기가 자유롭게
+                        축소, 확대 변경된다!!!
+                        viewBox="x축 y축 가로크기 세로크기"
+                        원본크기를 써준다!
+                        viewBox 속성은 대소문자를 구분한다!!!
+                        (그런데 브라우저가 소문자로 써도 자동변환함!)
+                     -->
                     <circle class="c1" cx="150" cy="150" r="140"></circle>
                 </svg>
             </div>
@@ -227,12 +235,12 @@
                 <svg viewBox="0 0 300 300">
                     <defs>
                         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stop-color="red"></stop>
-                          <stop offset="30%" stop-color="pink"></stop>
-                          <stop offset="60%" stop-color="orange"></stop>
-                          <stop offset="100%" stop-color="blue"></stop>
+                            <stop offset="0%" stop-color="red"></stop>
+                            <stop offset="30%" stop-color="pink"></stop>
+                            <stop offset="60%" stop-color="orange"></stop>
+                            <stop offset="100%" stop-color="blue"></stop>
                         </linearGradient>
-                      </defs>
+                    </defs>
                     <circle class="c1" cx="150" cy="150" r="140" style="stroke:ulr(#grad1)"></circle>
                     <!-- circle에 스타일 적용으로 
                     stroke:url(#그라데이션아이디)
@@ -247,12 +255,12 @@
                 <svg viewBox="0 0 300 300">
                     <defs>
                         <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stop-color="green"></stop>
-                          <stop offset="30%" stop-color="yello"></stop>
-                          <stop offset="60%" stop-color="pupple"></stop>
-                          <stop offset="100%" stop-color="orangered"></stop>
+                            <stop offset="0%" stop-color="green"></stop>
+                            <stop offset="30%" stop-color="yello"></stop>
+                            <stop offset="60%" stop-color="pupple"></stop>
+                            <stop offset="100%" stop-color="orangered"></stop>
                         </linearGradient>
-                      </defs>
+                    </defs>
                     <ellipse class="c1" cx="75" cy="150" rx="140" ry="65" transform="rotate(-90,75,150)"></ellipse>
                 </svg>
             </div>
@@ -261,8 +269,29 @@
 
     <!-- svg text -->
     <div class="svgtxt">
-        
+        <svg>
+            <text>
+                <defs>
+                    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="red"></stop>
+                        <stop offset="30%" stop-color="pink"></stop>
+                        <stop offset="60%" stop-color="orange"></stop>
+                        <stop offset="100%" stop-color="blue"></stop>
+                    </linearGradient>
+                </defs>
+                <tspan font-size="50" x="0" y="40">
+                    Avengers
+                </tspan>
+                <tspan font-size="60" x="10" dy="80">
+                    End Game
+                </tspan>
+            </text>
+        </svg>
     </div>
+
+    <!-- svg 요소를 symbol요소로 셋업 -->
+     <!-- 본 박스는 안보이게 처리함 -->
+     
 
     <!-- 
         [ SVG란? ]
@@ -329,6 +358,7 @@
         
         [ svg코드가 복잡하므로 아래쪽에 별도의 공간에 분리 후 호출하는 코드 ]
         1. 본 svg 태그 안에 이렇게 코딩:
+        
         <use xlink:href="#아이디명"></use>
 
         2. 아랫쪽 별도의 태그 안에 실제 svg 코드
@@ -338,11 +368,30 @@
             </symbol>
         </svg>
         
+        [ svg  축소확대용 속성 ]
+        viewBox 속성: (주의! 속성명 B대문자 필수! 대소문자구분!)
+        - 형식 : viewBox="x축위치 y축위치 width크기 height크기"
+        - 위의 형식의 값은 4가지이고 각 값은 띄어쓰기로 구분한다!
+        - 각 속성값의 특성
+            1) x축위치, y축위치는 양수값은 스테이지 바깥쪽방향이동
+            음수값은 스테이지 안쪽방향이동
+            -> 스테이지 보다 큰 svg 이미지가 있다면 위치를 이동해서
+            특정 이미지만 보이게 하는데 사용한다!!!
 
+            2) width크기, height크기는 svg원본 크기를 지정하는 부분이다.(현재 보이는 영역의 스테이지 크기설정)
+            -> 이 값의 width크기를 실제크기와 다르게 조정할 경우
+            값이 원본보다 커지면 보이는 벡터이미지는 작게 표현된다!
+            (값이 작아지면 크게표현됨)
+            -> height 크기는 벡터 그래픽의 세로영역을 확장하는데 사용
+
+            [ viewBox의 가장 일반적인 셋팅은? ]
+            viewBox="0 0 원래가로크기 원래세로크기"
+            -> 이 셋팅을 하면 스테이지가 크기 변경을 할때 svg의
+            크기를 비율을 유지하여 축소확대를 하게된다!
 
      -->
 
-     
+
 
 </body>
 
