@@ -43,11 +43,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // 1. 스크롤 위치가 100px 이상일때 
         // 변경사항: #top에 클래스 on 넣기
-        if(scTop >= 100) tbtn.classList.add("on");
+        if(scTop >= 100) topA.classList.add("on");
 
         // 2. 스크롤 위치가 100px 미만일때(else)
         // 변경사항: #top에 클래스 on 제거
-        else tbtn.classList.remove("on");
+        else topA.classList.remove("on");
 
         ///////////////////////////////
         ///// 위로가기 버튼 보이기기 ////
@@ -55,11 +55,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // 1. 스크롤 위치가 200px 초과일때 
         // 변경사항: #top에 클래스 on 넣기
-        if(scTop > 200) topA.classList.add("on");
+        if(scTop > 200) tbtn.classList.add("on");
 
         // 2. 스크롤 위치가 100px 미만일때(else)
         // 변경사항: #top에 클래스 on 제거
-        else topA.classList.remove("on");
+        else tbtn.classList.remove("on");
 
 
         //////////////////////////////////////
@@ -73,7 +73,9 @@ window.addEventListener("DOMContentLoaded", () => {
         scPos.forEach((val,idx)=>scAction(idx));
 
 
+
     }); //////////////// scroll /////////////////
+
 
     /*********************************************** 
         ** 원리:
@@ -121,7 +123,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-
     /************************************************** 
         [윈도우 세로 스크롤 위치값 가져오는 방법]
 
@@ -137,7 +138,6 @@ window.addEventListener("DOMContentLoaded", () => {
             로 바꿔서 위와 동일함!
 
     **************************************************/
-
 
 
 }); ////////////////// 로드구역 //////////////////////
