@@ -119,7 +119,8 @@
 /* 상위메뉴 li에 오버시 하위메뉴 보이기 */
 .smbx>li:hover .smsub{
     opacity: 1;
-    height: auto; /* 원래 height값 복원! */
+    height: auto; 
+    /* 원래 height값 복원! */
 
     /* 트랜지션 -> 오버시에만 주면 오버시에만 적용됨! */
     transition: opacity .4s ease-in-out;
