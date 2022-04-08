@@ -54,7 +54,11 @@ window.addEventListener("DOMContentLoaded", () => {
         ///////// 등장액션 클래스 추가 /////////
         //////////////////////////////////////
         
-        
+       // 현재 스크롤 위치가 등장할 요소의 위치범위에
+       // 있다면 등장해라!
+       if(scTop > scPos[0]-winH && scTop < scPos[0]){
+            scAct[0].classList.add("on");
+       } 
 
 
 
@@ -83,6 +87,10 @@ window.addEventListener("DOMContentLoaded", () => {
     } //////////// for ////////////////
 
     console.log(scPos);
+
+    // 스크롤 등장위치 조정값 : 윈도우 화면크기의 2 / 3
+    const winH = (window.innerHeight / 3) * 2 ;
+    console.log("윈도우높이절반",winH);
 
 
 
