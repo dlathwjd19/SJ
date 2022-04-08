@@ -88,9 +88,9 @@ window.addEventListener("DOMContentLoaded", () => {
     ***********************************************/
     // 스크롤 등장 대상요소
     let scAct = document.querySelectorAll(".scAct");
-    // 스크롤 등장 대상위치 배욜
+    // 스크롤 등장 대상위치 배열
     let scPos = [];
-    // 대상요소만큼 for문 돌기 -> for of
+    // 대상요소만큼 for문 돌기
     for(let i=0; i<scAct.length; i++){
         scPos[i] = scAct[i].offsetTop;
     } //////////// for ////////////////
