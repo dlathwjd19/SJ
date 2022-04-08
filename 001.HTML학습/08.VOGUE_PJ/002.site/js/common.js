@@ -5,7 +5,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     console.log("로딩완료!");
 
-    // 부드러운 스크롤
+    /// 부드러운 스크롤 호출!
+    startSS();
+
 
     // 스크롤값 변수
     let scTop;
@@ -13,6 +15,14 @@ window.addEventListener("DOMContentLoaded", () => {
     let topA = document.querySelector("#top");
     // 위로가기 버튼 - .tbtn
     let tbtn = document.querySelector(".tbtn");
+
+    //// 위로가기 버튼 클릭시 맨위로 이동하기 /////
+    // 부드러운 스크롤 위치변수 pos 값을 0주면 됨!
+    tbtn.onclikc = () => {
+        pos = 0; // 맨 위로 가기!
+        return false;
+        // a요소 기본이동 막기
+    }; ////// click //////
 
     /****************************** 
         [윈도우 스크롤 이벤트 함수]
@@ -25,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
         scTop = this.scrollY;
         // scrollY - 세로축 스크롤 위치값 리턴
         // this는 화살표함수에서 window객체임!
-        console.log("스위:", scTop);
+        // console.log("스위:", scTop);
 
         ///////////////////////////////
         // 상단메뉴 슬림 변경하기 ///////
