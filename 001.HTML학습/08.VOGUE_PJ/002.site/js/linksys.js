@@ -12,6 +12,10 @@ $(()=>{ //////////////////// JQB /////////////////////////
         // toLowerCase() - 소문자로 변환!
         // 참고) toUpperCase() - 대문자로 변환
         console.log("메뉴글자:",txt);
+
+        // "search" 만 아니면 카테고리 페이지로 보냄
+        if(txt!=="search")
+            location.href = "category.html?cat="+txt;
     }); ////// click ///////
 
 }); ////////////////////// JQB /////////////////////////
