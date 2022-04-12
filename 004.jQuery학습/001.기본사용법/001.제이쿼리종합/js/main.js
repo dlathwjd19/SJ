@@ -9,14 +9,14 @@ $(() => { ////////////jQB ///////////////////
     *****************************************/
     // 대상1 : 버튼들 - .btns>button
     let btns = $(".btns>button");
-    //    console.log("버튼개수:",btns.length);
+    // console.log("버튼개수:",btns.length);
 
     // 대상2 : 미니언즈 - .mi
     let mi = $(".mi");
 
     // 대상3 : 빌딩 각 방 - .building li
     let bd = $(".building li");
-    //    console.log("방수:",bd.length);
+    // console.log("방수:",bd.length);
 
     // 대상4 : 메시지 박스 - .msg
     let msg = $(".msg");
@@ -37,7 +37,7 @@ $(() => { ////////////jQB ///////////////////
                     2. 초기화 셋팅
     *******************************************************/
     // 2-1. 버튼셋팅 : 모든 버튼 숨기고 첫번재만 보이게함
-    //    btns.hide().first().show();
+    // btns.hide().first().show();
     // 버튼들.숨겨().첫번째().보여()
     // 중간 테스트를 위한 버튼 보이기 셋팅
     btns.hide().eq(0).show();
