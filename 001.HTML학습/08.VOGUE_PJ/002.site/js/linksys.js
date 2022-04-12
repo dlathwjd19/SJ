@@ -9,7 +9,11 @@ $(()=>{ //////////////////// JQB /////////////////////////
 
     // GNB메뉴 a요소 클릭시 링크 연결하기
 
-    $(".gnb a").click(function(){
+    $(".gnb a").click(function(e){
+
+        // a 요소 기본이동기능 막기
+        e.preventDefault();
+        
         let txt = $(this).text().trim().toLowerCase();
         // trim() - 앞뒤공백 제거!
         // toLowerCase() - 소문자로 변환!
@@ -19,6 +23,8 @@ $(()=>{ //////////////////// JQB /////////////////////////
         // "search" 만 아니면 카테고리 페이지로 보냄
         if(txt!=="search")
             location.href = "category.html?cat="+txt;
+
+            
     }); ////// click ///////
 
 }); ////////////////////// JQB /////////////////////////
