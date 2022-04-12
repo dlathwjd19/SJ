@@ -4,6 +4,9 @@ $(()=>{ //////////////////// JQB /////////////////////////
 
     console.log("로딩완료!");
 
+    // 메인 로고 클릭시 첫페이지로 이동하기
+    $(".logo a").click(()=>location.href="index.html")
+
     // GNB메뉴 a요소 클릭시 링크 연결하기
 
     $(".gnb a").click(function(){
