@@ -43,10 +43,29 @@ $(()=>{ /////////////// jQB ////////////////////////
     `); ///// before //////
 
     // 로그인, 회원가입, 갤러리 클릭시 페이지이동하기
-    $(".sns a").click(function(){
+    $(".sns a").click(function(e){
+        // 1. 기본기능막기
+        e.preventDefault();
+
+        // 2. 내부 텍스트
         let txt =$(this).text().trim();
         console.log("sns텍스트:",txt);
-    }); //////// click ////////
+
+        // 3. 분기하기
+        let url;
+        switch(txt){
+            case "로그인": url="login"; break;
+            case "회원가입": url="member"; break;
+            case "갤러리": url="gallery"; break;
+            default: url="esc";
+        }  ////////////// switch //////////////
+
+        // 4. 페이지 이동하기
+        if(url!=="esc")
+            location.href = url+".html";
+            
+
+    }); ////////// click ////////////
 
 
 }); /////////////////// jQB ////////////////////////
