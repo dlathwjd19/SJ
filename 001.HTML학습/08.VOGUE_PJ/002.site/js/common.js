@@ -34,7 +34,8 @@ window.addEventListener("DOMContentLoaded", () => {
     let tbtn = document.querySelector(".tbtn");
 
     /// 위로가기버튼 클릭시 맨위로 이동하기 ////
-    $(".tbtn").click((=>{
+    // 모바일에서 스크롤 없이 스와이퍼 이동시 무작동해결!
+    $(".tbtn").click(()=>{
         // 제이쿼리 스크롤 애니메이션
         $("html,body").animate({
             scrollTop:"0"
