@@ -44,56 +44,7 @@ font-family: 'Roboto Condensed', sans-serif;
     /* padding-top: 50%; */
 }
 /* 박스종류별 비율변경적용 */
-/* 파티션1개박스 */
-.pt1.rbx::before{
-    padding-top: 55.69%;
-    /* 
-        비율계산-> 가로크기:세로크기=100:x
-        x = 세로크기 * 100 / 가로크기
-        724 * 100 / 1300 = 55.69
-    */
-}
-/* 파티션3개박스 */
-.pt3.rbx::before{
-    padding-top: 50%;
-    /* 
-        비율계산-> 가로크기:세로크기=100:x
-        x = 세로크기 * 100 / 가로크기
-        650 * 100 / 1300 = 50
-    */
-}
-/* 비율유지속박스 */
-.rbxIn{
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-/* 한개짜리 파티션 박스의 높이값 100% */
-.pt1 .cbx{
-    height: 100%;
-}
 
-/* 컨텐츠박스 */
-.cbx{
-    position: relative;
-    /* 부모자격 */
-}
-/* 가상요소로 반투명 검정배경 그라데이션 넣기 */
-/* h2보다 먼저그려지도록 ::before사용!(아래위치) */
-.cbx::before{
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background-image: 
-    linear-gradient(
-        to top,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0));
-}
 
 /* 컨텐츠박스 가상요소로 보더애니 구현 */
 .cbx::after{

@@ -3,10 +3,64 @@
 
 /* 외부파일합치기 */
 @import url(reset.css);
-@import url(core.css);
-@import url(common.css);
+/* @import url(core.css); */
+/* @import url(common.css); */
 
 /* 박스표시 */
 body * {
-    outline: 1px dashed gray;
+    outline: 1px dashed red;
+}
+/* 속박스 */
+.ibx{
+    max-width: 1200px;
+    /* height:; */
+    margin: 0 auto;
+    
+}
+/* 상단 */
+.top{
+    /* height: auto; */
+    height: 72px;
+    background-color: #41414c;
+}
+.head{
+    position: relative;
+}
+
+h1.logo{
+    position: absolute;
+}
+.logo img{
+    margin: 1% 0;
+}
+.member{
+    position: absolute;
+    top: 15%;
+    margin-top: -25px;
+    right: 1%;
+
+}
+
+.member ul{
+    /* position: relative; */
+    display: flex;
+    /* right: 50%; */
+}
+
+.member ul li{
+    padding: 8px 12px;
+}
+.member>ul>li>a{
+    color: #fff;
+}
+
+.gnb ul{
+    display: flex;
+
+}
+.gnb>ul>li{
+    padding: 8px 12px;
+}
+.gnb>ul>li>a{
+    color: #fff;
 }
