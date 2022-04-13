@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
         },300);
         // 스크롤 위치값 업데이트
         pos=0;
-    }));
+    }); /////// click ////////
 
 
     // 부드러운 스크롤 위치변수 pos값을 0주면됨!
