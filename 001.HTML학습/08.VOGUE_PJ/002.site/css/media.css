@@ -14,6 +14,18 @@
     .logo img{
         width: 130px;
     }
+    /* 2.5. 상단 부모박스 */
+    #top{
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        background-color: #fff;
+        box-shadow: none;
+    }
+    /* body상단밀기 - #top때문에 첫번째 박스 밀기 */
+    body{
+        padding-top: 57px;
+    }
     /* 3. 상단중앙박스 */
     .top{
         padding: 10px;
