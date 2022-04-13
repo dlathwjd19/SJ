@@ -14,6 +14,25 @@ $(()=>{ /////////////// jQB ////////////////////////
     $(".sbtn").click(
         ()=>$(".mos").slideToggle(300));
 
+    // 로그인, 회원가입, 갤러리 html코드
+    let htcode = `
+    <a href="#" class="fi fi-laptop" title="로그인">
+        <span class="ir">
+            로그인
+        </span>
+    </a>
+    <a href="#" class="fi fi-user-secret" title="회원가입">
+        <span class="ir">
+            회원가입
+        </span>
+    </a>
+    <a href="#" class="fi fi-camera" title="갤러리">
+        <span class="ir">
+            갤러리
+        </span>
+    </a>
+    `;
+
     // 로그인, 회원가입, 갤러리 아이콘 넣기
     // 대상: .sns a:last-child 
     // 변경: 대상요소 앞에 a요소 삽입하기
@@ -24,26 +43,18 @@ $(()=>{ /////////////// jQB ////////////////////////
         // a요소 각각에 title로 내부글자를 넣어준다!
         $(this).attr("title",$(this).text().trim());
     }) ////// each ///////
-    .last().before(`
-        <a href="#" class="fi fi-laptop" title="로그인">
-            <span class="ir">
-                로그인
-            </span>
-            </a>
-        <a href="#" class="fi fi-user-secret" title="회원가입">
-            <span class="ir">
-                회원가입
-            </span>
-        </a>
-        <a href="#" class="fi fi-camera" title="갤러리">
-            <span class="ir">
-                갤러리
-            </span>
-        </a>
-    `); ///// before //////
+    .last().before(htcode);
+
+    // 모바일에 요소 추가!
+    $(".mosns a").last().before(htcode)
+    // 선택자.마지막().이전요소추가(코드)
+    .parent().find("a").eq(3).after("<br>");
+    // .부모().찾기("a").순번(4번째).다음요소추가("<br>")
 
     // 로그인, 회원가입, 갤러리 클릭시 페이지이동하기
-    $(".sns a").click(function(e){
+    // 클릭시 구조가 동일한 모바일도 그룹셋팅!
+    // .sns a + .mosns a
+    $(".sns a, .mosns a").click(function(e){
         // 1. 기본기능막기
         e.preventDefault();
 
@@ -63,7 +74,7 @@ $(()=>{ /////////////// jQB ////////////////////////
         // 4. 페이지 이동하기
         if(url!=="esc")
             location.href = url+".html";
-            
+
 
     }); ////////// click ////////////
 
