@@ -19,7 +19,12 @@ $(()=>{ /////////////// jQB ////////////////////////
     // 변경: 대상요소 앞에 a요소 삽입하기
     // 메서드: before(요소) -> 선택요소 앞에 형제삽입
     // -> 참고비교) after(요소) -> 선택요소 뒤에 형제삽입
-    $(".sns a").last().before(`
+    $(".sns a")
+    .each(function(){
+        // a요소 각각에 title로 내부글자를 넣어준다!
+        $(this).attr("title",$(this).text().trim());
+    }) ////// each ///////
+    .last().before(`
         <a href="#" class="fi fi-laptop" title="로그인">
             <span class="ir">
                 로그인
@@ -42,7 +47,7 @@ $(()=>{ /////////////// jQB ////////////////////////
         let txt =$(this).text().trim();
         console.log("sns텍스트:",txt);
     }); //////// click ////////
-    
+
 
 }); /////////////////// jQB ////////////////////////
 
