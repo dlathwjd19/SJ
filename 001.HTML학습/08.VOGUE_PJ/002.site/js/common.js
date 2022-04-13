@@ -14,6 +14,29 @@ $(()=>{ /////////////// jQB ////////////////////////
     $(".sbtn").click(
         ()=>$(".mos").slideToggle(300));
 
+    // 로그인, 회원가입, 갤러리 아이콘 넣기
+    // 대상: .sns a:last-child 
+    // 변경: 대상요소 앞에 a요소 삽입하기
+    // 메서드: before(요소) -> 선택요소 앞에 형제삽입
+    // -> 참고비교) after(요소) -> 선택요소 뒤에 형제삽입
+    $(".sns a").last().before(`
+        <a href="#" class="fi fi-laptop" title="로그인">
+            <span class="ir">
+                로그인
+            </span>
+            </a>
+        <a href="#" class="fi fi-user-secret" title="회원가입">
+            <span class="ir">
+                회원가입
+            </span>
+        </a>
+        <a href="#" class="fi fi-camera" title="갤러리">
+            <span class="ir">
+                갤러리
+            </span>
+        </a>
+    `);
+
 }); /////////////////// jQB ////////////////////////
 
 
