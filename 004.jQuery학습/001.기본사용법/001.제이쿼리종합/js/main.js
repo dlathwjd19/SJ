@@ -509,7 +509,32 @@ $(() => { ////////////jQB ///////////////////
                     $(this)
                     .animate({ // li가로크기보다 조금 더 이동
                         right: bd.eq(1).width()*1.3+"px"
-                    },5000,"easeInOutQuint")
+                    },5000,"easeInOutQuint");
+
+                    // 2-2. 헬기등장
+                    $(".heli").animate({
+                        left:"20%"
+                    },3000,"easeOutBack",
+                    function(){ // 콜백함수
+                        // 3. 주인공이 탄 이미지로 변경
+                        $(this).attr("src","images/heli2.png");
+                        // 4. 주인공 지우기(헬기에 탔으니까!)
+                        mi.hide(); // display:none처리
+                    }) /////////// animate ////////
+                    // 헬기 애니메이션 이어짐
+                    .delay(1000) // 5. 1초 기다림
+                    .animate({// 6. 오른쪽 끝으로 이동
+                        left:"70%"
+                    },4000,"easeInOutQuart",
+                    function(){ // 끝으로 이동 후 
+                        // 7. 헬기 조정사 좀비이미지
+                        $(this).attr("src","images/heli3.png");
+                    }) /////// animate ////////
+                    // 헬기애니 이어짐!!!
+                    // 8. 아주 천천히 화면 바깥으로 나감
+                    .animate({
+                        left:"100%"
+                    },10000,"easeInOutSine")
                 })
 
 
