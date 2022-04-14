@@ -38,6 +38,36 @@ $(()=>{ ////////////////////// jQB ////////////////////////
             // prepend(맨뒤div)
         } //////// else ////////
 
+        // 자동넘김 지우기
+        clearInterval(autoI);
+        clearTimeout(autoT);//쓰나미실행방지!
+        // 일정시간후 자동호출!
+        autoT = setTimeout(autoCall,4000);
+        // 4초후 자동넘김함수 호출!
+
     }); //////////// click //////////////
+
+
+
+    // 인터발함수
+    let autoI;
+    // 타임아웃용 변수
+    let autoT;
+
+    // 자동 넘김 함수 /////
+    const autoCall = ()=>{
+        autoI = setInterval(()=>{
+            gbx.append(gbx.find("div").first());
+        },2000);
+
+        // $(".rb").trigger("click");
+        // trigger(이벤트)->이벤트강제발생!
+
+    }; ///////// autoCall 함수 //////////
+
+    // 자동넘김함수 최초호출!
+    autoCall();
+
+
 
 }); ////////////////////// jQB /////////////////////////////
