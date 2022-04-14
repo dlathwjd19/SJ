@@ -26,6 +26,8 @@ $(()=>{ //////////////////// jQB ///////////////////////
    $(`input[type=text][id!=email2][class!=search],
    input[type=password]`)
    .blur(function(){ /////// blur /////////////
+
+        // 방금 블러발생한 요소의 id는?
         let cid = $(this).attr("id");
         // cid 는 current id 즉, 현재 아이디
         // attr(속성명) -> 해당속성값을 읽어옴!
@@ -34,7 +36,6 @@ $(()=>{ //////////////////// jQB ///////////////////////
         let cv = $(this).val();
         // cv 는 current value 즉, 현재값
         // val() -> 선택요소의 입력값을 읽어옴!
-
 
         console.log("블러발생!",cid,cv);
 
