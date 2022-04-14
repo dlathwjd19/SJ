@@ -14,7 +14,7 @@ $(()=>{ //////////////////// jQB ///////////////////////
         아닌 type이 "text"인 입력요소 input
 
         >>> 제이쿼리 선택표현법:
-        input[tytp=text][id!=email2][class!=search]
+        input[type=text][id!=email2][class!=search]
         >>> 대괄호[]는 속성선택, != 같지않다(제이쿼리전용)
 
         -> type이 "password"인 입력요소 input
@@ -23,6 +23,22 @@ $(()=>{ //////////////////// jQB ///////////////////////
         input[type=password]
 
     **********************************************/
+   $(`input[type=text][id!=email2][class!=search],
+   input[type=password]`)
+   .blur(function(){ /////// blur /////////////
+        let cid = $(this).attr("id");
+        // cid 는 current id 즉, 현재 아이디
+        // attr(속성명) -> 해당속성값을 읽어옴!
+
+        // 블러발생한 요소의 입력값은?
+        let cv = $(this).val();
+        // cv 는 current value 즉, 현재값
+        // val() -> 선택요소의 입력값을 읽어옴!
+
+
+        console.log("블러발생!",cid,cv);
+
+   }); //////////////// blur //////////////////
 
 
 
