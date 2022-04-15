@@ -131,7 +131,7 @@ $(() => { //////////////////// jQB ///////////////////////
                         },
 
                         // 4. 전송할데이터 타입
-                        dataType:"html",
+                        dataType: "html",
 
                         // 5. 비동기옵션
                         // 비동기 옵션을 꺼야(fasle)
@@ -139,25 +139,36 @@ $(() => { //////////////////// jQB ///////////////////////
                         async: false,
 
                         // 6. 성공처리: 중복안함 ok, 중복은 no
-                        success: function(res){
-                            console.log("결과:",res);
+                        success: function (res) {
+                            console.log("결과:", res);
+                            if (res === "ok") { // 사용가능
+                                $("#mid").siblings(".msg")
+                                    .text("훌륭한 아이디네요~!")
+                                    .addClass("on");
+                                // 클래스 on넣으면 녹색글자
+                            } ////// if //////
+                            else { // 사용불가
+                                $("#mid").siblings(".msg")
+                                .text("사용중인 ID입니다")
+                                .removeClass("on");
+
+                                // 불통과!!!
+                                pass = false;
+                                
+                            } ///// else /////
+
                         }, ///// success //////
-                        
+
                         // 7. 실패처리
                         // xhr - XMLHttpRequest 객체
                         // status - 실패상태코드번호
                         // error - 에러결과 메시지
-                        error: function(xhr,status,error){
-                            alert("연결실행실패:",error);
+                        error: function (xhr, status, error) {
+                            alert("연결실행실패:", error);
                         } /////// errer /////
 
                     }); /////////// ajax ////////////////
 
-
-                    $(this).siblings(".msg")
-                        .text("훌륭한 아이디네요~!")
-                        .addClass("on");
-                    // 클래스 on넣으면 녹색글자
 
                 } ///////// else : 아이디 검사 통과 /////////
 
