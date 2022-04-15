@@ -150,7 +150,8 @@ $(() => { //////////////////// jQB ///////////////////////
                         error: function(xhr,status,error){
                             alert("연결실행실패:",error);
                         } /////// errer /////
-                    })
+
+                    }); /////////// ajax ////////////////
 
 
                     $(this).siblings(".msg")
