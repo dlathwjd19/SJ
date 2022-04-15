@@ -14,8 +14,8 @@ $(() => { //////////////////////// jQB //////////////////////
     // 사이즈별 슬라이드 개수, 간격 동적변경셋팅
     // Responsive breakpoints
     breakpoints: {
-      // when window width is >= 500px
-      500: {
+      // when window width is >= 200px
+      200: {
         slidesPerView: 1,
         spaceBetween: 0
       },
