@@ -21,79 +21,43 @@ body {
     /* 가로스크롤바 없앰! */
 }
 
+html, body{
+    overflow: hidden;
+    /* 스크롤바 없앰 */
+    width: 100%;
+    height: 100%;
+}
+
 /* 기본태그 초기화 - 마진,패딩 없애기 */
-html,
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-ol,
-dl,
-dt,
-dd {
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd {
     margin: 0;
     padding: 0;
 }
 
 /* 헤딩태그 글자크기 초기화 */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
     font-size: 100%;
     /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
     기본글자크기는 16px */
 }
 
 /* ul,ol초기화 */
-ul,
-ol {
+ul,ol {
     list-style: none;
     /* 블릿 표시자 없앰 */
 }
 
-
 /* 작업진행중 외곽선 */
-/* 별표시(*)는 모든요소를 선택시 사용 */
 body * {
     outline: 1px dashed gray;
 }
 
-
 /* 컨텐츠 파트 최상위부모 */
 body {
-
     background-color: antiquewhite;
 }
 
 /********** 공통 클래스 **********/
-
-/* 스크롤바 디자인 클래스 */
-/* -webkit- 벤더사명(크롬,사파리) 접두어 */
-.scbar::-webkit-scrollbar {
-    /* 전체 스크롤바 크기변경 */
-    width: 7px;
-}
-
-.scbar::-webkit-scrollbar-thumb {
-    /* 스크롤바 */
-    background-color: #666;
-    border-radius: 5px;
-}
-
-.scbar::-webkit-scrollbar-track {
-    /* 스크롤바 트랙 */
-    background-color: #ddd;
-    border-radius: 5px;
-}
-
-
 
 
 /* 속박스 클래스 */
@@ -122,6 +86,7 @@ body {
     /* 애니메이션: 이시이지반방마 */
     /* animation: topAni .8s ease-out 6s forwards; */
 }
+
 .top {
     /* 속박스 */
     height: 96px;
@@ -136,35 +101,28 @@ body {
 }
 
 /*********** sns메뉴 ***********/
-.snsbx{ /* 최상위박스 */
+.member {
     position: absolute;
-    top: 50px;
-    left: 55%;
-    transform: translateX(-50%);
-    /* x축방향으로 자기크기의 절반 반대방향이동(중앙정렬) */
-    width: 1200px;
-    max-width: 100%;
-    /* 1200px이었다가 화면이 작아지면 100%로 변경! */
-    /* outline: 2px dotted blue; */
+    top: 50%;
+    /* margin-top: -25px; */
+    right: 7%;
+
 }
-.sns{
+
+.member ul {
+    /* position: relative; */
     display: flex;
-    justify-content: flex-end;
+    /* right: 50%; */
+    align-items: center;
 }
 
-
-.sns li{
-    float: left;
-    margin: 0 5px;
+.member ul li {
+    padding: 0px 10px;
 }
 
-.sns a{   
+.member>ul>li>a {
     color: #fff;
-    text-decoration: none;
-
-    font-family: 'Nanum Gothic', sans-serif;
     font-size: 1.5rem;
-    line-height: 30px;
 }
 
 /********** GNB 메뉴 **********/
@@ -176,10 +134,11 @@ body {
     /* x축방향으로 자기크기의 절반 반대방향이동(중앙정렬) */
 }
 
-.fll{
+.fll {
     display: flex;
     /* justify-content: center; */
 }
+
 /* .gnb>ul {
     width: 861px;
     margin: 0px auto;
@@ -204,6 +163,7 @@ body {
     /* 미리보더를 만들고 하위메뉴에 영향이 없도록함! */
 
 }
+
 /* li에 마우스 오버시 a요소 디자인 변경 */
 .gnb>ul>li:hover>a {
     /* background-color: #d5eeff; */
@@ -214,6 +174,7 @@ body {
     height: 315px;
     border-bottom: 3px solid #4571ff;
 }
+
 .gnb>ul::after {
     content: '';
     display: block;
@@ -245,11 +206,13 @@ body {
     transition: height .4s ease-out;
 
 }
+
 /* 상위 ul에 마우스 오버시 서브메뉴 전체보이기 */
 .gnb>ul:hover>li .smenu {
     height: 315px;
 }
-.smenu>li{
+
+.smenu>li {
     text-align: center;
 }
 
@@ -257,6 +220,7 @@ body {
 .smenu ol {
     padding: 20px;
 }
+
 /* 서브메뉴 구분선 */
 /* .smenu::before {
     content: "";
@@ -279,15 +243,15 @@ body {
     color: #222;
     text-decoration: none;
 }
+
 /* 서브메뉴 a에 오버시 */
 .smenu a:hover {
     background-color: #f0f0f0;
     color: #ff5411;
 }
 
-
 /* 모바일용 햄버거 버튼 */
-.ham{
+.ham {
     position: absolute;
     top: 18px;
     right: 20px;
@@ -301,384 +265,24 @@ body {
 
     /* 모바일 아닐때 안보임 */
     display: none;
-
 }
+
 /* 버튼모양 변경위해 가상요소로 내용넣기! */
-.ham::before{
+.ham::before {
     content: '≡';
 }
+
 /* 크롬브라우저 포커스 아웃라인 없애기 */
-.ham:focus{
+.ham:focus {
     outline: none;
 }
 
 
 
-
-
 /********************************* 2. 메인영역 *********************************/
-.cont {
-    max-width: 1920px;
-    /* 가장 큰 일반 해상도 크기로 최대가로크기 변경! */
-    height: 800px;
-    overflow: hidden;
-    /* 자식요소 마진탑포함! */
-    padding-bottom: 150px;
-}
 
-/* 캐릭터 부모박스 */
-#cbx {
-    width: 90%;
-    /* 부모박스크기의 90%가로크기 */
-    margin: 0 auto;
-    /* 마영오! - 블록가로중앙 */
-    margin-top: 527px;
-    /* 윗쪽마진 400px+127px(#top만큼)로 설정 */
-    /* height: 300px; */
-    /* background-color: rgba(144, 238, 144, 0.637); */
-
-    /* overflow: hidden; */
-    /* float해제를 위해! 
-    -> 자식요소가 위로 올라갈때 가려져서 쓸 수 없음!!! */
-    /* -> 가상요소로 마지막에 float해제설정하기! */
-}
-
-/* 가상요소로 clear설정하기! */
-#cbx::after {
-    content: '';
-    display: block;
-    /* div와 비슷 */
-    clear: both;
-    /* float을 끊어서 부모가 자식을 인식함! */
-}
-
-/* 캐릭터박스 공통 */
-.cat {
-    /* 4등분 가로 크기는 몇%? 25% */
-    width: 24%;
-    /* 25% - 1%(양쪽마진) = 24% */
-    margin: 0 .5%;
-    /* margin: 0 0.5%; */
-    /* 양쪽마진은 0.5%씩 2개이므로 합이 1%임
-    이를 크기에 반영한다! 
-    참고) 0.몇 이런수치값은 보통 0을 생략하는 경우가 많다*/
-    float: left;
-    /* 
-        [ 블록요소를 옆으로 흘러가게 하기!!! ]
-        float속성
-        -> left 값은 나는 왼쪽에 너는 오른쪽에 올라와!
-        -> right 값은 나는 오른쪽에 너는 왼쪽에 올라와!
-
-        [ 자식요소가 float된 경우 부모요소는 높이값 0? ]
-        -> 블록 자식요소 float으로 인해 부모요소가 높이값
-        이 0인 경우 다음과 같이해결한다!
-        1. 부모요소에 overflow:hidden 설정
-        2. float자식요소 중 float이 아닌 마지막 요소에
-         float해제 속성인 clear설정하기!
-
-    */
-
-    /* height: 200px; */
-    /* outline: 4px dotted red; */
-    cursor: pointer;
-    /* 손가락모양 */
-
-    /* 애니위한 변경속성 */
-    transform: translateY(-200%);
-    opacity: 0;
-
-}
-
-/* 캐릭터박스 애니 시차주기 */
-.cat:nth-child(1) {
-    /* 도깨비 */
-    /* 애니메이션: 이시이지반방마 */
-    animation: catAni 1s ease-out 3s forwards;
-}
-
-/* 캐릭터박스 애니 시차주기 */
-.cat:nth-child(2) {
-    /* 지은탁 */
-    animation: catAni 1s ease-out 3.5s forwards;
-}
-
-.cat:nth-child(3) {
-    /* 저승사자 */
-    animation: catAni 1s ease-out 4s forwards;
-}
-
-.cat:nth-child(4) {
-    /* 써니 */
-    animation: catAni 1s ease-out 4.5s forwards;
-}
-
-
-/* 캐릭터박스 키프레임 */
-@keyframes catAni {
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-} /* catAni 키프레임 */
-
-
-/* 캐릭터 이미지박스 */
-.ci {
-    /* 트랜지션: 속시이지 */
-    transition: margin-top .4s ease-out;
-}
-
-/* .cat에 마우스 오버시 .ci의 마진탑을 마이너스로 설정! */
-.cat:hover .ci {
-    margin-top: -57%;
-}
-
-/* 캐릭터 이미지 */
-.ci>img {
+.content{
     width: 100%;
-    /* 이미지크기를 싸고 있는 부모박스에 맞춰라!
-    height크기를 안주면 비율유지함! */
-
-}
-
-/* 캐릭터 이름이미지 박스 */
-.ci span {
-    display: block;
-    /* 블록으로 변경해서 부모박스 끝까지 차지함! */
-    text-align: center;
-    /* 인라인요소 중앙정렬 */
-    margin-top: -21%;
-    /* 부모높이값 기준 21%크기만큼 
-    반대방향(위쪽)으로 위치 이동함 */
-}
-
-/* 캐릭터 이름이미지 */
-.ci span img {
-    width: 40%;
-    /* 부모박스(span)의 가로크기의 40%크기 */
-}
-
-/* 
-    [ 자식요소 선택 가상클래스 ]
-
-    - 전제조건: 자식요소가 같은 종류일 경우
-    :first-child 첫번째 자식
-    :last-child 마지막 자식
-    :nth-child(순번) 몇번째 자식
-    - 순번은 1부터~!
-
-    - 전제조건: 자식요소가 여러가지일 경우
-    :first-of-type 첫번째 자식
-    :last-of-type 마지막 자식
-    :nth-of-type(순번) 몇번째 자식
-    - 순번은 1부터~!
-*/
-/* 첫번째 이름이미지 숨기기 */
-.ci span img:first-child {
-    display: none;
-}
-
-/* .cat에 마우스 오버시 첫번째 이미지 보이기 */
-.cat:hover .ci span img:first-child {
-    display: inline;
-}
-
-/* .cat에 마우스 오버시 마지막 이미지 숨기기 */
-.cat:hover .ci span img:last-child {
-    display: none;
-}
-
-/* 캐릭터 설명박스 */
-.cd {
-    height: 0;
-    /* .cat 오버시 250px로 높이값 변경! */
-    overflow-y: scroll;
-    /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
-
-    /* background:색이반고윙/크; */
-    background: url(../images/eachBG.jpg) no-repeat center/cover;
-    margin-top: 15px;
-
-    /* 둥근모서리 - border-radius */
-    border-radius: 20px 0 0 20px;
-    /* 4개의 값 - 왼쪽 위 부터 시계방향 */
-
-    /* 트랜지션: 속시이지 - trs */
-    transition: height .4s ease-out;
-    /* transition: .4s; -> 시간만 줘도 적용됨
-    옵션이 모든 속성과 가속도는 기본 ease적용*/
-}
-
-/***************************************************** 
-    트랜지션(Transition) 애니메이션효과주기
-    -> 속성값을 변화과정을 보여주면서 애니메이션하는 속성
-    transition: 속성 시간 이징 지연 -> 속시이지!
-    1. 속성 - 변경애니메이션 대상속성
-            (안쓰거나 all을 쓰면 모든 속성이 선택됨)
-    2. 시간 - 애니메이션 시간 : 초단위(s)
-    3. 이징 - 가속도
-            1) ease : 앞뒤로 약간씩 느림(기본값)
-            2) ease-in : 처음에 천천히 나중에 빨라짐
-            3) ease-out : 나중에 천천히 처음엔 빠름
-            4) ease-in-out : 처음과 끝에 천천히
-            5) linear : 등속도
-            -> 베지어곡선으로 매우 다채롭게 가속도 조정가능
-    6. 지연 - 지연시간 즉, 처음에 대기시간(초단위:s)
-    7. 적용법: 오버시와 원상복귀되는 애니가 같다면
-            오버전 원본에 한번만 주면 양방향 동일하게 적용됨
-            만약 오버시와 아웃시 따로 주려면 각각설정해야함!
-*****************************************************/
-/* .cat에 오버시 높이값 변경! */
-.cat:hover .cd {
-    height: 250px;
-}
-
-/* 캐릭터설명 타이틀 */
-.cd h3 {
-    font-family: 'Black And White Picture', sans-serif;
-    font-size: min(2vw, 30px);
-    font-weight: normal;
-    padding: 5px 10px 0;
-    /* 패딩: 위 양쪽 아래 */
-}
-
-/* 가상요소로 타이틀 앞에 작은 도깨비로고 넣기 */
-.cd h3::before {
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 30px;
-    background: url(../images/bg_logo_a_01.png) no-repeat right -184px;
-    vertical-align: -5px;
-    margin-right: 5px;
-    /* outline: 1px solid red; */
-}
-
-/* 캐릭터 설명 문단 */
-.cd p {
-    font-family: 'Kirang Haerang', cursive;
-    font-size: min(1.5vw, 20px);
-    line-height: 1.7;
-    padding: 10px;
-    text-align: justify;
-    /* 양쪽정렬 */
-}
-
-/* 캐릭터 설명 첫번째 글자 가상요소로 변경하기! */
-.cd p:first-of-type::first-letter {
-    font-size: min(2vw, 30px);
-    color: cyan;
-    text-shadow: 1px 0 #000, -1px 0 #000,
-        0 1px #000, 0 -1px #000;
-    /* 4개의 그림자로 글자 테두리 주기! */
-}
-
-/* 도깨비 문구 이미지 */
-#dtxt {
-    position: absolute;
-    top: 200px;
-    right: 50px;
-    /* 부모는? 보이는 화면 */
-    width: min(25vw, 327px);
-    /* 이미지의 최대크기 제한하기 */
-
-    /* 변경애니속성 2가지 */
-    transform: translate(100%, 50%);
-    opacity: 0;
-
-    /* 애니메이션: 이시이지반방마 */
-    animation: dtxtAni 2s ease-in-out 1s forwards;
-}
-
-/* 문구 키프레임 */
-@keyframes dtxtAni {
-    to {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-}
-
-/* dtxtAni키프레임 */
-
-/********** 3. 하단영역 **********/
-#info {
-    /* 겉박스 */
-    background-color: rgba(255, 255, 255, 0.7);
-}
-
-.info {
-    position: relative;
-    /* 부모자격 - .sel 선택박스 */
-    /* 속박스 */
-    height: 241px;
-    padding: 15px;
-    box-sizing: border-box;
-    /* 크기유지 - 보더,패딩포함 */
-}
-
-/* 하단링크 */
-.blink {
-    max-width: 804px;
-    margin: 0 auto;
-    /* 마영오! */
-}
-
-/* 가상요소 clear */
-.blink ul::after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.blink li {
-    float: left;
-    padding: 0 15px;
-}
-
-/* 하단링크 a */
-.blink a {
-    color: #222;
-    text-decoration: none;
-    /* font-family: 'Nanum Gothic', sans-serif; */
-    font: bold 1.4rem/2.8 'Nanum Gothic', sans-serif;
-    /* 
-        font 한번에 셋팅하기!
-        font: 스두크/줄체
-        font: 스타일 두께 크기/줄간격 글자체
-    */
-}
-
-/* 마우스 오버시 a요소 */
-.blink a:hover {
-    color: red;
-    text-decoration: underline;
-}
-
-/* 회사주소박스 */
-.addr {
-    max-width: 804px;
-    margin: 10px auto;
-    border: 4px double #222;
-    font: 1.4rem/2 'Nanum Gothic', sans-serif;
-    /* 원래 address요소는 italic체인데 font한번에쓰기에서
-    스타일 설정을 안하면 기본 normal이 적용되서 없어짐 */
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
-    /* 크기유지 */
-}
-
-/* 하단로고 */
-.blogo {
-    text-align: center;
-}
-
-/* 브랜드 바로가기 선택박스 */
-#sel{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    /* 부모는? .info */
-    font: bold 1.4rem/2.8 'Nanum Gothic', sans-serif;
-    padding: 5px;
+    height: 100%;
+    background-color: lightgray;
 }

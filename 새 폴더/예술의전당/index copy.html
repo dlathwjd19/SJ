@@ -4,13 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="드라마 도깨비의 캐릭터를 소개하는 tvN 서브소개 페이지입니다!">
+    <meta name="description" content="예술의 전당">
     <title>
         전당
     </title>
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/main1.css">
     <!-- 미디어쿼리 CSS -->
     <link rel="stylesheet" href="css/media.css">
+
+    <!-- 제에쿼리 라이브러리 -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/linksys.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
 </head>
 
 <body class="scbar">
@@ -120,18 +127,18 @@
                 </ul>
             </nav>
             <!-- sns메뉴 -->
-            <div class="snsbx ibx">
-                <nav class="sns">
+            <div class="membx ibx">
+                <nav class="member">
                     <ul>
+                        <li>
+                            <a href="#" class="search">
+                                <img src="./img/search-btn.gif" alt="검색"></a>
+                        </li>
                         <li>
                             <a href="#">로그인</a>
                         </li>
                         <li>
                             <a href="#">회원가입</a>
-                        </li>
-                        <li>
-                            <a href="#" class="search">
-                                <img src="./img/search-btn.gif" alt="검색"></a>
                         </li>
                     </ul>
                 </nav>
@@ -140,13 +147,26 @@
             <button class="ham" onclick="바꿔()"></button>
         </header>
     </div>
+
     <!-- 2. 메인영역 -->
-    <div class="content">
-        <div class="cnt01"><p>CONTENT01</p></div>
-        <div class="cnt02"><p>CONTENT02</p></div>
-        <div class="cnt03"><p>CONTENT03</p></div>
-        <div class="cnt04"><p>CONTENT04</p></div>
-    </div>
+    <main class="section">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </main>
+
     <!-- 3. 하단영역 -->
     <div id="info">
         <footer class="ibx info">
