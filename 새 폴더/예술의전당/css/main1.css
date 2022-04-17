@@ -289,8 +289,8 @@ body {
   }
 
   .swiper-slide {
-    text-align: center;
-    font-size: 18px;
+    /* text-align: center;
+    font-size: 18px; */
     background: lightgray;
 
     /* Center slide text vertically */
@@ -298,10 +298,25 @@ body {
     justify-content: center;
     align-items: center;
   }
+  .swiper-slide .cont01>h1{
+left: 50%;
+  }
 
-  .swiper-slide img {
+  /* .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+  } */
+
+.cont01>h1{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    margin: 10px;
+}
+
+
+
