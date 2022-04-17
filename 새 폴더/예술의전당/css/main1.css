@@ -61,85 +61,15 @@ ol {
 
 /* 작업진행중 외곽선 */
 /* 별표시(*)는 모든요소를 선택시 사용 */
-/* body * {
+body * {
     outline: 1px dashed gray;
-} */
+}
 
-/* outline은 보더와 달리
-주변요소에 전혀 영향을 주지 않는다!
-그래서 border는 박스요소에 필수포함요소지만
-outline은 필수요소가 아니다!!!
-그리고 요소의 외곽선 바깥으로 보임!
-
-사용법은 border와 유사함
-outline: 두께 종류 색상; */
 
 /* 컨텐츠 파트 최상위부모 */
 body {
-    /* 한번에 배경주기!!! */
-    /* background: 색상 이미지 반복여부 고정 위치/크기 */
-    /* background: 색이반고윙/크 */
 
     background-color: antiquewhite;
-
-    /* 로고가 위에 와야해서 먼저 배경셋팅함! */
-
-
-    /* 따로주기 */
-    /* background-image: url(../images/bg_mainvisual.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover; */
-
-
-
-    /* 1. 배경색 */
-    /* background-color: lightpink; */
-
-    /* 2. 배경이미지 - 기본적으로 반복됨(x,y방향) */
-    /* background-image: url(../images/bg_logo_a_01.png); */
-    /* 외부css인 경우 css파일위치에서 한단계위로 올라간 후
-    이미지폴더를 찾는다!(경로에 주의!) ../ 는 한칸위로 */
-
-    /* 3. 배경반복여부 */
-    /* background-repeat: no-repeat; */
-    /* 
-        no-repeat 반복안함
-        repeat-x x축반복
-        repeat-y y축반복
-    */
-    /* 4. 배경이미지 고정하기 */
-    /* background-attachment: fixed; */
-    /* fixed는 보이는 화면에 고정함! */
-
-    /* 5. 배경이미지 위치변경 */
-    /* background-position: center; */
-    /* background-position: right bottom; */
-    /* background-position: 100px 200px; */
-    /* 
-        background-position: 가로 세로; 
-        - 가로: px, % 등 단위 또는 left, center, right
-        - 세로: px, % 등 단위 또는 top, center, bottom
-    
-    */
-    /* 6.배경이미지 크기 */
-    /* background-size: cover; */
-    /* background-size: contain; */
-    /* background-size: auto 200px; */
-    /* background-size: 100px auto; */
-    /* background-size: 100px 400px; */
-    /* 
-        background-size: 가로 세로; 
-        - 가로 : px,% 등 단위 auto
-        - 세로 : px,% 등 단위 auto
-        -> 가로,세로중 한쪽만 크기주고 나머지는 auto일
-        경우 이미지가 고유 비율을 유지한다!
-        ->>> 특별한 값 : 
-        contain(비율유지 채우기-이미지모두 보임,빈틈있음)
-        cover(비율유지 채우기-배경박스에 빈틈없이 채움)
-    */
-
 }
 
 /********** 공통 클래스 **********/
@@ -386,7 +316,7 @@ body {
 
 
 
-/********** 2. 메인영역 **********/
+/********************************* 2. 메인영역 *********************************/
 .cont {
     max-width: 1920px;
     /* 가장 큰 일반 해상도 크기로 최대가로크기 변경! */
