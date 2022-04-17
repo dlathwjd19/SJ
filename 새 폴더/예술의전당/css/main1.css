@@ -319,6 +319,7 @@ left: 50%;
 }
 
 .concert{
+    top: 3%;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -330,23 +331,6 @@ left: 50%;
     z-index: 1;
 
     /* border: 2px dashed red; */
-}
-/*이동버튼*/
-.abtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    /*Y축 중앙이동*/
-}
-
-/*왼쪽버튼*/
-.ab1 {
-    left: 50px;
-}
-
-/*오른쪽버튼*/
-.ab2 {
-    right: 50px;
 }
 
 #slide {
@@ -376,6 +360,28 @@ left: 50%;
     height: 347px;
     object-fit: cover;
     /* 이미지 비율유지 채우기! */
+}
+/*이동버튼*/
+.abtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /*Y축 중앙이동*/
+}
+
+.abtn>img{
+    width: 30px;
+    height: 30px;
+}
+
+/*왼쪽버튼*/
+.ab1 {
+    left: 0px;
+}
+
+/*오른쪽버튼*/
+.ab2 {
+    right: 0px;
 }
 
 
