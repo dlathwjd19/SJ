@@ -1,0 +1,388 @@
+@charset "utf-8";
+/* 도깨비 메인페이지 CSS - main.css */
+
+/* 외부파일 합치기 - 웹폰트(CDN) */
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&family=Nanum+Gothic&display=swap');
+
+/* 
+font-family: 'Black And White Picture', sans-serif;
+font-family: 'Kirang Haerang', cursive;
+font-family: 'Nanum Gothic', sans-serif;
+*/
+
+/* 상대단위를 위한 html 글자크기 */
+html {
+    font-size: 10px;
+    /* rem단위 계산을 쉽게하기 위해 10px로 셋팅! */
+}
+
+body {
+    overflow-x: hidden;
+    /* 가로스크롤바 없앰! */
+}
+
+html, body{
+    overflow: hidden;
+    /* 스크롤바 없앰 */
+    position: relative;
+    height: 100%;
+}
+
+/* 기본태그 초기화 - 마진,패딩 없애기 */
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤딩태그 글자크기 초기화 */
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
+    기본글자크기는 16px */
+}
+
+/* ul,ol초기화 */
+ul,ol {
+    list-style: none;
+    /* 블릿 표시자 없앰 */
+}
+
+/* 작업진행중 외곽선 */
+body * {
+    outline: 1px dashed gray;
+}
+
+/* 컨텐츠 파트 최상위부모 */
+body {
+    background-color: antiquewhite;
+}
+
+/********** 공통 클래스 **********/
+
+
+/* 속박스 클래스 */
+.ibx {
+    /* width: 1200px; */
+    max-width: 1200px;
+    /* 최대가로 크기 1200px이다가 화면이 
+    1200px 보다 작아지면 auto로 자동변경 
+    가로스크롤이 생기지 않는다! */
+    margin: 0 auto;
+    /* 위아래 양쪽(auto는 등분함) */
+    /* 마영오! 블록박스 가로중앙 */
+}
+
+/********** 1. 상단영역 **********/
+#top {
+    /* 겉박스 */
+    position: fixed;
+    width: 100%;
+    /* 크기를 화면에 채움! */
+    background-color: #41414c;
+    border-bottom: 1px solid #ccc;
+    z-index: 9999;
+    /* 상단박스 위치 가장위! */
+
+    /* 애니메이션: 이시이지반방마 */
+    /* animation: topAni .8s ease-out 6s forwards; */
+}
+
+.top {
+    /* 속박스 */
+    height: 96px;
+}
+
+/* 로고박스 */
+#logo {
+    position: relative;
+    padding: 15px;
+    float: left;
+    left: -13%;
+}
+
+/*********** sns메뉴 ***********/
+.member {
+    position: absolute;
+    top: 50%;
+    /* margin-top: -25px; */
+    right: 7%;
+
+}
+
+.member ul {
+    /* position: relative; */
+    display: flex;
+    /* right: 50%; */
+    align-items: center;
+}
+
+.member ul li {
+    padding: 0px 10px;
+}
+
+.member>ul>li>a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+/********** GNB 메뉴 **********/
+.gnb {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* x축방향으로 자기크기의 절반 반대방향이동(중앙정렬) */
+}
+
+.fll {
+    display: flex;
+    /* justify-content: center; */
+}
+
+/* .gnb>ul {
+    width: 861px;
+    margin: 0px auto;
+} */
+.gnb>ul>li {
+    width: 165px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+
+/* 메뉴 링크 */
+.gnb>ul>li>a {
+    display: block;
+    /* 인라인블록이면 위아래로 영역이 줄간격만큼 확장됨! */
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.8rem;
+    line-height: 40px;
+    /* border-bottom: 4px solid #fff; */
+    /* 미리보더를 만들고 하위메뉴에 영향이 없도록함! */
+
+}
+
+/* li에 마우스 오버시 a요소 디자인 변경 */
+.gnb>ul>li:hover>a {
+    /* background-color: #d5eeff; */
+    color: navy;
+}
+
+.gnb>ul:hover::after {
+    height: 315px;
+    border-bottom: 3px solid #4571ff;
+}
+
+.gnb>ul::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #d5eeff;
+    transition: height .4s ease-out;
+    z-index: -1;
+}
+
+
+/* 서브메뉴 */
+.smenu {
+    position: absolute;
+    /* 젠틀앱솔루트 */
+    z-index: 1;
+    /* li 가상요소 after 앱솔루트보다 위! */
+    /* background-color: #fff; */
+    /* padding-top: 7px; */
+
+    /* 서브메뉴 숨기기 */
+    height: 0;
+    overflow: hidden;
+
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
+
+}
+
+/* 상위 ul에 마우스 오버시 서브메뉴 전체보이기 */
+.gnb>ul:hover>li .smenu {
+    height: 315px;
+}
+
+.smenu>li {
+    text-align: center;
+}
+
+/* 서브 하위 ol */
+.smenu ol {
+    padding: 20px;
+}
+
+/* 서브메뉴 구분선 */
+/* .smenu::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 88%;
+    background-color: gray;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  } */
+
+/* 서브 a */
+.smenu a {
+    font-size: 1.5rem;
+    line-height: 33px;
+
+    /* 글자색+밑줄 변경 */
+    color: #222;
+    text-decoration: none;
+}
+
+/* 서브메뉴 a에 오버시 */
+.smenu a:hover {
+    background-color: #f0f0f0;
+    color: #ff5411;
+}
+
+/* 모바일용 햄버거 버튼 */
+.ham {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+
+    font-size: 40px;
+    transform: scaleX(1.5);
+
+    /* 버튼 기본없애기 */
+    background-color: transparent;
+    border: none;
+
+    /* 모바일 아닐때 안보임 */
+    display: none;
+}
+
+/* 버튼모양 변경위해 가상요소로 내용넣기! */
+.ham::before {
+    content: '≡';
+}
+
+/* 크롬브라우저 포커스 아웃라인 없애기 */
+.ham:focus {
+    outline: none;
+}
+
+
+
+/********************************* 2. 메인영역 *********************************/
+
+.swiper {
+    /* max-width: 1200px; */
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+  }
+
+  .swiper-slide {
+    /* text-align: center;
+    font-size: 18px; */
+    background: lightgray;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-slide .cont01>h1{
+left: 50%;
+  }
+
+  /* .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+
+.cont01>h1{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    margin: 10px;
+}
+
+.concert{
+    top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    width: 15%;
+    height: 43%;
+    list-style: none;
+    padding: 1px;
+    z-index: 1;
+
+    /* border: 2px dashed red; */
+}
+
+#slide {
+    display: flex;
+    /* 플렉스 박스 */
+
+    /*사진을 싸고 있는 슬라이드*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#slide li {
+    flex-shrink: 0;
+    /* 부모박스크기만큼 줄어들지 않음 -> 0 */
+    flex-basis: 100%;
+    /* 가로크기를 부모박스 크기에 맞춤! */
+    /* height 값은 flex박스 자식요소에서 
+    등분할시 자동 100%임 */
+}
+
+#slide li img {
+    /*이미지는 박스에 맞춤!*/
+    width: 244px;
+    height: 347px;
+    object-fit: cover;
+    /* 이미지 비율유지 채우기! */
+}
+/*이동버튼*/
+.abtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /*Y축 중앙이동*/
+}
+
+.abtn>img{
+    width: 30px;
+    height: 30px;
+}
+
+/*왼쪽버튼*/
+.ab1 {
+    left: 0px;
+}
+
+/*오른쪽버튼*/
+.ab2 {
+    right: 0px;
+}
+
+
+

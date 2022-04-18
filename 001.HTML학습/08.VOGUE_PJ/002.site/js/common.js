@@ -1,9 +1,106 @@
 // 보그 PJ 공통 JS - common.js
 
+// 현재 페이지 이름 알아내기
+let pgnm= $(location).attr("pathname");
+// 슬래쉬 자르기
+pgnm = pgnm.split("/");
+// 마지막 배열값 읽기(페이지이름)
+pgnm = pgnm[pgnm.length-1];
+console.log(pgnm);
+// JS방식: window.location.pathname -> host제외한 경로
+
+// 인덱스 페이지와 카테고리 페이지에서만 슬림슬라이드 클래스 넣기위한 코드
+let slim =0;
+if(pgnm==="index.html" || 
+pgnm==="category.html") slim = 1; //인덱스페이지면 1로변경!
+
+$(()=>{ /////////////// jQB ////////////////////////
+    
+    // 햄버거 버튼 클릭시 모바일 메뉴 보이기
+    // 햄버거 버튼 -> .hbtn
+    // 모바일 메뉴 -> #mobx
+    $(".hbtn").click(
+        ()=>$("#mobx").slideToggle(300));
+    
+    // 검색 버튼 클릭시 검색창 보이기
+    // 검색 버튼 -> .sbtn
+    // 검색창 -> .mos
+    $(".sbtn").click(
+        ()=>$(".mos").slideToggle(300));
+
+    // 로그인, 회원가입, 갤러리 html코드
+    let htcode = `
+    <a href="#" class="fi fi-laptop" title="로그인">
+        <span class="ir">
+            로그인
+        </span>
+    </a>
+    <a href="#" class="fi fi-user-secret" title="회원가입">
+        <span class="ir">
+            회원가입
+        </span>
+    </a>
+    <a href="#" class="fi fi-camera" title="갤러리">
+        <span class="ir">
+            갤러리
+        </span>
+    </a>
+    `;
+
+    // 로그인, 회원가입, 갤러리 아이콘 넣기
+    // 대상: .sns a:last-child 
+    // 변경: 대상요소 앞에 a요소 삽입하기
+    // 메서드: before(요소) -> 선택요소 앞에 형제삽입
+    // -> 참고비교) after(요소) -> 선택요소 뒤에 형제삽입
+    $(".sns a")
+    .each(function(){
+        // a요소 각각에 title로 내부글자를 넣어준다!
+        $(this).attr("title",$(this).text().trim());
+    }) ////// each ///////
+    .last().before(htcode);
+    // 마지막 a요소 앞에 코드삽입함!
+
+    // 모바일에 요소 추가!
+    $(".mosns a").last().before(htcode)
+    // 선택자.마지막().이전요소추가(코드)
+    .parent().find("a").eq(3).after("<br>");
+    // .부모().찾기("a").순번(4번째).다음요소추가("<br>")
+
+    // 로그인, 회원가입, 갤러리 클릭시 페이지이동하기
+    // 클릭시 구조가 동일한 모바일도 그룹셋팅!
+    // .sns a + .mosns a
+    $(".sns a, .mosns a").click(function(e){
+        // 1. 기본기능막기
+        e.preventDefault();
+
+        // 2. 내부 텍스트
+        let txt =$(this).text().trim();
+        console.log("sns텍스트:",txt);
+
+        // 3. 분기하기
+        let url;
+        switch(txt){
+            case "로그인": url="login"; break;
+            case "회원가입": url="member"; break;
+            case "갤러리": url="gallery"; break;
+            default: url="esc";
+        }  ////////////// switch //////////////
+
+        // 4. 페이지 이동하기
+        if(url!=="esc")
+            location.href = url+".html";
+
+
+    }); ////////// click ////////////
+
+
+}); /////////////////// jQB ////////////////////////
+
+
 ///////////////// 로드구역 ///////////////////////
 window.addEventListener("DOMContentLoaded", () => {
 
-    console.log("로딩완료");
+    // console.log("로딩완료");
 
     /// 부드러운 스크롤 호출!
     startSS();
@@ -17,12 +114,23 @@ window.addEventListener("DOMContentLoaded", () => {
     let tbtn = document.querySelector(".tbtn");
 
     /// 위로가기버튼 클릭시 맨위로 이동하기 ////
+    // 모바일에서 스크롤 없이 스와이퍼 이동시 무작동해결!
+    $(".tbtn").click(()=>{
+        // 제이쿼리 스크롤 애니메이션
+        $("html,body").animate({
+            scrollTop:"0"
+        },300);
+        // 스크롤 위치값 업데이트
+        pos=0;
+    }); /////// click ////////
+
+
     // 부드러운 스크롤 위치변수 pos값을 0주면됨!
-    tbtn.onclick = () => {
-        pos = 0; // 맨위로 가기!
-        return false; 
-        // a요소 기본이동 막기
-    }; /////// click //////////
+    // tbtn.onclick = () => {
+    //     pos = 0; // 맨위로 가기!
+    //     return false; 
+    //     // a요소 기본이동 막기
+    // }; /////// click //////////
 
     /********************************** 
         [ 윈도우 스크롤 이벤트 함수 ]
@@ -43,7 +151,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // 1. 스크롤 위치가 100px 이상일때 
         // 변경사항: #top에 클래스 on넣기
-        if (scTop >= 100) topA.classList.add("on");
+        // 조건추가: slim 이 true일때 즉, 1일때
+        if (scTop >= 100 && slim) topA.classList.add("on");
 
         // 2. 스크롤 위치가 100px 미만일때(else)
         // 변경사항: #top에 클래스 on제거
@@ -97,11 +206,11 @@ window.addEventListener("DOMContentLoaded", () => {
         scPos[i] = scAct[i].offsetTop;
     } //////////// for ///////////////
 
-    console.log(scPos);
+    // console.log(scPos);
 
     // 스크롤 등장위치 조정값 : 윈도우화면크기의 2 / 3
     const winH = (window.innerHeight / 3) * 2;
-    console.log("윈도우높이2/3:",winH);
+    // console.log("윈도우높이2/3:",winH);
 
     /******************************************** 
         함수명: scAction
