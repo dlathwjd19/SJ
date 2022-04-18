@@ -8,11 +8,15 @@
     <title>예술의 전당</title>
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/copy.css">
+    <link rel="stylesheet" href="./css/concert.css">
 
-    <!-- 제에쿼리 라이브러리 -->
+    <!-- 제이쿼리 라이브러리 -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
+
     <script src="js/autoScroll.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body class="scbar">
@@ -138,7 +142,29 @@
     </div>
 
     <!-- 2. 메인영역 -->
-    <section id="pg1" class="page"></section>
+    <section id="pg1" class="page">
+        <div class="title" id="concert">
+            <h1>공연/음악/전시</h1>
+        </div>
+         <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
     <section id="pg2" class="page"></section>
     <section id="pg3" class="page"></section>
     <section id="pg4" class="page"></section>
