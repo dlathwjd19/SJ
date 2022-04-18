@@ -19,6 +19,10 @@ $(() => { ///////////// jQB //////////////////////
 
     console.log("로딩완료!");
 
+    /// 새로고침 시 스크롤위치 캐싱이 있으므로
+    // 강제 상단 이동을 코딩하여 제어한다!
+    $("html,body").stop().animate({scrollTop:"0"},100);
+
     /**************************************************** 
         [ 자동스크롤 구현! ]
 
@@ -81,9 +85,9 @@ $(() => { ///////////// jQB //////////////////////
         function (e) {
 
             ////////// 광스크롤 막기 //////////
-            if(prot_sc) return;
+            if (prot_sc) return;
             prot_sc = 1; // 막기
-            setTimeout(()=>prot_sc=0,dur_sc);
+            setTimeout(() => prot_sc = 0, dur_sc);
             //////////////////////////////////
 
 
@@ -117,8 +121,21 @@ $(() => { ///////////// jQB //////////////////////
                 -> 현재 브라우저가 파이어폭스인지 어떻게 알지?
                 navigator.userAgent 이 값을 찍으면
                 브라우저 정보가 표시됨
+                -> 브라우저 정보에 "firerfox" 라는 문자가
+                있으면 파이어폭스 브라우저다!
+                -> 정규식으로 문자가 있는 여부 구분하기
+                /문자/집/i -> 대소문자 관계없이 찾으라!
+                -> 정규식.test(값) -> 값에 정규식 문자가 있으면 true
+
+                -> /firefox/i.text("navigator.userAgent")
+                : 브라우저 정보에 "firefox"문자가 있으면 true
+
             *******************************************/
-           console.log("브라우저정보:",navigator.userAgent);
+            //    console.log("브라우저정보:",navigator.userAgent);
+
+            // 파이어폭스 브라우저면 delta의 부모가 반대가 됨!
+            if (/firefox/i.test(navigator.userAgent)) delta = -delta;
+
 
 
 
@@ -151,6 +168,35 @@ $(() => { ///////////// jQB //////////////////////
 
 
         }); //////////////////// mousewheel /////////////
+
+        /////// 메뉴 클릭시 스크롤 이동 애니메이션 ///////
+        // 대상: .gnb li
+        $(".gnb a").click(function(e){
+
+            // 기본이동막기
+            e.preventDefault();
+
+            // 1. 순번 알아내기(부모인 li의 순번)
+            let idx = $(this).parent().index();
+            console.log("메뉴순번:",idx);
+
+            // 2. idx순번을 pno 전역 페이지번호에 넣기!
+            pno = idx;
+
+            // 3. 페이지 이동하기
+            // 이동할 위치 -> 윈도우 높이값*페이지번호
+            let pgpos = $(window).height() * pno;
+
+            $("html,body").stop().animate({
+                scrollTop: pgpos + "px"
+            }, dur_sc, easing_sc);
+
+            // 4. 현재 페이지 메뉴 클래스 on넣기!
+            $(".gnb li").eq(pno).addClass("on")
+            .siblings().removeClass("on");
+
+
+        }); //////////// click /////////
 
 
 
