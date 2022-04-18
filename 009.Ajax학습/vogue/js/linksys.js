@@ -16,6 +16,7 @@ $(()=>{ //////////////////// JQB /////////////////////////
         // a 요소 기본이동기능 막기
         e.preventDefault();
         
+        
         let txt = $(this).text().trim().toLowerCase();
         // trim() - 앞뒤공백 제거!
         // toLowerCase() - 소문자로 변환!
