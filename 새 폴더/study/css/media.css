@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* 카툰네트워크 미디어쿼리 CSS - media.css */
+
+/************* 780px 이하 시작 *************/
+@media screen and (max-width:780px) {
+
+    .gnb{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px;
+        height: 37px;
+    }
+
+    .glist{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .glist li{
+        width: 100%;
+        text-align: center;
+    }
+    .ham{
+        display: block;
+    }
+
+    /* 하단영역 */
+    #info {
+        height: auto;
+    }
+
+    /* 회사정보 */
+    #info address {
+        text-align: center;
+        padding: 0;
+    }
+
+    /* 회사정보 */
+    #info address span {
+        display: block;
+        padding: 5vw;
+    }
+
+    /* 하단로고 이미지 */
+    #info img {
+        float: none;
+        margin-right: 0;
+    }
+
+    /* sns박스 */
+    .sns {
+        position: static;
+        text-align: center;
+    }
+}
+
+
+
+/************* 600px 이하 시작 *************/
+@media screen and (max-width:600px) {
+
+    /* 메인영역 비율변경 */
+    #cont.rbx::before {
+        padding-top: 150%;
+    }
+
+    /* 스크린 위치,크기조정 */
+    #screen {
+        top: 9.8%;
+        left: 12.8%;
+        width: 76%;
+        height: 28.8%;
+    }
+
+    /* 예고편 선택메뉴 */
+    .plist {
+        width: 68vw;
+        top: 45%;
+    }
+
+    /* ul 플렉스박스 */
+    .plist ul {
+        flex-wrap: wrap;
+    } 
+
+    /* 포스터 이미지크기 */
+    .plist img {
+        width: 32vw;
+        padding-bottom: 10%;
+        /* 한줄에 2개 오도록 크기조정 */
+    }
+    /*이미지설명 박스 */
+    .ptxt {
+        width: 32vw;
+        font-size: 2.5vw;
+    }
+    .ptxt li:first-child{
+        font-size: 3.5vw;
+    }
+
+}

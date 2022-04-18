@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+html,body,h1,h2,ul,ol,li{
+    margin: 0;
+    padding: 0;
+
+}
+
+ul,ol{
+    list-style: none;
+}
+
+/* 헤딩태그 글자크기 초기화 */
+h1,h2 {
+    font-size: 100%;
+    /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
+    기본글자크기는 16px */
+}
+
+img {
+    border: none;
+    /* 이미지 링크시 서버에서 볼때 파란색 자동보더 없애기 */
+    vertical-align: bottom;
+    /* 박스 이미지 하단간극 없애기(약4px)
+    값으로 top, middle등 도 효과있음! */
+}

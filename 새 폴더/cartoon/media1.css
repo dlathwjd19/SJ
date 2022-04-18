@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* 카툰네트워크 미디어쿼리 CSS - media1.css */
+
+
+/************* 800px 이하 시작 *************/
+@media screen and (max-width:800px) {
+
+    /* 하단영역 */
+    .info {
+        height: auto;
+    }
+
+    /* 회사정보 */
+    .info address {
+        text-align: center;
+        padding: 0;
+        /* 기존 패딩 위, 왼쪽 없앰 */
+    }
+
+    /* 회사정보 */
+    .info address span {
+        display: block;
+        padding: 5vw;
+    }
+
+    /* 하단로고 이미지 */
+    .info img {
+        float: none;
+        margin-right: 0;
+    }
+
+    /* sns박스 */
+    ul.sns {
+        position: static;
+        justify-content: center;
+        padding: 20px 0;
+    }
+}
+
+/************* 800px 이하 끝 ***************/
+
+
+/************* 600px 이하 시작 *************/
+@media screen and (max-width:600px) {
+
+    
+    /* 메인영역 비율변경 */
+    #cont.rbx::before {
+        padding-top: 150%;
+    }
+
+    /* 메인 배경 속성변경 */
+    #cont{
+        background-position: top;
+        /* 배경위치 top만 쓰면 가로는 자동 center */
+        background-size: 130%;
+        /* 배경크기에 수치를 하나만쓰면 
+        가로크기임(세로자동) */
+    }
+
+    /* 스크린 위치,크기조정 */
+    #screen {
+        top: 9.8%;
+        left: 12.8%;
+        width: 76%;
+        height: 28.8%;
+    }
+
+    /* 예고편 선택메뉴 */
+    .plist {
+        width: 90vw;
+        /* 가로크기지정 */
+        bottom: 3%;
+    }
+
+    /* ul 플렉스박스 */
+    .plist ul {
+        flex-wrap: wrap;
+        /* 줄바꿈 */
+    }
+
+    /* 포스터 이미지크기 */
+    .plist img {
+        width: 28vw;
+        /* 한줄에 3개 오도록 크기조정 */
+    }
+    /*이미지설명 박스 */
+    .ptxt {
+        width: 28vw;
+        /* 한줄에 3개 오도록 크기조정 */
+        font-size: 2vw;
+    }
+    .ptxt li:first-child{
+        font-size: 2vw;
+    }
+
+}
+
+
+/************* 600px 이하 끝 ***************/
