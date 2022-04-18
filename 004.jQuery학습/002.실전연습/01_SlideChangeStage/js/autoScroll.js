@@ -22,8 +22,8 @@ $(() => { ///////////// jQB //////////////////////
     /// 새로고침 시 스크롤위치 캐싱이 있으므로
     // 강제 상단 이동을 코딩하여 제어한다!
     $("html,body").stop().animate({
-        scrollTop:"0"
-    },100);
+        scrollTop: "0"
+    }, 100);
 
     /**************************************************** 
         [ 자동스크롤 구현! ]
@@ -167,42 +167,50 @@ $(() => { ///////////// jQB //////////////////////
                 scrollTop: pgpos + "px"
             }, dur_sc, easing_sc);
 
+            /******************************************* 
+                4. 현재 메뉴 표시하기 : GNB + 사이드표시자
+            *******************************************/
+            $(".gnb li").eq(pno).addClass("on")
+                .siblings().removeClass("on");
+            $(".indic li").eq(pno).addClass("on")
+                .siblings().removeClass("on");
 
         }); //////////////////// mousewheel /////////////
 
-        /////// 공통 a요소 기본이동 막기 //////
-        $("a").click(function (e) {
-            // 기본이동막기
-            e.preventDefault();
-        }); ////////// click /////////////
+    /////// 공통 a요소 기본이동 막기 //////
+    $("a").click(function (e) {
+        // 기본이동막기
+        e.preventDefault();
+    }); ////////// click /////////////
 
-        /////// 메뉴 클릭시 스크롤 이동 애니메이션 ///////
-        // 대상: .gnb li + .indic li
-        $(".gnb li, .indic li").click(function (e) {
+    /////// 메뉴 클릭시 스크롤 이동 애니메이션 ///////
+    // 대상: .gnb li + .indic li
+    $(".gnb li, .indic li").click(function (e) {
 
-            // 1. 순번 알아내기 : li 순번
-            let idx = $(this).index();
-            console.log("메뉴순번:",idx);
+        // 1. 순번 알아내기 : li 순번
+        let idx = $(this).index();
+        console.log("메뉴순번:", idx);
 
-            // 2. idx순번을 pno 전역 페이지번호에 넣기!
-            pno = idx;
+        // 2. idx순번을 pno 전역 페이지번호에 넣기!
+        pno = idx;
 
-            // 3. 페이지 이동하기
-            // 이동할 위치 -> 윈도우 높이값*페이지번호
-            let pgpos = $(window).height() * pno;
+        // 3. 페이지 이동하기
+        // 이동할 위치 -> 윈도우 높이값*페이지번호
+        let pgpos = $(window).height() * pno;
 
-            $("html,body").stop().animate({
-                scrollTop: pgpos + "px"
-            }, dur_sc, easing_sc);
+        $("html,body").stop().animate({
+            scrollTop: pgpos + "px"
+        }, dur_sc, easing_sc);
 
-            // 4. 현재 페이지 메뉴 클래스 on넣기!
-            $(".gnb li").eq(pno).addClass("on")
+        // 4. 현재 페이지 메뉴 클래스 on넣기!
+        // GNB메뉴 + 사이드 표시메뉴
+        $(".gnb li").eq(pno).addClass("on")
             .siblings().removeClass("on");
-            $(".indic li").eq(pno).addClass("on")
+        $(".indic li").eq(pno).addClass("on")
             .siblings().removeClass("on");
 
 
-        }); //////////// click /////////
+    }); //////////// click /////////
 
 
 
