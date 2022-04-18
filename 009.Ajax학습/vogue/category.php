@@ -10,10 +10,10 @@
     <!-- 폰티스토 sns아이콘 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css">
     <link rel="stylesheet" href="css/category.css">
+    <!-- 미디어쿼리는 본css아래에 넣음! -->
     <link rel="stylesheet" href="css/media.css">
-    <!-- 미디어 쿼리는 본 css 아래에 넣음! -->
     <script src="js/smoothScroll20.js"></script>
-
+    
     <!-- 제이쿼리 라이브러리 + 제이쿼리UI -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
@@ -24,6 +24,9 @@
 </head>
 
 <body>
+    <!-- 로그인 세션처리 인클루드 -->
+    <?php include "inc/login_session.inc" ?>
+
     <!-- 1. 상단영역 인클루드 -->
     <?php include "inc/top.inc" ?>
 
@@ -32,13 +35,13 @@
         <main class="cont ibx">
             <!-- 1. 카테고리 페이지 탑영역 -->
             <header class="ctop">
-                <!-- 1-1. 서브타이틀 -->
+                <!-- 1-1.서브타이틀 -->
                 <h2 class="stit"></h2>
-                <!-- 1-2. 서브메뉴
+                <!-- 1-2.서브메뉴
                     (LNB-Local Navigation Bar) -->
                 <nav class="lnb"></nav>
             </header>
-            
+
             <!-- 컨텐츠 유형2 -->
             <div class="pt3 rbx">
                 <div class="rbxIn fbx">
@@ -69,7 +72,7 @@
             </div>
         </main>
     </div>
-
+    
     <!-- 3. 하단영역 인클루드 -->
     <?php include "inc/info.inc" ?>
 

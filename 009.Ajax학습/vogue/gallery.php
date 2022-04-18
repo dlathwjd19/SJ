@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css">
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/gallery.css">
-    <!-- 미디어 쿼리는 본 css 아래에 넣음! -->
+    <!-- 미디어쿼리는 본css아래에 넣음! -->
     <link rel="stylesheet" href="css/media.css">
     <script src="js/smoothScroll20.js"></script>
-
+    
     <!-- 제이쿼리 라이브러리 + 제이쿼리UI -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-
+    
     <script src="js/linksys.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/gallery.js"></script>
@@ -26,6 +26,9 @@
 </head>
 
 <body>
+    <!-- 로그인 세션처리 인클루드 -->
+    <?php include "inc/login_session.inc" ?>
+
     <!-- 1. 상단영역 인클루드 -->
     <?php include "inc/top.inc" ?>
 
@@ -34,7 +37,7 @@
         <main class="cont ibx disel">
             <!-- 1. 로그인 페이지 탑영역 -->
             <header class="ctop">
-                <!-- 1-1. 서브타이틀 -->
+                <!-- 1-1.서브타이틀 -->
                 <h2 class="stit">Gallery</h2>
             </header>
 
