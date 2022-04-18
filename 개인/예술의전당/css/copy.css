@@ -283,7 +283,7 @@ body {
             width: 100%;
             height: 25px;
             margin: 10px 0;
-            cursor: pointer;/* 손가락모양 */
+            cursor: pointer; /* 손가락모양 */
         }
 
         /* a요소 */
@@ -293,6 +293,7 @@ body {
             height: 2px;
             margin-top: 4px;
             background-color: #ccc;
+            border-radius: 15px;
             box-shadow: 1px 1px 1px #777;
             transition: width .4s;
         }
