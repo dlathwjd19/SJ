@@ -28,7 +28,8 @@ session_start();
 
           // 2. 로그인 버튼을 로그아웃 버튼으로 변경하기
           // 대상: .sns a:nth-child(5)
-          $(".smsub a").eq(4).attr("title","로그아웃")
+          $(".sns a").eq(4)
+          .attr("title","로그아웃")
           .off("click")
           // 기존 이벤트를 제거하는 메서드 -> off(이벤트명)
 
