@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 도깨비 메인페이지 CSS - main.css */
+/* 예술의전당 메인페이지 CSS - main.css */
 
 /* 외부파일 합치기 - 웹폰트(CDN) */
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&family=Nanum+Gothic&display=swap');
@@ -48,9 +48,9 @@ ul,ol {
 }
 
 /* 작업진행중 외곽선 */
-body * {
+/* body * {
     outline: 1px dashed gray;
-}
+} */
 
 /* 컨텐츠 파트 최상위부모 */
 body {
@@ -82,9 +82,6 @@ body {
     border-bottom: 1px solid #ccc;
     z-index: 9999;
     /* 상단박스 위치 가장위! */
-
-    /* 애니메이션: 이시이지반방마 */
-    /* animation: topAni .8s ease-out 6s forwards; */
 }
 
 .top {
@@ -100,7 +97,7 @@ body {
     left: -13%;
 }
 
-/*********** sns메뉴 ***********/
+/*********** 로그인/회원가입 ***********/
 .member {
     position: absolute;
     top: 50%;
@@ -139,10 +136,6 @@ body {
     /* justify-content: center; */
 }
 
-/* .gnb>ul {
-    width: 861px;
-    margin: 0px auto;
-} */
 .gnb>ul>li {
     width: 165px;
     text-align: center;
@@ -160,14 +153,13 @@ body {
     font-size: 1.8rem;
     line-height: 40px;
     /* border-bottom: 4px solid #fff; */
-    /* 미리보더를 만들고 하위메뉴에 영향이 없도록함! */
-
 }
 
 /* li에 마우스 오버시 a요소 디자인 변경 */
 .gnb>ul>li:hover>a {
     /* background-color: #d5eeff; */
     color: navy;
+    font-weight: bold;
 }
 
 .gnb>ul:hover::after {
@@ -192,9 +184,7 @@ body {
 /* 서브메뉴 */
 .smenu {
     position: absolute;
-    /* 젠틀앱솔루트 */
     z-index: 1;
-    /* li 가상요소 after 앱솔루트보다 위! */
     /* background-color: #fff; */
     /* padding-top: 7px; */
 
@@ -249,34 +239,6 @@ body {
     background-color: #f0f0f0;
     color: #ff5411;
 }
-
-/* 모바일용 햄버거 버튼 */
-.ham {
-    position: absolute;
-    top: 18px;
-    right: 20px;
-
-    font-size: 40px;
-    transform: scaleX(1.5);
-
-    /* 버튼 기본없애기 */
-    background-color: transparent;
-    border: none;
-
-    /* 모바일 아닐때 안보임 */
-    display: none;
-}
-
-/* 버튼모양 변경위해 가상요소로 내용넣기! */
-.ham::before {
-    content: '≡';
-}
-
-/* 크롬브라우저 포커스 아웃라인 없애기 */
-.ham:focus {
-    outline: none;
-}
-
 
 
 /********************************* 2. 메인영역 *********************************/
@@ -361,6 +323,7 @@ left: 50%;
     object-fit: cover;
     /* 이미지 비율유지 채우기! */
 }
+
 /*이동버튼*/
 .abtn {
     position: absolute;

@@ -1,4 +1,4 @@
-// 쇼핑몰 배너 JS //
+// 예술의전당 공연/전시 배너 JS //
 // 로드구역 ////////////
 window.addEventListener("load", () => {
 
