@@ -24,6 +24,9 @@
 </head>
 
 <body>
+    <!-- 1. 상단영역 인클루드 -->
+    <?php include "inc/top.inc" ?>
+
     <!-- 2. 메인영역 -->
     <div class="bgc">
         <main class="cont ibx">
@@ -67,11 +70,8 @@
         </main>
     </div>
 
-
-    <!-- 위로가기버튼 -->
-    <a href="#" class="tbtn fi fi-angle-up">
-        <span class="ir">위로가기버튼</span>
-    </a>
+    <!-- 3. 하단영역 인클루드 -->
+    <?php include "inc/info.inc" ?>
 
 </body>
 
