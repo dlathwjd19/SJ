@@ -7,16 +7,23 @@
     -webkit-user-drag: none;
 }
 
-#pg1 .title{
+/* #pg1>title{
     position: absolute;
     float: left;
     width: 100%;
     text-align: center;
     padding: 10% 0 1% 0; 
+} */
+.page{
+  position: relative;
+  margin: 0 auto;
 }
-.title>h1{
-    font-size: 45px;   
-    margin-bottom: 15px;
+
+#concert h1 {
+  position: absolute;
+    top: 20%;
+    left: 40%;
+    font-size: 4.5rem;
 }
 
 .swiper {
