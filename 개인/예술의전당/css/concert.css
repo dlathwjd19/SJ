@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* 예술의전당 1페이지 CSS - consert.css */
+
+/* 드래그 선택 안되게 하는 css */
+.disel{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#pg1 .title{
+    position: absolute;
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 10% 0 1% 0; 
+}
+.title>h1{
+    font-size: 45px;   
+    margin-bottom: 15px;
+}
+
+.swiper {
+    max-width: 1000px;
+    height: 400px;
+    /* height: 390px; */
+    top: 35%;
+    margin: 0 auto;
+    /* width: 100%;
+    height: 100%; */
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cont {
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    font-size: 15px;
+    color: gray;
+    padding: 9px;
+    line-height: 23px;
+
+    /* border: 1px dashed green; */
+  }
+
+  .cont>span{
+    font-size: 16px;
+    font-weight: bold;
+  }
