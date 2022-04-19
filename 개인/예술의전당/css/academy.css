@@ -59,8 +59,14 @@
   margin: 10px 25px;
 }
 
-.icon span{
-  text-align: center;
+.border img{
+  position: relative;
+  top: 25%;
+}
+
+.border p{
+  position: relative;
+  top: 30%;
 }
 
 /* 주요 서비스 아이콘이미지 */
