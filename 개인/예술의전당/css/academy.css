@@ -55,8 +55,18 @@
 .ser{
   display: flex;
 }
+/* 수강신청아이콘 */
 .icon1{
   background: url(../img/newaca_img1.png) no-repeat center center;
+}
+.icon2{
+  background: url(../img/newaca_img2.png) no-repeat center center;
+}
+.icon3{
+  background: url(../img/newaca_img3.png) no-repeat center center;
+}
+.icon4{
+  background: url(../img/newaca_img4.png) no-repeat center center;
 }
 
 
