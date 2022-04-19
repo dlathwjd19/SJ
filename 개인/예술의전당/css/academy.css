@@ -29,6 +29,7 @@
 .service{
   position: relative;
   max-width: 1000px;
+  height: 200px;
   margin: 0 auto;
   top: 40%;
 
@@ -46,18 +47,24 @@
 }
 
 .sicon{
-  display: inline-block;
-  width: 12vw;
-  height: 12vh;
+  /* display: inline-block; */
+  width: 15vw;
+  height: 15vh;
   border: 1px dashed blue;
+
+  float: left;
+  padding: 10px 0px 0px 20px;
+}
+.icon img{
+  width: 100px;
+  height: 100px;
 }
 /* 주요서비스박스 */
 .ser{
-  display: flex;
-  justify-content: space-evenly;
+  
 }
 /* 주요 서비스 아이콘이미지 */
-.icon1{
+/* .icon1{
   background: url(../img/newaca_img1.png) no-repeat center center;
 }
 .icon2{
@@ -68,7 +75,7 @@
 }
 .icon4{
   background: url(../img/newaca_img4.png) no-repeat center center;
-}
+} */
 
 
 
