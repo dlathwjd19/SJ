@@ -13,10 +13,10 @@
   align-items: center;
   flex-wrap: wrap;
 
-  border: 1px dashed red;
+  /* border: 1px dashed red; */
 }
-/* 아카데미 a링크 */
-.icon>a{
+/* 아카데미 각 아이콘 글씨 */
+.icon p{
   font-size: 1.8rem;
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
@@ -29,100 +29,51 @@
   max-width: 1000px;
   /* height: 200px; */
   margin: 0 auto;
-  top: 35%;
+  top: 22%;
 
   /* display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap; */
 
-  border: 1px dashed red;
+  /* border: 1px dashed red; */
 }
 
-.service>h1{
+/* 주요 서비스 타이틀글자 */
+.stit{
   font-size: 2.2rem;
-  margin: 2%;
+  margin-left: 2%;
 }
 
 /* 서비스 속박스 */
 .ser{
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  /* border: 2px dashed blue; */
 }
 
 /* 서비스 아이콘 박스 */
 .border {
   min-width: 198px;
   height: 136px;
-  border: 1px dashed green;
+  border: 1px solid #d0d0d0;
   margin: 10px 25px;
 }
-
-.border img{
-  position: relative;
-  top: 25%;
-}
-
-.border p{
-  position: relative;
-  top: 30%;
-}
-
-/* 주요 서비스 아이콘이미지 */
-/* .icon1{
-  background: url(../img/newaca_img1.png) no-repeat center center;
-}
-.icon2{
-  background: url(../img/newaca_img2.png) no-repeat center center;
-}
-.icon3{
-  background: url(../img/newaca_img3.png) no-repeat center center;
-}
-.icon4{
-  background: url(../img/newaca_img4.png) no-repeat center center;
-} */
-
-
-
-/* .aca-item{
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  top: 10%;
-
-}
-
-.aca-item > ul {
-  width: 100%;
-  padding: 10px 20px;
-  border: 1px solid #000;
-  background-color: #f8f8f8;
-}
-
-.newaca-item-quick > ul > li {
-  float: left;
-  width: calc(100% / 8);
-  padding-bottom: 25px;
-}
-
-.newaca-item-quick > ul > li > a {
+/* 아이콘 이미지겉박스 */
+.siconbx{
   display: block;
+    height: 70px;
+    /* vertical-align: middle; */
+    text-align: center;
+    margin-top: 15%;
 }
-
-.newaca-item-quick > ul > li > a > .newaca-item-icon {
-  width: 100%;/
-  height: auto;
-  margin: 0 auto;
-  margin: 0 auto;
-  padding-top: 25px;
+/* 서비스아이콘글자 */
+.border p{
+  font-size: 1.6rem;
   text-align: center;
-
-}
-.newaca-item-quick > ul > li > a > .newaca-item-title {
-  width: 100%;
-  margin-top: 10px;
-  text-align: center;
-  font-size: 18px;
+  color: rgba(0, 0, 0, 0.7);
   font-weight: bold;
-} */
+}
