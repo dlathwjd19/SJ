@@ -1,12 +1,18 @@
 @charset "utf-8";
 /* 예술의전당 1페이지 CSS - consert.css */
 
+#academy h1{
+  position: absolute;
+    top: 20%;
+    left: 40%;
+    font-size: 4.5rem;
+}
 /* 아카데미 박스 */
 .acaitem{
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
-  top: 18%;
+  top: 33%;
 
   display: flex;
   justify-content: space-around;
@@ -29,7 +35,7 @@
   max-width: 1000px;
   /* height: 200px; */
   margin: 0 auto;
-  top: 22%;
+  top: 42%;
 
   /* display: flex;
   justify-content: space-around;
