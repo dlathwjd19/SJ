@@ -52,6 +52,9 @@
   border: 1px dashed blue;
 }
 
+.ser{
+  display: flex;
+}
 .icon1{
   background: url(../img/newaca_img1.png) no-repeat center center;
 }
