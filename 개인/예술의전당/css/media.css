@@ -25,8 +25,8 @@
     }
 }
 
-/************** 970px 이하 미디어쿼리 **************/
-@media screen and (max-width:970px) {
+/************** 700px 이하 미디어쿼리 **************/
+@media screen and (max-width:1000px) {
     
     /* 1. 숨기기 - GNB메뉴, 서브메뉴, 메뉴배경가상요소, 로그인박스 */
 
@@ -44,4 +44,46 @@
     .ham {
         display: block;
     }
+
+    .swiper{
+        width: 100vw;
+    }
+
+    /* 아카데미 타이틀 */
+    .title{
+      height: auto;  
+    }
+    .title h1{
+        padding: 0;
+    }
+
+    /* 아카데미 아이콘 */
+    .acaitem{
+        /* width: calc(100vw - 500px);
+        height: calc(100vh - 500px); */
+        /* width: 98vw;
+        height: 40vh; */
+        width: 98vw;
+        height: 30vh;
+        /* 700이하 40 */
+    }
+    .icon img{
+        width: 15vw;
+        /* 700 이하 28 */
+    }
+
+    /* 아카데미 - 서비스박스*/
+    .service{
+        top: 26%;
+        /* top: 23.5%; */
+    }
+    .border {
+        min-width: 22vw;
+        height: 22vh;
+        margin: 15px 10px;
+        /* min-width: 21vw;
+        height: 18vh;
+        margin: 10px 3px; 733사이즈*/
+    }
+
 }
