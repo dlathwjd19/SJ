@@ -64,6 +64,7 @@
             <div v-else-if="v.num===4">출력2</div>
             <div v-if>출력3</div>
 
+
             v-if="value.메뉴 !=='없음"
             해석: 제이슨 데이터의 속성 
             "메뉴"의 값이 '없음'이 아니면 출력함!
@@ -71,8 +72,7 @@
          -->
         <!-- 
             조건에 맞는 것만 나오게 할 수도 있다!
-            <li v-for="(v,n) in vals.data" 
-            v-if="n==='living'"> -->
+            <li v-for="(v,n) in vals.data" v-if="n==='living'"> -->
         <li v-for="(v,n) in vals.data">
             <h2>{{v.제목}}</h2>
 
