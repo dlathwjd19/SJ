@@ -344,7 +344,7 @@ body {
     padding-top: 6px;
     padding-bottom: 30px;
     background-color: #fff;
-    /* display: none;  */
+    display: none; 
     /* 처음에 안보임 */
 
     /* 모바일 전체메뉴 상단메뉴뺀 나머지
