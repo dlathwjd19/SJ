@@ -71,7 +71,7 @@
     color: gray;
     padding: 9px;
     line-height: 21px;
-    font-size: 1.3rem;
+    font-size: min(12px,1vw);
 
     /* border: 1px dashed green; */
   }
@@ -79,6 +79,6 @@
   /* 콘서트 타이틀 */
   .cont>span{
     color: #41414c;
-    font-size: 1.7rem;
+    font-size: min(17px,1.2vw);
     font-weight: bold;
   }
