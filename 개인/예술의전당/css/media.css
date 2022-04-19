@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* 예술의 전당 메인페이지 미디어쿼리 - media.css */
+
+/************** 1024px 이하 미디어쿼리 **************/
+@media all and (max-width:1024px)	{	
+	.container{ 
+        width:92%;
+        margin:0 auto;
+    }
+
+	.container1{ 
+        width:100%;
+    }
+
+	.whide
+    {
+        display:none
+    }
+
+	.mhide{
+        display:block
+    }
+	.mhide img{
+        width:100%;
+    }
+}
+
+/************** 970px 이하 미디어쿼리 **************/
+@media screen and (max-width:970px) {
+    
+    /* 1. 숨기기 - GNB메뉴, 서브메뉴, 메뉴배경가상요소, 로그인박스 */
+
+    .gnb,
+    .smenu,
+    /* .gnb>ul>li.sm::after, */
+    .member{
+        display: none;
+    }
+    #logo img{
+       width: 170px;
+    }
+
+    /* 2. 보이기 - 햄버거버튼 */
+    .ham {
+        display: block;
+    }
+}
