@@ -23,7 +23,7 @@
   border: 1px solid red;
 }
 
-.title h1 {
+.title h1 {/* 공통 */
   position: absolute;
     top: 20%;
     left: 40%;
