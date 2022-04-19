@@ -17,7 +17,8 @@
 }
 /* 아카데미 각 아이콘 글씨 */
 .icon p{
-  font-size: 1.8rem;
+  font-size: min(18px,2.5vw);
+  
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
   font-weight: bold;
@@ -41,7 +42,7 @@
 
 /* 주요 서비스 타이틀글자 */
 .stit{
-  font-size: 2.2rem;
+  font-size: min(22px,2vw);
   margin-left: 2%;
 }
 
@@ -72,7 +73,7 @@
 }
 /* 서비스아이콘글자 */
 .border p{
-  font-size: 1.6rem;
+  font-size: min(17px,2vw);
   text-align: center;
   color: rgba(0, 0, 0, 0.7);
   font-weight: bold;
