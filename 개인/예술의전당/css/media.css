@@ -40,8 +40,8 @@
        width: 170px;
     }
 
-    /* 2. 보이기 - 햄버거버튼 */
-    .ham {
+    /* 2. 보이기 - 모바일버튼 */
+    .mobtn {
         display: block;
     }
 
