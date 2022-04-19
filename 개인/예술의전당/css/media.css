@@ -45,17 +45,27 @@
         display: block;
     }
 
-    .swiper{
-        width: 100vw;
-    }
-
     /* 아카데미 타이틀 */
     .title{
       height: auto;  
     }
     .title h1{
-        padding: 0;
+        padding: 3%;
     }
+
+    /* 콘서트 슬라이드 */
+    .swiper{
+        width: 95vw;
+        height: auto;
+    }
+
+    .cont span{
+        font-size: 0.8em;
+    }
+    .cont{
+        font-size: 1rem;
+    }
+
 
     /* 아카데미 아이콘 */
     .acaitem{
