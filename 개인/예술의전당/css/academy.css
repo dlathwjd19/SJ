@@ -26,7 +26,40 @@
   font-weight: bold;
 }
 
+.service{
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  top: 40%;
 
+  /* display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; */
+
+  border: 1px dashed red;
+}
+
+.service>h1{
+  font-size: 2.2rem;
+  margin: 2%;
+}
+
+.sicon{
+  display: inline-block;
+  width: 12vw;
+  height: 12vh;
+  border: 1px dashed blue;
+}
+
+.icon1{
+  background: url(../img/newaca_img1.png);
+}
+
+.sicon>img{
+  width: 100%;
+  height: 100%;
+}
 
 /* .aca-item{
   position: relative;
