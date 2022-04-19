@@ -267,11 +267,11 @@ body {
 
 /* 모바일 전용버튼 */
 .mobtn{/* 공통 */
-    position: absolute;
+    position: fixed;
     /* 부모는? #top(모바일에서 fixed) */
     width: 21px;
     height: 21px;
-    top: 50%;
+    top: 7%;
     transform: translateY(-50%);
     /* 세로중앙이동 */
     display: none;
@@ -279,16 +279,16 @@ body {
 }
 /* 모바일용 햄버거 버튼 */
 .hbtn{
-    right: 20px;
-    font-size: 15px;
-    color: red;
+    right: 30px;
+    font-size: 25px;
+    color: #fff;
 }
 /* 모바일용 검색버튼 */
 .sbtn{
-    right: 70px;
-    font-size: 21px;
+    right: 75px;
+    font-size: 25px;
     font-weight: bold;
-    color: red;
+    color: #fff;
 }
 
 /* 1.4. 모바일 검색박스 */
