@@ -281,14 +281,14 @@ body {
 .hbtn{
     right: 20px;
     font-size: 15px;
-    color: #fff;
+    color: red;
 }
 /* 모바일용 검색버튼 */
 .sbtn{
     right: 70px;
     font-size: 21px;
     font-weight: bold;
-    color: #fff;
+    color: red;
 }
 
 /* 1.4. 모바일 검색박스 */

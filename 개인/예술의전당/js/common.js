@@ -1,18 +1,5 @@
 // 예술의전당 PJ 공통 JS - common.js
 
-// 현재 페이지 이름 알아내기
-let pgnm= $(location).attr("pathname");
-// 슬래쉬 자르기
-pgnm = pgnm.split("/");
-// 마지막 배열값 읽기(페이지이름)
-pgnm = pgnm[pgnm.length-1];
-console.log(pgnm);
-// JS방식: window.location.pathname -> host제외한 경로
-
-// 인덱스 페이지와 카테고리 페이지에서만 슬림슬라이드 클래스 넣기위한 코드
-let slim =0;
-if(pgnm==="index.html" || 
-pgnm==="category.html") slim = 1; //인덱스페이지면 1로변경!
 
 $(()=>{ /////////////// jQB ////////////////////////
     
