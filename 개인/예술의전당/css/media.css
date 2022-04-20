@@ -78,10 +78,11 @@
         /* 아카데미 타이틀 */
         .title {
             height: auto;
+            top: 15%;
         }
 
         .title h1 {
-            padding: 3%;
+            padding: 3%
         }
 
 
@@ -90,6 +91,10 @@
             width: 70vw;
             height: 35vh;
             /* 700이하 40 */
+        }
+
+        .aca{
+            margin: 10px;
         }
 
         .icon img {
