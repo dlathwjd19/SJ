@@ -1,66 +1,445 @@
 @charset "utf-8";
-/* 예술의전당 PJ 메인 페이지 CSS - main.css */
+/* 예술의전당 메인페이지 CSS - core.css */
 
-/* 외부파일합치기 */
-@import url(reset.css);
-/* @import url(core.css); */
-/* @import url(common.css); */
+/* 외부파일 합치기 - 웹폰트(CDN) */
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Kirang+Haerang&family=Nanum+Gothic&display=swap');
 
-/* 박스표시 */
-body * {
-    outline: 1px dashed red;
+/* 
+font-family: 'Black And White Picture', sans-serif;
+font-family: 'Kirang Haerang', cursive;
+font-family: 'Nanum Gothic', sans-serif;
+*/
+
+/* 상대단위를 위한 html 글자크기 */
+html {
+    font-size: 10px;
+    /* rem단위 계산을 쉽게하기 위해 10px로 셋팅! */
 }
-/* 속박스 */
-.ibx{
-    max-width: 1200px;
-    /* height:; */
-    margin: 0 auto;
-    
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    /* 보이는 화면기준 채우기 */
+    /* body하위 요소의 높이값 %의 기준이됨! */
+    overflow: hidden;
+    /* 스크롤바 없애기(스크롤안됨!) */
 }
-/* 상단 */
-.top{
-    /* height: auto; */
-    height: 72px;
+
+/* 기본태그 초기화 - 마진,패딩 없애기 */
+html,
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤딩태그 글자크기 초기화 */
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
+    기본글자크기는 16px */
+}
+
+/* ul,ol초기화 */
+ul,
+ol {
+    list-style: none;
+    /* 블릿 표시자 없앰 */
+}
+a { 
+    text-decoration:none; 
+} 
+
+/* 작업진행중 외곽선 */
+/* body * {
+    outline: 1px dashed blue;
+} */
+
+/* 컨텐츠 파트 최상위부모 */
+body {
+    background-color: antiquewhite;
+}
+
+/********** 공통 클래스 **********/
+
+
+/* 페이지 공통 class */
+.page {
+    /* 한페이지 보이는 화면 채우기 */
+    width: 100%;
+    height: 100%;
+    /* 
+        width: 100vw;
+        height: 100vh;
+        보이는 화면 기준의 뷰포트단위를 쓰면
+        body의 height 100%가 필요없다!
+        왜냐하면 보이는 화면을 기준하니까!
+        단, vw단위는 스크롤바 트랙까지 포함한
+        화면 전체를 기준하므로
+        데스트탑에서는 100%를 사용하는게 좋다!
+        (이유는 가로스크롤바가 생기게 되므로!)
+     */
+}
+
+/********** 1. 상단영역 **********/
+#top {
+    /* 겉박스 */
+    position: fixed;
+    width: 100%;
+    /* 크기를 화면에 채움! */
     background-color: #41414c;
+    border-bottom: 1px solid #ccc;
+    z-index: 9999;
+    /* 상단박스 위치 가장위! */
+    /* display: none; */
 }
-.head{
+
+.top {
+    /* 속박스 */
+    height: 96px;
+}
+
+/* 로고박스 */
+#logo {
     position: relative;
+    padding: 15px;
+    float: left;
+    left: 0%;
 }
 
-h1.logo{
+/*********** 로그인/회원가입 ***********/
+.member {
     position: absolute;
-}
-.logo img{
-    margin: 1% 0;
-}
-.member{
-    position: absolute;
-    top: 15%;
-    margin-top: -25px;
-    right: 1%;
+    top: 50%;
+    /* margin-top: -25px; */
+    right: 7%;
 
 }
 
-.member ul{
+.member ul {
     /* position: relative; */
     display: flex;
     /* right: 50%; */
+    align-items: center;
 }
 
-.member ul li{
-    padding: 8px 12px;
+.member ul li {
+    padding: 0px 10px;
 }
-.member>ul>li>a{
+
+.member>ul>li>a {
     color: #fff;
+    font-size: 1.5rem;
 }
 
-.gnb ul{
+/********** GNB 메뉴 **********/
+.gnb {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* x축방향으로 자기크기의 절반 반대방향이동(중앙정렬) */
+}
+
+.fll {
     display: flex;
+    /* justify-content: center; */
+}
+
+.gnb>ul>li {
+    width: 165px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+
+/* 메뉴 링크 */
+.gnb>ul>li>a {
+    display: block;
+    /* 인라인블록이면 위아래로 영역이 줄간격만큼 확장됨! */
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.8rem;
+    line-height: 40px;
+    /* border-bottom: 4px solid #fff; */
+}
+
+/* li에 마우스 오버시 a요소 디자인 변경 */
+.gnb>ul>li:hover>a {
+    /* background-color: #d5eeff; */
+    color: navy;
+    font-weight: bold;
+}
+
+.gnb>ul:hover::after {
+    height: 315px;
+    border-bottom: 3px solid #4571ff;
+}
+
+.gnb>ul::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #d5eeff;
+    transition: height .4s ease-out;
+    z-index: -1;
+}
+
+
+/* 서브메뉴 */
+.smenu {
+    position: absolute;
+    z-index: 1;
+    /* background-color: #fff; */
+    /* padding-top: 7px; */
+
+    /* 서브메뉴 숨기기 */
+    height: 0;
+    overflow: hidden;
+
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
 
 }
-.gnb>ul>li{
-    padding: 8px 12px;
+
+/* 상위 ul에 마우스 오버시 서브메뉴 전체보이기 */
+.gnb>ul:hover>li .smenu {
+    height: 315px;
 }
-.gnb>ul>li>a{
+
+.smenu>li {
+    text-align: center;
+}
+
+/* 서브 하위 ol */
+.smenu ol {
+    padding: 20px;
+}
+
+/* 서브메뉴 구분선 */
+/* .smenu::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 88%;
+    background-color: gray;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  } */
+
+/* 서브 a */
+.smenu a {
+    font-size: 1.5rem;
+    line-height: 33px;
+
+    /* 글자색+밑줄 변경 */
+    color: #222;
+    text-decoration: none;
+}
+
+/* 서브메뉴 a에 오버시 */
+.smenu a:hover {
+    background-color: #f0f0f0;
+    color: #ff5411;
+}
+
+/* 모바일 전용버튼 */
+.mobtn{/* 공통 */
+    position: fixed;
+    width: 21px;
+    height: 21px;
+    top: 7%;
+    transform: translateY(-50%);
+    /* 세로중앙이동 */
+    display: none;
+    /* 처음에 안보임 */
+}
+/* 모바일용 햄버거 버튼 */
+.hbtn{
+    right: 30px;
+    font-size: 25px;
     color: #fff;
 }
+/* 모바일용 검색버튼 */
+.sbtn{
+    right: 75px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* 1.4. 모바일 검색박스 */
+.mos{
+    padding: 15px 30px;
+    background-color: #fff;
+    display: none;/* 처음에 숨기기 */
+}
+/* 검색속박스 */
+.mwrap{
+    position: relative;
+    /* 부모자격 */
+    width: 100%;
+    height: 35px;
+    background-color: #000;
+}
+/* 검색입력창 - 부모박스의 크기에 따라 유동적인 박스 */
+#search{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 50px;
+    bottom: 9px;
+}
+/* 입력양식 */
+#search input{
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+}
+/* input박스는 일반 div박스와 다르기때문에 겉박스를 만들고
+채우기 형식으로 디자인함! */
+
+/* 검색창검색버튼 */
+.scbtn{
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 1.5. 모바일 전체메뉴박스 (#top의 하위자식으로 편성) */
+#mobx {
+    padding-left: 15px;
+    padding-top: 6px;
+    padding-bottom: 30px;
+    background-color: #fff;
+    display: none; 
+    /* 처음에 안보임 */
+
+    /* 모바일 전체메뉴 상단메뉴뺀 나머지
+    화면에서 크기를 잡고 넘치는 컨텐츠는
+    세로 스크롤로 볼 수 있게 한다! */
+    height: calc(100vh - 57px);
+    overflow-y: auto;
+}
+/* 1.5-1.모바일 GNb */
+.mognb {
+    padding-left: 15px;
+}
+.mognb a {
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 2;
+    color: #333;
+}
+
+
+
+
+/********************************* 2. 메인영역 *********************************/
+
+/* 2. 페이지영역 */
+/* 개별 페이지 셋팅 */
+#pg1 {
+    background-color: lightgray;
+}
+
+#pg2 {
+    background-color: #d8e6ebe0;
+}
+
+#pg3 {
+    background-color: #e0ebfffa;
+}
+
+#pg4 {
+    background-color: lightgoldenrodyellow;
+}
+
+/* 인디케이터 */
+.indic {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    /* 세로중앙이동 */
+    left: 5%;
+    width: 70px;
+    /* outline: 3px dotted red; */
+}
+
+.indic li {
+    width: 100%;
+    height: 25px;
+    margin: 10px 0;
+    cursor: pointer;
+    /* 손가락모양 */
+}
+
+/* a요소 */
+.indic a {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 4px;
+    /* background-color: #ccc; */
+    /* box-shadow: 1px 1px 1px #777; */
+    transition: width .4s;
+}
+
+/* a요소 */
+.indic a span {
+    font-size: 1.5rem;
+}
+
+/* .indic ul li:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0.2rem;
+            width: 0.7rem;
+            height: 0.7rem;
+            margin-top: -0.35rem;
+            border-radius: 50%;
+            background: purple;
+            opacity: 0.2;
+        } */
+/* 마우스 오버시 + 클래스 "on" 사이드페이지이동버튼 */
+/* .indic li:hover a,
+    .indic li.on a { */
+/* width: 150%; */
+/* background-color: red;
+        } */
+
+        
