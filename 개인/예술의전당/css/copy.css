@@ -321,7 +321,7 @@ body {
 /* input박스는 일반 div박스와 다르기때문에 겉박스를 만들고
 채우기 형식으로 디자인함! */
 
-/* 검색버튼 */
+/* 검색창검색버튼 */
 .scbtn{
     position: absolute;
     top: -3px;
@@ -333,7 +333,7 @@ body {
     color: #fff;
     text-align: center;
     line-height: 40px;
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
 }
 
