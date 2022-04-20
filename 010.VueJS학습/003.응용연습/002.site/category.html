@@ -247,7 +247,13 @@
                 v-bind:class="클래스명"
                 -> 데이터 바인드 할때 클래스명을 추가함!
                 -> 클래스명은 pm 값과 동일 -> catName
+
              ******************************************-->
+
+             <!-- 탭 타이틀 변경 메서드 호출하기 -->
+             {{chgTit(v.제목)}}
+             <!-- 콧수염으로 Vue 메서드도 호출가능! -->
+
             <!-- 1. 카테고리 페이지 탑영역 -->
             <header class="ctop">
                 <!-- 1-1. 서브타이틀 -->
@@ -278,13 +284,22 @@
             <div class="pt3 rbx">
                 <div class="rbxIn fbx">
                     <div class="cbx bgi bg1-1">
-                        <h2>{{v.타이틀[0]}}</h2>
+                        <!-- <h2>{{v.타이틀[0]}}</h2> -->
+                        <h2 v-html="v.타이틀[0]"></h2>
+                        <!-- 
+                            [ html태그 출력 디렉티브 ]
+                            v-html="태그코드"
+                            콧수염 표시자 넣으면
+                            html 특수문자, 태그가 처리안되고
+                            그대로 출력된다! 따라서 html
+                            넣기는 v-html 디렉티브를 쓴다!
+                         -->
                     </div>
                     <div class="cbx bgi bg1-2">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[1]"></h2>
                     </div>
                     <div class="cbx bgi bg1-3">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[2]"></h2>
                     </div>
                 </div>
             </div>
@@ -292,13 +307,13 @@
             <div class="pt3 rbx">
                 <div class="rbxIn fbx">
                     <div class="cbx bgi bg2-1">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[3]"></h2>
                     </div>
                     <div class="cbx bgi bg2-2">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[4]"></h2>
                     </div>
                     <div class="cbx bgi bg2-3">
-                        <h2></h2>
+                        <h2 v-html="v.타이틀[5]"></h2>
                     </div>
                 </div>
             </div>
@@ -339,6 +354,36 @@
     <a href="#" class="tbtn fi fi-angle-up">
         <span class="ir">위로가기버튼</span>
     </a>
+
+    <!-- 뷰JS전용 GVB -->
+    <nav class="VueGnb">
+        <!-- 타이틀 -->
+        <h2>SPA 체험존!!!</h2>
+        <!-- 메뉴 -->
+        <ul>
+            <li>
+                <a href="#">FASHION</a>
+            </li>
+            <li>
+                <a href="#">BEAUTY</a>
+            </li>
+            <li>
+                <a href="#">LIVING</a>
+            </li>
+            <li>
+                <a href="#">PEOPLE</a>
+            </li>
+            <li>
+                <a href="#">VIDEO</a>
+            </li>
+            <li>
+                <a href="#">RUNWAY</a>
+            </li>
+            <li>
+                <a href="#">SHOPPING</a>
+            </li>
+        </ul>
+    </nav>
 
 </body>
 
