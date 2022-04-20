@@ -1,43 +1,20 @@
 @charset "utf-8";
 /* 예술의 전당 메인페이지 미디어쿼리 - media.css */
 
-/************** 1024px 이하 미디어쿼리 **************/
-@media all and (max-width:1024px)	{	
-	.container{ 
-        width:92%;
-        margin:0 auto;
-    }
 
-	.container1{ 
-        width:100%;
-    }
-
-	.whide
-    {
-        display:none
-    }
-
-	.mhide{
-        display:block
-    }
-	.mhide img{
-        width:100%;
-    }
-}
-
-/************** 700px 이하 미디어쿼리 **************/
+/************** 1000px 이하 미디어쿼리 **************/
 @media screen and (max-width:1000px) {
-    
-    /* 1. 숨기기 - GNB메뉴, 서브메뉴, 메뉴배경가상요소, 로그인박스 */
+
+    /* 1. 숨기기 - GNB메뉴, 서브메뉴, 로그인박스 */
 
     .gnb,
     .smenu,
-    /* .gnb>ul>li.sm::after, */
-    .member{
+    .member {
         display: none;
     }
-    #logo img{
-       width: 170px;
+
+    #logo img {
+        width: 170px;
     }
 
     /* 2. 보이기 - 모바일버튼 */
@@ -46,15 +23,16 @@
     }
 
     /* 아카데미 타이틀 */
-    .title{
-      height: auto;  
+    .title {
+        height: auto;
     }
-    .title h1{
+
+    .title h1 {
         padding: 3%;
     }
 
     /* 콘서트 슬라이드 */
-    .swiper{
+    .swiper {
         width: 95vw;
         height: auto;
     }
@@ -68,21 +46,23 @@
 
 
     /* 아카데미 아이콘 */
-    .acaitem{
+    .acaitem {
         width: 98vw;
         /* height: 30vh; */
         /* 700이하 40 */
     }
-    .icon img{
+
+    .icon img {
         width: 15vw;
         /* 700 이하 28 */
     }
 
     /* 아카데미 - 서비스박스*/
-    .service{
+    .service {
         top: 26%;
         /* top: 23.5%; */
     }
+
     .border {
         min-width: 22vw;
         height: 22vh;
@@ -90,6 +70,48 @@
         /* min-width: 21vw;
         height: 18vh;
         margin: 10px 3px; 733사이즈*/
+    }
+
+    /************** 800px 이하 미디어쿼리 **************/
+    @media screen and (max-width:800px) {
+
+        /* 아카데미 타이틀 */
+        .title {
+            height: auto;
+        }
+
+        .title h1 {
+            padding: 3%;
+        }
+
+
+        /* 아카데미 아이콘 */
+        .acaitem {
+            width: 70vw;
+            height: 35vh;
+            /* 700이하 40 */
+        }
+
+        .icon img {
+            width: 23vw;
+            /* 700 이하 28 */
+        }
+
+        /* 아카데미 - 서비스박스*/
+        .service {
+            top: 23.5%;
+            /* top: 23.5%; */
+        }
+
+        .ser{
+            width: 100%;
+        }
+    
+        .border {
+            min-width: 21vw;
+            height: 12vh;
+            margin: 10px 3px;
+        }
     }
 
 }
